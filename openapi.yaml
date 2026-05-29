@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  title: History Moments API
+  description: API para buscar e gerar informações e flashcards sobre períodos históricos utilizando a inteligência artificial do Gemini.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Servidor de Desenvolvimento Local
+
+paths:
+  /:
+    get:
+      summary: Retorna o status e a versão da API
+      description: Endpoint básico para verificar se a API está online e operando.
+      responses:
+        '200':
+          description: API está online.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: History moments API
+                  version:
+                    type: string
+                    example: "1.0"
+
+  /periodos:
+    get:
+      summary: Lista os períodos históricos pré-existentes
+      description: Retorna os dados estáticos carregados a partir do arquivo JSON local.
+      responses:
+        '200':
+          description: Lista de períodos retornada com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  periodos:
+                    type: array
+                    items:
+                      type: object
+                    example: [{"id": 1, "nome": "Idade Média"}, {"id": 2, "nome": "Renascimento"}]
+
+    post:
+      summary: Gera informações/flashcards sobre um período específico
+      description: Envia o nome de um período histórico para que o Gemini gere informações estruturadas em JSON.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - periodo
+              properties:
+                periodo:
+                  type: string
+                  description: O nome do período histórico que deseja pesquisar.
+                  example: "Segunda Guerra Mundial"
+      responses:
+        '200':
+          description: Informações do período geradas com sucesso.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  informações:
+                    type: object
+                    description: Objeto dinâmico gerado pelo Gemini que segue o formato do seu `PERIODS_SCHEMA`.
+        '400':
+          description: Requisição inválida (corpo malformado ou ausência do campo 'periodo').
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: Insira um período para poder receber as informações
+        '500':
+          description: Erro interno ao processar a requisição ou falha na integração com a API do Gemini.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: "Erro ao gerar os flashcards: [Detalhes do Erro]"

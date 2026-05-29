@@ -1,0 +1,394 @@
+{
+    "periodos": [
+        {
+            "id": 1,
+            "nome": "Pré-História",
+            "periodo": "c. 2.5 milhões a.C. - c. 4000 a.C.",
+            "resumo": "Período anterior à invenção da escrita, abrangendo desde o surgimento dos primeiros hominídeos até as primeiras civilizações. Caracteriza-se pelo desenvolvimento de ferramentas de pedra, domínio do fogo e revolução agrícola.",
+            "acontecimentos": [
+                {
+                    "id": 1,
+                    "nome": "Domínio do fogo",
+                    "ano": "c. 1.5 milhões a.C. - 400 mil a.C.",
+                    "lugar": "África, Ásia e Europa",
+                    "oque_aconteceu": "Diferentes espécies humanas aprenderam a controlar, produzir e manter o fogo para aquecimento, proteção e cocção de alimentos.",
+                    "oque_mudou": "O fogo permitiu a expansão para climas frios, melhorou a digestão e a biodisponibilidade de nutrientes e fortaleceu os laços sociais.",
+                    "figuras_principais": [
+                        {"nome": "Homo erectus", "papel": "Primeira espécie claramente associada ao uso sistemático do fogo"}
+                    ],
+                    "informacoes_adicionais": "Evidências mais antigas vêm de sítios no Quênia (1.4 milhão anos) e Israel (780 mil anos)."
+                },
+                {
+                    "id": 2,
+                    "nome": "Revolução Neolítica e surgimento da agricultura",
+                    "ano": "c. 10.000 a.C. - 8.000 a.C.",
+                    "lugar": "Crescente Fértil (Oriente Médio)",
+                    "oque_aconteceu": "Grupos humanos domesticaram plantas (trigo, cevada) e animais (ovelhas, cabras, bois), passando da caça-coleta para a produção de alimentos.",
+                    "oque_mudou": "Surgimento dos primeiros assentamentos permanentes, aumento populacional, divisão do trabalho, desigualdades sociais e desenvolvimento de tecnologias como cerâmica.",
+                    "figuras_principais": [
+                        {"nome": "Povos natufianos", "papel": "Cultura que iniciou a sedentarização no Levante"}
+                    ],
+                    "informacoes_adicionais": "Jericó e Çatalhöyük estão entre os primeiros grandes assentamentos neolíticos."
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nome": "Idade Antiga",
+            "periodo": "c. 4000 a.C. - 476 d.C.",
+            "resumo": "Período marcado pelo surgimento das primeiras civilizações, invenção da escrita, formação dos grandes impérios (Egito, Grécia, Roma) e desenvolvimento do pensamento filosófico e político.",
+            "acontecimentos": [
+                {
+                    "id": 1,
+                    "nome": "Invenção da escrita",
+                    "ano": "c. 3400 a.C. - 3200 a.C.",
+                    "lugar": "Mesopotâmia (atual Iraque)",
+                    "oque_aconteceu": "Os sumérios desenvolveram a escrita cuneiforme, inicialmente para registrar transações comerciais e administrativas.",
+                    "oque_mudou": "A escrita permitiu o registro da história, leis, literatura e conhecimento científico, tornando possível a administração de grandes impérios.",
+                    "figuras_principais": [
+                        {"nome": "Sumérios", "papel": "Povo criador da primeira escrita"}
+                    ],
+                    "informacoes_adicionais": "Os tabletes mais antigos vêm de Uruk e continham pictogramas."
+                },
+                {
+                    "id": 2,
+                    "nome": "Democracia ateniense",
+                    "ano": "508 a.C. - 507 a.C.",
+                    "lugar": "Atenas (Grécia Antiga)",
+                    "oque_aconteceu": "Clístenes instituiu reformas que estabeleceram a democracia direta em Atenas, onde cidadãos livres votavam na Assembleia e eram sorteados para cargos públicos.",
+                    "oque_mudou": "Criação do primeiro sistema democrático registrado, influenciando profundamente o pensamento político ocidental.",
+                    "figuras_principais": [
+                        {"nome": "Clístenes", "papel": "Reformador que instituiu a democracia ateniense"},
+                        {"nome": "Péricles", "papel": "Líder que fortaleceu a democracia no século de ouro"}
+                    ],
+                    "informacoes_adicionais": "Excluía mulheres, escravos e estrangeiros. A participação era vista como dever cívico."
+                },
+                {
+                    "id": 3,
+                    "nome": "Fundação do Império Romano",
+                    "ano": "27 a.C.",
+                    "lugar": "Roma",
+                    "oque_aconteceu": "Otávio Augusto tornou-se o primeiro imperador romano, encerrando a República e iniciando o período imperial que duraria cerca de 500 anos no Ocidente.",
+                    "oque_mudou": "Estabelecimento da Pax Romana (200 anos de paz e prosperidade), expansão máxima do Império, desenvolvimento do direito romano e do cristianismo como religião imperial.",
+                    "figuras_principais": [
+                        {"nome": "Otávio Augusto", "papel": "Primeiro imperador romano"},
+                        {"nome": "Júlio César", "papel": "Ditador cujo assassinato levou ao fim da República"}
+                    ],
+                    "informacoes_adicionais": "Augusto fundou o corpo de bombeiros e a guarda pretoriana, e instituiu impostos sobre heranças."
+                },
+                {
+                    "id": 4,
+                    "nome": "Nascimento de Jesus Cristo",
+                    "ano": "c. 4 a.C. - 6 d.C.",
+                    "lugar": "Belém (Judéia)",
+                    "oque_aconteceu": "Jesus de Nazaré, considerado pelos cristãos como o Filho de Deus e Messias, nasceu em Belém e iniciou um movimento que pregaria o amor ao próximo e a salvação eterna.",
+                    "oque_mudou": "Surgimento do Cristianismo, que se tornaria a maior religião do mundo, influenciando profundamente a cultura, arte, filosofia e direito ocidentais.",
+                    "figuras_principais": [
+                        {"nome": "Jesus Cristo", "papel": "Fundador do Cristianismo"},
+                        {"nome": "Maria", "papel": "Mãe de Jesus"}
+                    ],
+                    "informacoes_adicionais": "O calendário ocidental (d.C.) tem como marco seu nascimento."
+                },
+                {
+                    "id": 5,
+                    "nome": "Queda do Império Romano do Ocidente",
+                    "ano": "476 d.C.",
+                    "lugar": "Itália",
+                    "oque_aconteceu": "O general germânico Odoacro depôs o imperador Rômulo Augusto, último imperador romano do Ocidente, e enviou as insígnias imperiais ao imperador do Oriente.",
+                    "oque_mudou": "Marcou o fim da Antiguidade e início da Idade Média na Europa Ocidental, desintegração da administração romana e surgimento de reinos germânicos.",
+                    "figuras_principais": [
+                        {"nome": "Rômulo Augusto", "papel": "Último imperador romano do Ocidente"},
+                        {"nome": "Odoacro", "papel": "General germânico que depôs o imperador"}
+                    ],
+                    "informacoes_adicionais": "O Império Romano do Oriente (Bizantino) continuou por quase mil anos, até 1453."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nome": "Idade Média",
+            "periodo": "476 d.C. - 1453 d.C.",
+            "resumo": "Período entre a queda de Roma e a queda de Constantinopla. Caracteriza-se pelo feudalismo, influência da Igreja Católica, Cruzadas, Peste Negra e formação dos estados nacionais.",
+            "acontecimentos": [
+                {
+                    "id": 1,
+                    "nome": "Hégira (fundação do Islã)",
+                    "ano": "622 d.C.",
+                    "lugar": "Meca e Medina (atual Arábia Saudita)",
+                    "oque_aconteceu": "O profeta Maomé fugiu de Meca para Medina, estabelecendo a primeira comunidade muçulmana e iniciando o calendário islâmico.",
+                    "oque_mudou": "Fundação do Islã como potência política e religiosa, unificação das tribos árabes e início da expansão islâmica que criaria um império do Mediterrâneo à Ásia.",
+                    "figuras_principais": [
+                        {"nome": "Maomé", "papel": "Profeta do Islã"}
+                    ],
+                    "informacoes_adicionais": "O ano de 622 é o Ano 1 do calendário islâmico (Hijri)."
+                },
+                {
+                    "id": 2,
+                    "nome": "Cisma do Oriente",
+                    "ano": "1054 d.C.",
+                    "lugar": "Constantinopla e Roma",
+                    "oque_aconteceu": "Conflitos entre o Papa de Roma e o Patriarca de Constantinopla levaram à excomunhão mútua, dividindo o cristianismo entre Igreja Católica (Ocidente) e Igreja Ortodoxa (Oriente).",
+                    "oque_mudou": "Divisão permanente das igrejas cristãs com diferenças doutrinárias que persistem até hoje, influenciando a geopolítica europeia.",
+                    "figuras_principais": [
+                        {"nome": "Papa Leão IX", "papel": "Papa que enviou legados a Constantinopla"},
+                        {"nome": "Patriarca Miguel Cerulário", "papel": "Patriarca que rompeu com Roma"}
+                    ],
+                    "informacoes_adicionais": "Em 1965, as excomunhões foram levantadas, mas a divisão persiste."
+                },
+                {
+                    "id": 3,
+                    "nome": "As Cruzadas",
+                    "ano": "1095-1291 d.C.",
+                    "lugar": "Jerusalém e Oriente Médio",
+                    "oque_aconteceu": "O Papa Urbano II convocou os cristãos europeus a retomarem Jerusalém do controle muçulmano. A Primeira Cruzada conquistou a cidade em 1099, estabelecendo Estados Cruzados.",
+                    "oque_mudou": "Expansão do comércio entre Europa e Oriente, enfraquecimento do feudalismo, intercâmbio cultural e fortalecimento do poder papal.",
+                    "figuras_principais": [
+                        {"nome": "Papa Urbano II", "papel": "Convocador da Primeira Cruzada"},
+                        {"nome": "Saladino", "papel": "Sultão muçulmano que reconquistou Jerusalém em 1187"}
+                    ],
+                    "informacoes_adicionais": "Houve oito cruzadas principais; a última fortaleza cruzada, Acre, caiu em 1291."
+                },
+                {
+                    "id": 4,
+                    "nome": "Carta Magna",
+                    "ano": "1215 d.C.",
+                    "lugar": "Inglaterra",
+                    "oque_aconteceu": "O rei João Sem Terra, pressionado por nobres rebeldes, selou a Carta Magna, documento que limitava os poderes do monarca e garantia direitos como julgamento justo.",
+                    "oque_mudou": "Estabeleceu o princípio de que o rei não está acima da lei, influenciando o constitucionalismo, o devido processo legal e os direitos humanos.",
+                    "figuras_principais": [
+                        {"nome": "João Sem Terra", "papel": "Rei que assinou a Carta Magna"}
+                    ],
+                    "informacoes_adicionais": "A cláusula 39 (julgamento justo) é a mais famosa e influente."
+                },
+                {
+                    "id": 5,
+                    "nome": "Peste Negra",
+                    "ano": "1347-1351 d.C.",
+                    "lugar": "Europa",
+                    "oque_aconteceu": "Uma pandemia de peste bubônica matou entre 30% e 60% da população europeia (cerca de 25 a 50 milhões de pessoas).",
+                    "oque_mudou": "Crise demográfica e econômica, escassez de mão de obra, aumento dos salários, enfraquecimento do sistema feudal e da Igreja.",
+                    "figuras_principais": [
+                        {"nome": "Yersinia pestis", "papel": "Bactéria causadora da peste"}
+                    ],
+                    "informacoes_adicionais": "O termo 'quarentena' vem do período de 40 dias de isolamento para navios em Veneza."
+                },
+                {
+                    "id": 6,
+                    "nome": "Queda de Constantinopla",
+                    "ano": "1453 d.C.",
+                    "lugar": "Constantinopla (atual Istambul)",
+                    "oque_aconteceu": "O sultão otomano Mehmed II tomou Constantinopla, capital do Império Bizantino, após um cerco de 53 dias.",
+                    "oque_mudou": "Fim do Império Bizantino, início da hegemonia otomana, fuga de estudiosos gregos para a Itália (contribuindo para o Renascimento) e bloqueio das rotas comerciais com a Ásia (incentivando as Grandes Navegações).",
+                    "figuras_principais": [
+                        {"nome": "Mehmed II", "papel": "Sultão otomano conquistador"},
+                        {"nome": "Constantino XI Paleólogo", "papel": "Último imperador bizantino"}
+                    ],
+                    "informacoes_adicionais": "A data de 1453 é o marco tradicional entre Idade Média e Idade Moderna."
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nome": "Idade Moderna",
+            "periodo": "1453 d.C. - 1789 d.C.",
+            "resumo": "Período que vai da queda de Constantinopla à Revolução Francesa. Caracteriza-se pelas Grandes Navegações, Reforma Protestante, Renascimento, Iluminismo, absolutismo e revolução científica.",
+            "acontecimentos": [
+                {
+                    "id": 1,
+                    "nome": "Chegada de Colombo à América",
+                    "ano": "1492 d.C.",
+                    "lugar": "Caribe",
+                    "oque_aconteceu": "Cristóvão Colombo, a serviço da Espanha, chegou à América, inaugurando o contato permanente entre a Europa e o continente americano.",
+                    "oque_mudou": "Início da colonização europeia da América, intercâmbio colombiano (troca de plantas, animais, doenças e cultura), genocídio de povos indígenas e ascensão da Europa como centro mundial.",
+                    "figuras_principais": [
+                        {"nome": "Cristóvão Colombo", "papel": "Navegador que liderou a expedição"},
+                        {"nome": "Reis Católicos", "papel": "Fernando e Isabel, monarcas espanhóis financiadores"}
+                    ],
+                    "informacoes_adicionais": "Colombo fez quatro viagens à América e nunca aceitou que tinha descoberto um novo continente."
+                },
+                {
+                    "id": 2,
+                    "nome": "Reforma Protestante",
+                    "ano": "1517 d.C.",
+                    "lugar": "Alemanha",
+                    "oque_aconteceu": "Martinho Lutero publicou suas 95 Teses criticando a venda de indulgências, iniciando a Reforma Protestante.",
+                    "oque_mudou": "Divisão da cristandade ocidental, surgimento do Protestantismo, guerras religiosas, tradução da Bíblia para línguas vernáculas e fortalecimento dos estados contra o papa.",
+                    "figuras_principais": [
+                        {"nome": "Martinho Lutero", "papel": "Teólogo e líder da Reforma"},
+                        {"nome": "João Calvino", "papel": "Líder da Reforma na Suíça"}
+                    ],
+                    "informacoes_adicionais": "A Dieta de Worms (1521) condenou Lutero, que foi escondido e traduziu o Novo Testamento para o alemão."
+                },
+                {
+                    "id": 3,
+                    "nome": "Revolução Científica",
+                    "ano": "1543-1687 d.C.",
+                    "lugar": "Europa",
+                    "oque_aconteceu": "Cientistas como Copérnico, Galileu e Newton desenvolveram o método científico e revolucionaram a compreensão do universo, com Newton publicando os 'Princípios Matemáticos' em 1687.",
+                    "oque_mudou": "Nascimento da ciência moderna, questionamento da autoridade da Igreja, desenvolvimento da física, astronomia e medicina, e influência no Iluminismo.",
+                    "figuras_principais": [
+                        {"nome": "Nicolau Copérnico", "papel": "Propositor do modelo heliocêntrico"},
+                        {"nome": "Galileu Galilei", "papel": "Pai da astronomia observacional"},
+                        {"nome": "Isaac Newton", "papel": "Autor da lei da gravitação universal"}
+                    ],
+                    "informacoes_adicionais": "Galileu foi julgado pela Inquisição em 1633 e forçado a renunciar às suas descobertas."
+                },
+                {
+                    "id": 4,
+                    "nome": "Revolução Gloriosa e Declaração de Direitos",
+                    "ano": "1688-1689 d.C.",
+                    "lugar": "Inglaterra",
+                    "oque_aconteceu": "O parlamento inglês depôs o rei católico Jaime II e convidou os protestantes Guilherme de Orange e Maria para governar, estabelecendo a Declaração de Direitos (Bill of Rights).",
+                    "oque_mudou": "Estabelecimento da monarquia constitucional na Inglaterra, supremacia do parlamento, liberdades civis e influência direta nos sistemas políticos dos EUA e França.",
+                    "figuras_principais": [
+                        {"nome": "Guilherme de Orange", "papel": "Rei após a Revolução Gloriosa"},
+                        {"nome": "John Locke", "papel": "Filósofo cujas ideias influenciaram a Declaração"}
+                    ],
+                    "informacoes_adicionais": "A Revolução Gloriosa foi relativamente incruenta, ao contrário da Guerra Civil Inglesa (1642-1651)."
+                },
+                {
+                    "id": 5,
+                    "nome": "Independência dos Estados Unidos",
+                    "ano": "1776 d.C.",
+                    "lugar": "Filadélfia",
+                    "oque_aconteceu": "As Treze Colônias declararam independência do Reino Unido através da Declaração de Independência, baseada em princípios iluministas.",
+                    "oque_mudou": "Criação dos Estados Unidos como primeira grande república moderna, inspiração para revoluções posteriores e estabelecimento de uma constituição escrita.",
+                    "figuras_principais": [
+                        {"nome": "George Washington", "papel": "Comandante e primeiro presidente"},
+                        {"nome": "Thomas Jefferson", "papel": "Principal autor da Declaração"},
+                        {"nome": "Benjamin Franklin", "papel": "Diplomata e líder intelectual"}
+                    ],
+                    "informacoes_adicionais": "A guerra pela independência durou até 1783, com vitória americana em Yorktown."
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nome": "Idade Contemporânea",
+            "periodo": "1789 d.C. - Presente",
+            "resumo": "Período que vai da Revolução Francesa aos dias atuais. Caracteriza-se pelas revoluções burguesas, industrialização, imperialismo, guerras mundiais, Guerra Fria, globalização e revolução digital.",
+            "acontecimentos": [
+                {
+                    "id": 1,
+                    "nome": "Revolução Francesa",
+                    "ano": "1789-1799 d.C.",
+                    "lugar": "França",
+                    "oque_aconteceu": "O povo francês, inspirado pelo Iluminismo, revoltou-se contra o absolutismo e a desigualdade, tomando a Bastilha em 14 de julho de 1789 e proclamando os Direitos do Homem e do Cidadão.",
+                    "oque_mudou": "Fim do Antigo Regime, ascensão da burguesia, disseminação dos ideais de liberdade, igualdade e fraternidade, inspiração para revoluções na Europa e América Latina, e surgimento de Napoleão Bonaparte.",
+                    "figuras_principais": [
+                        {"nome": "Maximilien Robespierre", "papel": "Líder jacobino durante o Terror"},
+                        {"nome": "Napoleão Bonaparte", "papel": "General que tomou o poder em 1799"},
+                        {"nome": "Marquês de Lafayette", "papel": "Herói da independência americana e líder revolucionário"}
+                    ],
+                    "informacoes_adicionais": "A Declaração dos Direitos do Homem e do Cidadão influenciou a Declaração Universal dos Direitos Humanos da ONU em 1948."
+                },
+                {
+                    "id": 2,
+                    "nome": "Revolução Industrial (1ª e 2ª)",
+                    "ano": "1760-1914 d.C.",
+                    "lugar": "Inglaterra, depois Europa, EUA e Japão",
+                    "oque_aconteceu": "A 1ª Revolução (1760-1840) trouxe a máquina a vapor, o tear mecânico e a produção fabril. A 2ª (1870-1914) trouxe eletricidade, petróleo, aço, automóvel e linha de montagem.",
+                    "oque_mudou": "Urbanização acelerada, surgimento do proletariado, novas classes sociais (burguesia industrial), crescimento econômico sem precedentes, poluição, imperialismo e tensões que levaram às guerras mundiais.",
+                    "figuras_principais": [
+                        {"nome": "James Watt", "papel": "Aperfeiçoou a máquina a vapor"},
+                        {"nome": "Thomas Edison", "papel": "Inventor da lâmpada elétrica e do fonógrafo"},
+                        {"nome": "Henry Ford", "papel": "Introduziu a linha de montagem e produção em massa"},
+                        {"nome": "Karl Marx", "papel": "Criticou o capitalismo e inspirou movimentos operários"}
+                    ],
+                    "informacoes_adicionais": "A Revolução Industrial causou a migração de milhões de pessoas do campo para as cidades e aumentou a expectativa de vida."
+                },
+                {
+                    "id": 3,
+                    "nome": "Primeira Guerra Mundial",
+                    "ano": "1914-1918 d.C.",
+                    "lugar": "Principalmente Europa (trincheiras da França, Bélgica, Rússia, Itália e Bálcãs)",
+                    "oque_aconteceu": "O assassinato do arquiduque Francisco Ferdinando (Áustria) desencadeou alianças militares (Tríplice Entente vs Tríplice Aliança). A guerra de trincheiras, com novas tecnologias (metralhadoras, tanques, aviões, gás tóxico), matou cerca de 20 milhões.",
+                    "oque_mudou": "Fim dos impérios Alemão, Austro-Húngaro, Otomano e Russo, surgimento de novos países (Polônia, Tchecoslováquia, Iugoslávia), criação da Liga das Nações, crise econômica na Europa e ascensão dos EUA como potência.",
+                    "figuras_principais": [
+                        {"nome": "Francisco Ferdinando", "papel": "Arquiduque austríaco cujo assassinato iniciou a guerra"},
+                        {"nome": "Woodrow Wilson", "papel": "Presidente dos EUA que propôs os 14 Pontos e a Liga das Nações"},
+                        {"nome": "Kaiser Guilherme II", "papel": "Imperador alemão que abdicou no fim da guerra"}
+                    ],
+                    "informacoes_adicionais": "A guerra terminou em 11 de novembro de 1918 às 11h. O Tratado de Versalhes (1919) impôs duras condições à Alemanha, alimentando o revanchismo que levaria à Segunda Guerra."
+                },
+                {
+                    "id": 4,
+                    "nome": "Revolução Russa e criação da URSS",
+                    "ano": "1917 d.C.",
+                    "lugar": "Rússia",
+                    "oque_aconteceu": "A Revolução de Fevereiro depôs o czar Nicolau II. A Revolução de Outubro, liderada por Lenin e os bolcheviques, tomou o poder, estabelecendo o primeiro estado socialista do mundo.",
+                    "oque_mudou": "Criação da União das Repúblicas Socialistas Soviéticas (URSS) em 1922, inspiração para movimentos comunistas globais, retirada da Rússia da Primeira Guerra e polarização ideológica que levaria à Guerra Fria.",
+                    "figuras_principais": [
+                        {"nome": "Vladimir Lenin", "papel": "Líder da Revolução de Outubro e primeiro governante da URSS"},
+                        {"nome": "Leon Trotsky", "papel": "Organizador do Exército Vermelho"},
+                        {"nome": "Josef Stalin", "papel": "Sucessor de Lenin que transformou a URSS em superpotência"},
+                        {"nome": "Nicolau II", "papel": "Último czar da Rússia (executado em 1918)"}
+                    ],
+                    "informacoes_adicionais": "A família real russa foi executada pelos bolcheviques em 1918. A URSS durou até 1991."
+                },
+                {
+                    "id": 5,
+                    "nome": "Grande Depressão",
+                    "ano": "1929-1939 d.C.",
+                    "lugar": "Mundial (iniciada nos EUA)",
+                    "oque_aconteceu": "A quebra da Bolsa de Valores de Nova York em outubro de 1929 (Quinta-Feira Negra) desencadeou uma crise econômica global, com queda drástica da produção, desemprego em massa (25% nos EUA) e falências bancárias.",
+                    "oque_mudou": "Ascensão do intervencionismo estatal (New Deal de Franklin Roosevelt), surgimento do fascismo e nazismo como alternativas, protecionismo comercial, e contribuição direta para a Segunda Guerra Mundial.",
+                    "figuras_principais": [
+                        {"nome": "Franklin D. Roosevelt", "papel": "Presidente dos EUA que implementou o New Deal"},
+                        {"nome": "Herbert Hoover", "papel": "Presidente dos EUA no início da crise, visto como omisso"},
+                        {"nome": "John Maynard Keynes", "papel": "Economista que defendeu a intervenção estatal na economia"}
+                    ],
+                    "informacoes_adicionais": "O PIB dos EUA caiu 30% entre 1929 e 1933. O desemprego atingiu 25 milhões de pessoas nos países industrializados."
+                },
+                {
+                    "id": 6,
+                    "nome": "Segunda Guerra Mundial",
+                    "ano": "1939-1945 d.C.",
+                    "lugar": "Europa, Ásia (Pacífico), África e Atlântico",
+                    "oque_aconteceu": "A invasão da Polônia pela Alemanha nazista (1º de setembro de 1939) desencadeou o conflito global entre Aliados (Reino Unido, URSS, EUA, China) e Eixo (Alemanha, Itália, Japão). Incluiu o Holocausto (6 milhões de judeus mortos), bombardeios estratégicos e bombas atômicas em Hiroshima e Nagasaki.",
+                    "oque_mudou": "Cerca de 70-85 milhões de mortos (a maioria civis), fim do nazismo, criação da Organização das Nações Unidas (ONU), início da Guerra Fria, divisão da Alemanha, independência de colônias na Ásia e África, e ascensão dos EUA e URSS como superpotências.",
+                    "figuras_principais": [
+                        {"nome": "Adolf Hitler", "papel": "Líder da Alemanha nazista (suicidou-se em 1945)"},
+                        {"nome": "Winston Churchill", "papel": "Primeiro-ministro do Reino Unido"},
+                        {"nome": "Franklin D. Roosevelt", "papel": "Presidente dos EUA (morreu em 1945)"},
+                        {"nome": "Josef Stalin", "papel": "Líder da URSS"},
+                        {"nome": "Harry S. Truman", "papel": "Presidente dos EUA que autorizou as bombas atômicas"}
+                    ],
+                    "informacoes_adicionais": "O Dia D (6 de junho de 1944) foi a maior invasão anfíbia da história. A guerra terminou na Europa em 8 de maio de 1945 e no Pacífico em 2 de setembro de 1945."
+                },
+                {
+                    "id": 7,
+                    "nome": "Guerra Fria",
+                    "ano": "1947-1991 d.C.",
+                    "lugar": "Mundial (EUA vs URSS)",
+                    "oque_aconteceu": "Conflito ideológico, político e militar indireto entre os EUA (capitalismo/democracia) e a URSS (comunismo/partido único). Incluiu corrida armamentista (arsenal nuclear), corrida espacial, espionagem, guerras por procuração (Coreia, Vietnã, Afeganistão) e a construção do Muro de Berlim (1961).",
+                    "oque_mudou": "Divisão do mundo em dois blocos (OTAN vs Pacto de Varsóvia), ameaça de aniquilação nuclear, avanços tecnológicos (foguetes, satélites, internet), descolonização da África e Ásia, queda do Muro de Berlim (1989) e dissolução da URSS (1991), com vitória do capitalismo liberal.",
+                    "figuras_principais": [
+                        {"nome": "Harry S. Truman", "papel": "Presidente dos EUA que lançou a Doutrina Truman (1947)"},
+                        {"nome": "Josef Stalin", "papel": "Líder soviético no início da Guerra Fria"},
+                        {"nome": "John F. Kennedy", "papel": "Presidente dos EUA durante a Crise dos Mísseis de Cuba (1962)"},
+                        {"nome": "Ronald Reagan", "papel": "Presidente dos EUA que intensificou a corrida armamentista"},
+                        {"nome": "Mikhail Gorbachev", "papel": "Líder soviético cujas reformas (glasnost e perestroika) levaram ao fim da URSS"}
+                    ],
+                    "informacoes_adicionais": "A Crise dos Mísseis de Cuba (1962) foi o momento mais próximo de uma guerra nuclear. A corrida espacial levou o homem à Lua em 1969 (Apollo 11)."
+                },
+                {
+                    "id": 8,
+                    "nome": "Revolução Digital e Internet",
+                    "ano": "1970-presente d.C.",
+                    "lugar": "Mundial (iniciada nos EUA)",
+                    "oque_aconteceu": "Desenvolvimento do microprocessador (1971), do computador pessoal (1970s-80s), da internet pública (1991), da world wide web (1993), dos smartphones (2007) e da inteligência artificial (2010s-2020s).",
+                    "oque_mudou": "Revolução na comunicação, comércio, educação e trabalho; globalização instantânea; redes sociais; economia digital (e-commerce, criptomoedas); desinformação; privacidade; automação e novas formas de emprego.",
+                    "figuras_principais": [
+                        {"nome": "Tim Berners-Lee", "papel": "Inventor da world wide web"},
+                        {"nome": "Bill Gates", "papel": "Fundador da Microsoft"},
+                        {"nome": "Steve Jobs", "papel": "Co-fundador da Apple"},
+                        {"nome": "Mark Zuckerberg", "papel": "Fundador do Facebook"},
+                        {"nome": "Elon Musk", "papel": "Empreendedor (Tesla, SpaceX) e figura da tecnologia atual"}
+                    ],
+                    "informacoes_adicionais": "Em 2024, cerca de 5.4 bilhões de pessoas (67% da população mundial) usavam a internet. A inteligência artificial generativa (ChatGPT, 2022) representa nova revolução."
+                }
+            ]
+        }
+    ]
+}
