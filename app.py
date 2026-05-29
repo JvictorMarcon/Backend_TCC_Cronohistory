@@ -60,9 +60,7 @@ def root():
 
 @app.route('/periodos', methods = ["GET"])
 def periods():
-    return jsonify({
-        "periodos": dados_periodos
-    }),200
+    return jsonify(dados_periodos),200
 
 @app.route('/periodos', methods = ["POST"])
 def busca_por_periodo():
