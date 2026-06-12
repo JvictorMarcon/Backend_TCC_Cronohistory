@@ -29,6 +29,42 @@
                         {"nome": "Povos natufianos", "papel": "Cultura que iniciou a sedentarização no Levante"}
                     ],
                     "informacoes_adicionais": "Jericó e Çatalhöyük estão entre os primeiros grandes assentamentos neolíticos."
+                },
+                {
+                    "id": 3,
+                    "nome": "Primeiras ferramentas de pedra lascada",
+                    "ano": "c. 2.6 milhões a.C.",
+                    "lugar": "Vale do Rio Omo (Etiópia)",
+                    "oque_aconteceu": "Os hominídeos mais antigos, possivelmente Australopithecus ou Homo habilis, começaram a lascar pedras para criar ferramentas cortantes, iniciando o Paleolítico.",
+                    "oque_mudou": "Início da tecnologia humana, permitindo processamento de carne, quebra de ossos e fabricação de outros instrumentos. Marcou a separação entre humanos e outros primatas.",
+                    "figuras_principais": [
+                        {"nome": "Homo habilis", "papel": "Primeira espécie associada à fabricação sistemática de ferramentas"}
+                    ],
+                    "informacoes_adicionais": "A indústria lítica mais antiga é chamada Olduvaiense, em referência ao desfiladeiro de Olduvai na Tanzânia."
+                },
+                {
+                    "id": 4,
+                    "nome": "Primeiras manifestações artísticas (pinturas rupestres)",
+                    "ano": "c. 40.000 a.C. - 35.000 a.C.",
+                    "lugar": "Europa Ocidental (Espanha, França, Alemanha) e Indonésia",
+                    "oque_aconteceu": "Humanos anatomicamente modernos (Homo sapiens) começaram a produzir pinturas em cavernas, esculturas em marfim e osso, e objetos rituais como as Vênus paleolíticas.",
+                    "oque_mudou": "Evidência de pensamento simbólico, linguagem complexa, rituais religiosos e cultura compartilhada. A arte rupestre pode ter sido usada em cerimôniais de caça ou iniciação.",
+                    "figuras_principais": [
+                        {"nome": "Homo sapiens", "papel": "Autor das primeiras manifestações artísticas"}
+                    ],
+                    "informacoes_adicionais": "As cavernas de Chauvet (França) e Altamira (Espanha) estão entre os sítios mais famosos, com pinturas de cavalos, bisões e mamutes."
+                },
+                {
+                    "id": 5,
+                    "nome": "Migração para a América",
+                    "ano": "c. 20.000 a.C. - 15.000 a.C.",
+                    "lugar": "Estreito de Bering (Ponte de terra entre Ásia e América)",
+                    "oque_aconteceu": "Grupos de caçadores-coletores siberianos cruzaram a ponte de terra de Bering (Beringia) durante a última era glacial, seguindo manadas de mamutes e outros grandes mamíferos.",
+                    "oque_mudou": "Povoamento das Américas, desenvolvimento de culturas distintas (Clóvis, Folsom), extinção da megafauna e surgimento de civilizações posteriores (Olmecas, Maias, Incas, Astecas).",
+                    "figuras_principais": [
+                        {"nome": "Povos paleoíndios", "papel": "Primeiros habitantes das Américas"}
+                    ],
+                    "informacoes_adicionais": "A cultura Clóvis (c. 13.000 a.C.) foi por muito tempo considerada a mais antiga das Américas, mas sítios como Monte Verde (Chile, 14.800 a.C.) sugerem ocupação mais antiga."
                 }
             ]
         },
@@ -52,6 +88,72 @@
                 },
                 {
                     "id": 2,
+                    "nome": "Unificação do Egito",
+                    "ano": "c. 3100 a.C.",
+                    "lugar": "Vale do Nilo (Egito)",
+                    "oque_aconteceu": "O faraó Menes (ou Narmer) unificou o Alto e o Baixo Egito, estabelecendo a primeira dinastia e a capital em Mênfis.",
+                    "oque_mudou": "Início da civilização faraônica que duraria 3.000 anos. Desenvolvimento da escrita hieroglífica, arquitetura monumental (pirâmides), religião complexa e sistema administrativo centralizado.",
+                    "figuras_principais": [
+                        {"nome": "Menes (Narmer)", "papel": "Primeiro faraó do Egito unificado"}
+                    ],
+                    "informacoes_adicionais": "A Paleta de Narmer, encontrada em Hieracômpolis, é um dos primeiros documentos históricos do Egito, mostrando a unificação."
+                },
+                {
+                    "id": 3,
+                    "nome": "Código de Hamurabi",
+                    "ano": "c. 1754 a.C.",
+                    "lugar": "Babilônia (Mesopotâmia)",
+                    "oque_aconteceu": "O rei Hamurabi da Babilônia codificou 282 leis gravadas em uma estela de diorito, abrangendo comércio, propriedade, família, crimes e punições (incluindo 'olho por olho').",
+                    "oque_mudou": "Primeiro código legal abrangente a sobreviver até hoje. Influenciou o direito posterior, estabeleceu o princípio de leis escritas e públicas, e fortaleceu o estado babilônico.",
+                    "figuras_principais": [
+                        {"nome": "Hamurabi", "papel": "Rei da Babilônia que criou o código"}
+                    ],
+                    "informacoes_adicionais": "A estela original está no Museu do Louvre, em Paris. As leis variavam conforme a classe social do ofensor e da vítima."
+                },
+                {
+                    "id": 4,
+                    "nome": "Guerras Médicas",
+                    "ano": "499 a.C. - 449 a.C.",
+                    "lugar": "Grécia, Mar Egeu, Ásia Menor",
+                    "oque_aconteceu": "Cidades-estado gregas (lideradas por Atenas e Esparta) repeliram duas invasões do Império Persa de Dario I e Xerxes I, com vitórias em Maratona (490 a.C.), Termópilas (480 a.C.) e Salamina (480 a.C.).",
+                    "oque_mudou": "Preservação da cultura grega, surgimento do 'Século de Ouro' de Atenas (liderado por Péricles), rivalidade entre Atenas e Esparta que levou à Guerra do Peloponeso, e identidade grega unificada contra o 'bárbaro' persa.",
+                    "figuras_principais": [
+                        {"nome": "Milcíades", "papel": "General ateniense vitorioso em Maratona"},
+                        {"nome": "Leônidas", "papel": "Rei de Esparta que liderou os 300 na Termópilas"},
+                        {"nome": "Temístocles", "papel": "Estrategista da vitória naval em Salamina"},
+                        {"nome": "Xerxes I", "papel": "Rei persa que liderou a segunda invasão"}
+                    ],
+                    "informacoes_adicionais": "A corrida de Filípides de Maratona a Atenas (42 km) para anunciar a vitória deu origem à maratona moderna."
+                },
+                {
+                    "id": 5,
+                    "nome": "Alexandre, o Grande",
+                    "ano": "336 a.C. - 323 a.C.",
+                    "lugar": "Macedônia, Grécia, Egito, Pérsia, Ásia Central, Índia",
+                    "oque_aconteceu": "Alexandre III da Macedônia, filho de Filipe II, conquistou o vasto Império Persa (de Dario III), chegou ao Egito (fundando Alexandria) e avançou até o rio Indo (atual Paquistão).",
+                    "oque_mudou": "Criação de um dos maiores impérios da antiguidade, disseminação da cultura helenística (fusão grega, egípcia e persa), início do período helenístico (323-31 a.C.), e difusão da língua grega no Mediterrâneo oriental.",
+                    "figuras_principais": [
+                        {"nome": "Alexandre, o Grande", "papel": "Rei e conquistador macedônio"},
+                        {"nome": "Aristóteles", "papel": "Filósofo e tutor de Alexandre"}
+                    ],
+                    "informacoes_adicionais": "Alexandre morreu na Babilônia aos 32 anos, sem deixar herdeiro adulto. Seu império foi dividido entre seus generais (Ptolomeu, Seleuco, Antígono, Lisímaco)."
+                },
+                {
+                    "id": 6,
+                    "nome": "Guerras Púnicas",
+                    "ano": "264 a.C. - 146 a.C.",
+                    "lugar": "Mediterrâneo Ocidental (Itália, Sicília, Norte da África, Península Ibérica)",
+                    "oque_aconteceu": "Três guerras entre a República Romana e Cartago (fenícios). Aníbal cruzou os Alpes com elefantes na Segunda Guerra (218 a.C.). Na Terceira, Cipião Emiliano arrasou Cartago.",
+                    "oque_mudou": "Roma tornou-se a potência dominante do Mediterrâneo ocidental, anexou Sicília, Sardenha, Córsega, Hispânia e Norte da África, e destruiu sua maior rival comercial.",
+                    "figuras_principais": [
+                        {"nome": "Aníbal Barca", "papel": "General cartaginês"},
+                        {"nome": "Cipião Africano", "papel": "General romano que derrotou Aníbal em Zama (202 a.C.)"},
+                        {"nome": "Catão, o Velho", "papel": "Senador romano que encerrava discursos com 'Cartago deve ser destruída'"}
+                    ],
+                    "informacoes_adicionais": "Após a destruição de Cartago em 146 a.C., os romanos salgaram a terra para que nada mais crescesse (versão lendária, mas historicamente disputada)."
+                },
+                {
+                    "id": 7,
                     "nome": "Democracia ateniense",
                     "ano": "508 a.C. - 507 a.C.",
                     "lugar": "Atenas (Grécia Antiga)",
@@ -64,7 +166,7 @@
                     "informacoes_adicionais": "Excluía mulheres, escravos e estrangeiros. A participação era vista como dever cívico."
                 },
                 {
-                    "id": 3,
+                    "id": 8,
                     "nome": "Fundação do Império Romano",
                     "ano": "27 a.C.",
                     "lugar": "Roma",
@@ -77,7 +179,7 @@
                     "informacoes_adicionais": "Augusto fundou o corpo de bombeiros e a guarda pretoriana, e instituiu impostos sobre heranças."
                 },
                 {
-                    "id": 4,
+                    "id": 9,
                     "nome": "Nascimento de Jesus Cristo",
                     "ano": "c. 4 a.C. - 6 d.C.",
                     "lugar": "Belém (Judéia)",
@@ -90,7 +192,7 @@
                     "informacoes_adicionais": "O calendário ocidental (d.C.) tem como marco seu nascimento."
                 },
                 {
-                    "id": 5,
+                    "id": 10,
                     "nome": "Queda do Império Romano do Ocidente",
                     "ano": "476 d.C.",
                     "lugar": "Itália",
@@ -112,6 +214,19 @@
             "acontecimentos": [
                 {
                     "id": 1,
+                    "nome": "Reino Franco e Carlos Magno",
+                    "ano": "768 d.C. - 814 d.C.",
+                    "lugar": "França, Alemanha, Itália, Países Baixos",
+                    "oque_aconteceu": "Carlos Magno (rei dos francos) conquistou vastos territórios na Europa ocidental, foi coroado 'Imperador dos Romanos' pelo Papa Leão III em 800 d.C., fundando o Império Carolíngio.",
+                    "oque_mudou": "Renascimento carolíngio (renovação cultural, cópia de manuscritos antigos), fortalecimento da Igreja, unificação temporária da Europa ocidental, e modelo de governo que inspiraria futuros impérios (Sacro Império).",
+                    "figuras_principais": [
+                        {"nome": "Carlos Magno", "papel": "Imperador e rei dos francos"},
+                        {"nome": "Papa Leão III", "papel": "Papa que coroou Carlos Magno"}
+                    ],
+                    "informacoes_adicionais": "Carlos Magno é considerado 'Pai da Europa' por unificar grande parte do continente. O Tratado de Verdun (843) dividiu seu império entre seus netos, originando França, Alemanha e Lotaríngia."
+                },
+                {
+                    "id": 2,
                     "nome": "Hégira (fundação do Islã)",
                     "ano": "622 d.C.",
                     "lugar": "Meca e Medina (atual Arábia Saudita)",
@@ -123,7 +238,21 @@
                     "informacoes_adicionais": "O ano de 622 é o Ano 1 do calendário islâmico (Hijri)."
                 },
                 {
-                    "id": 2,
+                    "id": 3,
+                    "nome": "Idade de Ouro Islâmica",
+                    "ano": "750 d.C. - 1258 d.C.",
+                    "lugar": "Califado Abássida (Bagdá), Córdoba (Espanha), Cairo",
+                    "oque_aconteceu": "Período de florescimento cultural, científico e econômico no mundo islâmico. A Casa da Sabedoria em Bagdá traduziu e expandiu conhecimentos gregos, indianos e persas.",
+                    "oque_mudou": "Avanços em matemática (álgebra, algoritmos), medicina (Avicena, Al-Razi), astronomia, química (alquimia), óptica (Alhazen), preservação de textos antigos e transmissão à Europa através da Espanha.",
+                    "figuras_principais": [
+                        {"nome": "Al-Khwarizmi", "papel": "Matemático que desenvolveu a álgebra"},
+                        {"nome": "Avicena (Ibn Sina)", "papel": "Médico e filósofo, autor do 'Cânone da Medicina'"},
+                        {"nome": "Averróis (Ibn Rushd)", "papel": "Filósofo que comentou Aristóteles"}
+                    ],
+                    "informacoes_adicionais": "A conquista mongol de Bagdá em 1258 marcou o fim do período, mas centros islâmicos em outros lugares continuaram florescentes."
+                },
+                {
+                    "id": 4,
                     "nome": "Cisma do Oriente",
                     "ano": "1054 d.C.",
                     "lugar": "Constantinopla e Roma",
@@ -136,7 +265,20 @@
                     "informacoes_adicionais": "Em 1965, as excomunhões foram levantadas, mas a divisão persiste."
                 },
                 {
-                    "id": 3,
+                    "id": 5,
+                    "nome": "Conquista normanda da Inglaterra",
+                    "ano": "1066 d.C.",
+                    "lugar": "Inglaterra (Hastings)",
+                    "oque_aconteceu": "Guilherme, Duque da Normandia (França), derrotou o rei Haroldo II na Batalha de Hastings, tornando-se rei da Inglaterra.",
+                    "oque_mudou": "Fim da era anglo-saxônica, introdução do feudalismo na Inglaterra, fusão das línguas (francês dos nobres com inglês dos camponeses, gerando o inglês moderno), e estreitamento dos laitos com a França, gerando séculos de conflito.",
+                    "figuras_principais": [
+                        {"nome": "Guilherme, o Conquistador", "papel": "Duque da Normandia e rei da Inglaterra"},
+                        {"nome": "Haroldo II", "papel": "Último rei anglo-saxão da Inglaterra"}
+                    ],
+                    "informacoes_adicionais": "A Tapeçaria de Bayeux é um bordado de 70 metros que narra a conquista. O Domesday Book (1086) foi um censo detalhado da Inglaterra encomendado por Guilherme."
+                },
+                {
+                    "id": 6,
                     "nome": "As Cruzadas",
                     "ano": "1095-1291 d.C.",
                     "lugar": "Jerusalém e Oriente Médio",
@@ -144,12 +286,13 @@
                     "oque_mudou": "Expansão do comércio entre Europa e Oriente, enfraquecimento do feudalismo, intercâmbio cultural e fortalecimento do poder papal.",
                     "figuras_principais": [
                         {"nome": "Papa Urbano II", "papel": "Convocador da Primeira Cruzada"},
-                        {"nome": "Saladino", "papel": "Sultão muçulmano que reconquistou Jerusalém em 1187"}
+                        {"nome": "Saladino", "papel": "Sultão muçulmano que reconquistou Jerusalém em 1187"},
+                        {"nome": "Ricardo Coração de Leão", "papel": "Rei inglês na Terceira Cruzada"}
                     ],
-                    "informacoes_adicionais": "Houve oito cruzadas principais; a última fortaleza cruzada, Acre, caiu em 1291."
+                    "informacoes_adicionais": "Houve oito cruzadas principais; a última fortaleza cruzada, Acre, caiu em 1291. A Quarta Cruzada (1204) saqueou Constantinopla, aprofundando o Cisma."
                 },
                 {
-                    "id": 4,
+                    "id": 7,
                     "nome": "Carta Magna",
                     "ano": "1215 d.C.",
                     "lugar": "Inglaterra",
@@ -158,10 +301,23 @@
                     "figuras_principais": [
                         {"nome": "João Sem Terra", "papel": "Rei que assinou a Carta Magna"}
                     ],
-                    "informacoes_adicionais": "A cláusula 39 (julgamento justo) é a mais famosa e influente."
+                    "informacoes_adicionais": "A cláusula 39 (julgamento justo) é a mais famosa e influente. Apenas 3 das 63 cláusulas originais ainda estão em vigor."
                 },
                 {
-                    "id": 5,
+                    "id": 8,
+                    "nome": "Guerra dos Cem Anos",
+                    "ano": "1337-1453 d.C.",
+                    "lugar": "França e Países Baixos",
+                    "oque_aconteceu": "Conflito dinástico entre as casas de Valois (França) e Plantageneta (Inglaterra) pela sucessão ao trono francês. Joana d'Arc liderou os franceses no cerco de Orleans (1429).",
+                    "oque_mudou": "Fortalecimento do sentimento nacional francês e inglês, desenvolvimento de exércitos profissionais (com arqueiros ingleses e artilharia francesa), expulsão da Inglaterra da França (exceto Calais), e enfraquecimento da nobreza feudal.",
+                    "figuras_principais": [
+                        {"nome": "Joana d'Arc", "papel": "Heroína francesa, queimada na fogueira em 1431, canonizada em 1920"},
+                        {"nome": "Henrique V", "papel": "Rei inglês vitorioso em Azincourt (1415)"}
+                    ],
+                    "informacoes_adicionais": "A guerra inspirou as peças históricas de Shakespeare. Joana d'Arc foi capturada pelos borgonheses (aliados ingleses) e entregue à Inquisição inglesa."
+                },
+                {
+                    "id": 9,
                     "nome": "Peste Negra",
                     "ano": "1347-1351 d.C.",
                     "lugar": "Europa",
@@ -170,10 +326,10 @@
                     "figuras_principais": [
                         {"nome": "Yersinia pestis", "papel": "Bactéria causadora da peste"}
                     ],
-                    "informacoes_adicionais": "O termo 'quarentena' vem do período de 40 dias de isolamento para navios em Veneza."
+                    "informacoes_adicionais": "O termo 'quarentena' vem do período de 40 dias de isolamento para navios em Veneza. Houve surtos recorrentes até o século XVIII."
                 },
                 {
-                    "id": 6,
+                    "id": 10,
                     "nome": "Queda de Constantinopla",
                     "ano": "1453 d.C.",
                     "lugar": "Constantinopla (atual Istambul)",
@@ -183,7 +339,7 @@
                         {"nome": "Mehmed II", "papel": "Sultão otomano conquistador"},
                         {"nome": "Constantino XI Paleólogo", "papel": "Último imperador bizantino"}
                     ],
-                    "informacoes_adicionais": "A data de 1453 é o marco tradicional entre Idade Média e Idade Moderna."
+                    "informacoes_adicionais": "A data de 1453 é o marco tradicional entre Idade Média e Idade Moderna. Hagia Sophia foi convertida em mesquita (hoje museu)."
                 }
             ]
         },
@@ -195,6 +351,31 @@
             "acontecimentos": [
                 {
                     "id": 1,
+                    "nome": "Imprensa de Gutenberg",
+                    "ano": "c. 1440-1455 d.C.",
+                    "lugar": "Mainz, Alemanha",
+                    "oque_aconteceu": "Johannes Gutenberg desenvolveu a prensa de tipos móveis, imprimindo a Bíblia de 42 linhas (Bíblia de Gutenberg) por volta de 1455.",
+                    "oque_mudou": "Democratização do conhecimento, queda drástica do custo de livros, disseminação de ideias (Reforma, Renascimento, Iluminismo), aumento do alfabetismo, padronização de línguas e formação da opinião pública.",
+                    "figuras_principais": [
+                        {"nome": "Johannes Gutenberg", "papel": "Inventor da prensa de tipos móveis na Europa"}
+                    ],
+                    "informacoes_adicionais": "Até Gutenberg, os livros eram copiados à mão, principalmente por monges. A imprensa é frequentemente listada como a invenção mais importante do segundo milênio."
+                },
+                {
+                    "id": 2,
+                    "nome": "Descobrimento do Brasil",
+                    "ano": "1500 d.C.",
+                    "lugar": "Brasil (Porto Seguro, atual Bahia)",
+                    "oque_aconteceu": "A frota portuguesa liderada por Pedro Álvares Cabral, a caminho das Índias, avistou terras que seriam chamadas de Ilha de Vera Cruz, depois Brasil.",
+                    "oque_mudou": "Início da colonização portuguesa na América do Sul, exploração do pau-brasil, escravidão de indígenas, introdução da cana-de-açúcar e, mais tarde, tráfico de escravos africanos, formação da maior nação lusófona do mundo.",
+                    "figuras_principais": [
+                        {"nome": "Pedro Álvares Cabral", "papel": "Capitão-mor da frota que descobriu o Brasil"},
+                        {"nome": "Pero Vaz de Caminha", "papel": "Escrivão que descreveu o Brasil em carta a D. Manuel I"}
+                    ],
+                    "informacoes_adicionais": "A carta de Caminha é o primeiro documento escrito sobre o Brasil. O Tratado de Tordesilhas (1494) dividia o mundo entre Portugal e Espanha, mas Cabral pode ter se desviado intencionalmente para reivindicar a terra."
+                },
+                {
+                    "id": 3,
                     "nome": "Chegada de Colombo à América",
                     "ano": "1492 d.C.",
                     "lugar": "Caribe",
@@ -204,10 +385,10 @@
                         {"nome": "Cristóvão Colombo", "papel": "Navegador que liderou a expedição"},
                         {"nome": "Reis Católicos", "papel": "Fernando e Isabel, monarcas espanhóis financiadores"}
                     ],
-                    "informacoes_adicionais": "Colombo fez quatro viagens à América e nunca aceitou que tinha descoberto um novo continente."
+                    "informacoes_adicionais": "Colombo fez quatro viagens à América e nunca aceitou que tinha descoberto um novo continente, insistindo que havia chegado à Ásia."
                 },
                 {
-                    "id": 2,
+                    "id": 4,
                     "nome": "Reforma Protestante",
                     "ano": "1517 d.C.",
                     "lugar": "Alemanha",
@@ -215,12 +396,26 @@
                     "oque_mudou": "Divisão da cristandade ocidental, surgimento do Protestantismo, guerras religiosas, tradução da Bíblia para línguas vernáculas e fortalecimento dos estados contra o papa.",
                     "figuras_principais": [
                         {"nome": "Martinho Lutero", "papel": "Teólogo e líder da Reforma"},
-                        {"nome": "João Calvino", "papel": "Líder da Reforma na Suíça"}
+                        {"nome": "João Calvino", "papel": "Líder da Reforma na Suíça"},
+                        {"nome": "Henrique VIII", "papel": "Rei inglês que criou a Igreja Anglicana"}
                     ],
                     "informacoes_adicionais": "A Dieta de Worms (1521) condenou Lutero, que foi escondido e traduziu o Novo Testamento para o alemão."
                 },
                 {
-                    "id": 3,
+                    "id": 5,
+                    "nome": "Contrarreforma e Concílio de Trento",
+                    "ano": "1545-1563 d.C.",
+                    "lugar": "Trento, Itália",
+                    "oque_aconteceu": "A Igreja Católica reuniu o Concílio de Trento para responder à Reforma, reafirmando a doutrina católica (sete sacramentos, purgatório, veneração de santos), condenando a justificação pela fé somente, e instituindo reformas disciplinares (proibiu a venda de indulgências, exigiu seminários para padres).",
+                    "oque_mudou": "Renovação do catolicismo, criação da Companhia de Jesus (jesuítas) para educação e missões, inquisição mais ativa, Index librorum prohibitorum (lista de livros proibidos), e barroco como estilo artístico de propaganda da fé.",
+                    "figuras_principais": [
+                        {"nome": "Papa Paulo III", "papel": "Papa que convocou o Concílio de Trento"},
+                        {"nome": "Inácio de Loyola", "papel": "Fundador da Companhia de Jesus"}
+                    ],
+                    "informacoes_adicionais": "O Concílio de Trento, realizado em 25 sessões ao longo de 18 anos, foi um dos mais importantes da história da Igreja e definiu o catolicismo até o Concílio Vaticano II (1962-1965)."
+                },
+                {
+                    "id": 6,
                     "nome": "Revolução Científica",
                     "ano": "1543-1687 d.C.",
                     "lugar": "Europa",
@@ -229,12 +424,13 @@
                     "figuras_principais": [
                         {"nome": "Nicolau Copérnico", "papel": "Propositor do modelo heliocêntrico"},
                         {"nome": "Galileu Galilei", "papel": "Pai da astronomia observacional"},
-                        {"nome": "Isaac Newton", "papel": "Autor da lei da gravitação universal"}
+                        {"nome": "Isaac Newton", "papel": "Autor da lei da gravitação universal"},
+                        {"nome": "Johannes Kepler", "papel": "Descobridor das leis do movimento planetário"}
                     ],
-                    "informacoes_adicionais": "Galileu foi julgado pela Inquisição em 1633 e forçado a renunciar às suas descobertas."
+                    "informacoes_adicionais": "Galileu foi julgado pela Inquisição em 1633 e forçado a renunciar às suas descobertas. Newton também fez importantes contribuições à óptica e ao cálculo."
                 },
                 {
-                    "id": 4,
+                    "id": 7,
                     "nome": "Revolução Gloriosa e Declaração de Direitos",
                     "ano": "1688-1689 d.C.",
                     "lugar": "Inglaterra",
@@ -244,10 +440,26 @@
                         {"nome": "Guilherme de Orange", "papel": "Rei após a Revolução Gloriosa"},
                         {"nome": "John Locke", "papel": "Filósofo cujas ideias influenciaram a Declaração"}
                     ],
-                    "informacoes_adicionais": "A Revolução Gloriosa foi relativamente incruenta, ao contrário da Guerra Civil Inglesa (1642-1651)."
+                    "informacoes_adicionais": "A Revolução Gloriosa foi relativamente incruenta, ao contrário da Guerra Civil Inglesa (1642-1651). O Bill of Rights inspirou a Declaração de Direitos dos EUA (1791) e a Declaração Universal dos Direitos Humanos (1948)."
                 },
                 {
-                    "id": 5,
+                    "id": 8,
+                    "nome": "Iluminismo",
+                    "ano": "c. 1715-1789 d.C.",
+                    "lugar": "França (epicentro), Escócia, Alemanha, Américas",
+                    "oque_aconteceu": "Movimento intelectual que enfatizava a razão, a ciência, a liberdade individual e a tolerância religiosa contra a autoridade tradicional (monarquia absoluta e Igreja).",
+                    "oque_mudou": "Influenciou a Independência dos EUA (Declaração de Independência, 1776), a Revolução Francesa (Declaração dos Direitos do Homem, 1789), separação Igreja-Estado, liberdade de expressão, e desenvolvimento da economia de mercado (Adam Smith).",
+                    "figuras_principais": [
+                        {"nome": "Voltaire", "papel": "Defensor da liberdade de expressão e tolerância religiosa"},
+                        {"nome": "Jean-Jacques Rousseau", "papel": "Teórico do contrato social e soberania popular"},
+                        {"nome": "Montesquieu", "papel": "Defensor da separação dos poderes"},
+                        {"nome": "Denis Diderot", "papel": "Editor da Enciclopédia"},
+                        {"nome": "Immanuel Kant", "papel": "Filósofo alemão que definiu o Iluminismo como 'a saída do homem de sua menoridade'"}
+                    ],
+                    "informacoes_adicionais": "A Enciclopédia (1751-1772) reuniu conhecimento de 140 colaboradores e foi proibida pela Igreja Católica, mas vendida secretamente."
+                },
+                {
+                    "id": 9,
                     "nome": "Independência dos Estados Unidos",
                     "ano": "1776 d.C.",
                     "lugar": "Filadélfia",
@@ -258,7 +470,21 @@
                         {"nome": "Thomas Jefferson", "papel": "Principal autor da Declaração"},
                         {"nome": "Benjamin Franklin", "papel": "Diplomata e líder intelectual"}
                     ],
-                    "informacoes_adicionais": "A guerra pela independência durou até 1783, com vitória americana em Yorktown."
+                    "informacoes_adicionais": "A guerra pela independência durou até 1783, com vitória americana em Yorktown. A Constituição dos EUA (1787) é a mais antiga ainda em vigor."
+                },
+                {
+                    "id": 10,
+                    "nome": "Revolução Industrial na Inglaterra (1ª fase)",
+                    "ano": "1760-1840 d.C.",
+                    "lugar": "Inglaterra (Midlands, Lancashire)",
+                    "oque_aconteceu": "Inovações tecnológicas como a máquina a vapor (James Watt), tear mecânico (Edmund Cartwright) e fiação mecânica (Richard Arkwright) mecanizaram a produção de tecidos de algodão. O carvão e o ferro substituíram a madeira.",
+                    "oque_mudou": "Início da industrialização, migração campo-cidade, surgimento do proletariado, crescimento populacional sem precedentes, poluição ambiental, e ascensão da Inglaterra como 'oficina do mundo'.",
+                    "figuras_principais": [
+                        {"nome": "James Watt", "papel": "Aperfeiçoou a máquina a vapor (patente em 1769)"},
+                        {"nome": "Richard Arkwright", "papel": "Inventor da spinning frame (1769)"},
+                        {"nome": "Adam Smith", "papel": "Economista da 'mão invisível' do mercado"}
+                    ],
+                    "informacoes_adicionais": "O algodão processado na Inglaterra passou de 2,5 milhões de libras em 1760 para 22 milhões em 1787, a maioria proveniente de escravos nos EUA."
                 }
             ]
         },
@@ -280,25 +506,95 @@
                         {"nome": "Napoleão Bonaparte", "papel": "General que tomou o poder em 1799"},
                         {"nome": "Marquês de Lafayette", "papel": "Herói da independência americana e líder revolucionário"}
                     ],
-                    "informacoes_adicionais": "A Declaração dos Direitos do Homem e do Cidadão influenciou a Declaração Universal dos Direitos Humanos da ONU em 1948."
+                    "informacoes_adicionais": "A Declaração dos Direitos do Homem e do Cidadão influenciou a Declaração Universal dos Direitos Humanos da ONU em 1948. A Revolução aboliu a escravidão (1794, restaurada por Napoleão em 1802, abolida definitivamente em 1848)."
                 },
                 {
                     "id": 2,
-                    "nome": "Revolução Industrial (1ª e 2ª)",
-                    "ano": "1760-1914 d.C.",
-                    "lugar": "Inglaterra, depois Europa, EUA e Japão",
-                    "oque_aconteceu": "A 1ª Revolução (1760-1840) trouxe a máquina a vapor, o tear mecânico e a produção fabril. A 2ª (1870-1914) trouxe eletricidade, petróleo, aço, automóvel e linha de montagem.",
-                    "oque_mudou": "Urbanização acelerada, surgimento do proletariado, novas classes sociais (burguesia industrial), crescimento econômico sem precedentes, poluição, imperialismo e tensões que levaram às guerras mundiais.",
+                    "nome": "Era Napoleônica",
+                    "ano": "1799-1815 d.C.",
+                    "lugar": "Europa",
+                    "oque_aconteceu": "Napoleão Bonaparte tornou-se cônsul (1799) e depois imperador (1804). Conquistou grande parte da Europa, impôs o Código Napoleônico, mas foi derrotado na Rússia (1812) e em Waterloo (1815).",
+                    "oque_mudou": "Disseminação de ideias revolucionárias (igualdade perante a lei, propriedade privada, fim dos privilégios feudais), despertar do nacionalismo, redesenho do mapa da Europa no Congresso de Viena (1815), e venda da Louisiana para os EUA (1803).",
                     "figuras_principais": [
-                        {"nome": "James Watt", "papel": "Aperfeiçoou a máquina a vapor"},
-                        {"nome": "Thomas Edison", "papel": "Inventor da lâmpada elétrica e do fonógrafo"},
-                        {"nome": "Henry Ford", "papel": "Introduziu a linha de montagem e produção em massa"},
-                        {"nome": "Karl Marx", "papel": "Criticou o capitalismo e inspirou movimentos operários"}
+                        {"nome": "Napoleão Bonaparte", "papel": "Imperador francês"},
+                        {"nome": "Duque de Wellington", "papel": "Comandante britânico em Waterloo"},
+                        {"nome": "Czar Alexandre I", "papel": "Líder russo na Campanha de 1812"}
                     ],
-                    "informacoes_adicionais": "A Revolução Industrial causou a migração de milhões de pessoas do campo para as cidades e aumentou a expectativa de vida."
+                    "informacoes_adicionais": "O Código Napoleônico influenciou o direito civil de muitos países, incluindo Brasil e Quebec (Canadá). Napoleão morreu exilado na ilha de Santa Helena em 1821."
                 },
                 {
                     "id": 3,
+                    "nome": "Independências na América Latina",
+                    "ano": "1808-1826 d.C.",
+                    "lugar": "América Espanhola e Portuguesa",
+                    "oque_aconteceu": "A invasão napoleônica da Espanha e Portugal enfraqueceu os impérios coloniais. Líderes como Simón Bolívar, José de San Martín e Dom Pedro I lideraram movimentos de independência.",
+                    "oque_mudou": "Surgimento de 18 novas nações na América Latina (Brasil, Argentina, México, Colômbia, Venezuela, etc.), fim do monopólio colonial, instabilidade política, caudilhismo, e manutenção da estrutura social desigual.",
+                    "figuras_principais": [
+                        {"nome": "Simón Bolívar", "papel": "Líder das independências do norte da América do Sul"},
+                        {"nome": "José de San Martín", "papel": "Líder das independências do sul (Argentina, Chile, Peru)"},
+                        {"nome": "Dom Pedro I", "papel": "Primeiro imperador do Brasil independente (1822)"},
+                        {"nome": "Miguel Hidalgo", "papel": "Líder da independência do México (1810)"}
+                    ],
+                    "informacoes_adicionais": "Bolívar sonhava com uma federação latino-americana (Grã-Colômbia), mas se desfez em 1830. O Haiti tornou-se independente em 1804 (primeira república negra)."
+                },
+                {
+                    "id": 4,
+                    "nome": "Primavera dos Povos (Revoluções de 1848)",
+                    "ano": "1848 d.C.",
+                    "lugar": "Europa (França, Alemanha, Itália, Áustria, Hungria)",
+                    "oque_aconteceu": "Onda de revoluções liberais e nacionalistas contra monarquias absolutas e conservadoras. Na França, a monarquia de Luís Felipe foi derrubada e a Segunda República proclamada.",
+                    "oque_mudou": "Fim da servidão na Áustria e Hungria, abolição da escravidão nas colônias francesas, sufrágio universal masculino na França (curto período), e ascensão do nacionalismo alemão e italiano, levando às unificações (1871).",
+                    "figuras_principais": [
+                        {"nome": "Luís Napoleão Bonaparte", "papel": "Eleito presidente da França (1848), depois imperador Napoleão III"},
+                        {"nome": "Karl Marx", "papel": "Publicou o Manifesto Comunista em 1848"},
+                        {"nome": "Lajos Kossuth", "papel": "Líder da revolução húngara"}
+                    ],
+                    "informacoes_adicionais": "Apesar de derrotadas em quase toda parte, as revoluções de 1848 foram o primeiro levante europeu simultâneo e abalaram a ordem da Restauração (Congresso de Viena)."
+                },
+                {
+                    "id": 5,
+                    "nome": "Unificação da Alemanha",
+                    "ano": "1864-1871 d.C.",
+                    "lugar": "Alemanha",
+                    "oque_aconteceu": "O ministro prussiano Otto von Bismarck, através de 'guerras e discursos', liderou a unificação alemã: Guerra dos Ducados (1864, vs Dinamarca), Guerra Austro-Prussiana (1866), e Guerra Franco-Prussiana (1870-1871).",
+                    "oque_mudou": "Criação do Império Alemão (II Reich) em 1871 no Palácio de Versalhes, humilhação da França (perda da Alsácia-Lorena), equilíbrio de poder europeu alterado, e ascensão da Alemanha como potência industrial e militar.",
+                    "figuras_principais": [
+                        {"nome": "Otto von Bismarck", "papel": "Chanceler prussiano, 'arquiteto' da unificação"},
+                        {"nome": "Guilherme I", "papel": "Rei da Prússia e primeiro imperador alemão"}
+                    ],
+                    "informacoes_adicionais": "A França declarou guerra (1870) devido a uma 'manipulação' de Bismarck do telegrama de Ems. O Império Alemão durou até 1918."
+                },
+                {
+                    "id": 6,
+                    "nome": "Revolução Industrial (2ª fase)",
+                    "ano": "1870-1914 d.C.",
+                    "lugar": "Europa, EUA, Japão",
+                    "oque_aconteceu": "Novas tecnologias: eletricidade (Edison, Tesla, Westinghouse), petróleo (motor de combustão interna, Daimler, Benz), aço (processo Bessemer), linha de montagem (Ford, 1913), telégrafo, telefone (Bell), rádio (Marconi).",
+                    "oque_mudou": "Produção em massa, surgimento de grandes corporações (Rockefeller, Carnegie), urbanização acelerada, automóvel, avião (Irmãos Wright, 1903), cinema, quarentena redução de doenças infecciosas, e imperialismo para matérias-primas (petróleo, borracha, cobre).",
+                    "figuras_principais": [
+                        {"nome": "Thomas Edison", "papel": "Lâmpada elétrica, fonógrafo"},
+                        {"nome": "Nikola Tesla", "papel": "Corrente alternada, motor elétrico"},
+                        {"nome": "Henry Ford", "papel": "Linha de montagem, Ford T (1908)"},
+                        {"nome": "Karl Benz", "papel": "Primeiro automóvel com motor de combustão (1886)"}
+                    ],
+                    "informacoes_adicionais": "A produção de aço passou de 500.000 toneladas em 1860 para 28 milhões em 1900. O Ford T, produzido entre 1908 e 1927, vendeu 15 milhões de unidades, democratizando o carro."
+                },
+                {
+                    "id": 7,
+                    "nome": "Imperialismo e Partilha da África",
+                    "ano": "1881-1914 d.C.",
+                    "lugar": "África, Ásia, Oceania",
+                    "oque_aconteceu": "Potências europeias (Reino Unido, França, Alemanha, Bélgica, Portugal, Itália) dividiram quase toda a África na Conferência de Berlim (1884-1885). Na Ásia, a Índia britânica, Indochina francesa e o desmembramento da China.",
+                    "oque_mudou": "Exploração de recursos (diamantes, ouro, borracha, marfim), genocídio no Estado Livre do Congo (10 milhões de mortos), imposição de fronteiras artificiais, missões cristãs e educação ocidental, resistência anticolonial (Expedição dos Ashanti, Guerra Zulu).",
+                    "figuras_principais": [
+                        {"nome": "Leopoldo II", "papel": "Rei belga que explorou o Congo como propriedade privada"},
+                        {"nome": "Cecil Rhodes", "papel": "Imperialista britânico na África Austral (Rodésia)"},
+                        {"nome": "Otto von Bismarck", "papel": "Organizador da Conferência de Berlim"}
+                    ],
+                    "informacoes_adicionais": "Em 1914, apenas Libéria e Etiópia permaneciam independentes na África. 'O sol nunca se põe no Império Britânico' (cobria 25% da Terra)."
+                },
+                {
+                    "id": 8,
                     "nome": "Primeira Guerra Mundial",
                     "ano": "1914-1918 d.C.",
                     "lugar": "Principalmente Europa (trincheiras da França, Bélgica, Rússia, Itália e Bálcãs)",
@@ -312,7 +608,7 @@
                     "informacoes_adicionais": "A guerra terminou em 11 de novembro de 1918 às 11h. O Tratado de Versalhes (1919) impôs duras condições à Alemanha, alimentando o revanchismo que levaria à Segunda Guerra."
                 },
                 {
-                    "id": 4,
+                    "id": 9,
                     "nome": "Revolução Russa e criação da URSS",
                     "ano": "1917 d.C.",
                     "lugar": "Rússia",
@@ -327,7 +623,7 @@
                     "informacoes_adicionais": "A família real russa foi executada pelos bolcheviques em 1918. A URSS durou até 1991."
                 },
                 {
-                    "id": 5,
+                    "id": 10,
                     "nome": "Grande Depressão",
                     "ano": "1929-1939 d.C.",
                     "lugar": "Mundial (iniciada nos EUA)",
@@ -341,7 +637,21 @@
                     "informacoes_adicionais": "O PIB dos EUA caiu 30% entre 1929 e 1933. O desemprego atingiu 25 milhões de pessoas nos países industrializados."
                 },
                 {
-                    "id": 6,
+                    "id": 11,
+                    "nome": "Ascensão do Nazismo e Fascismo",
+                    "ano": "1922-1933 d.C.",
+                    "lugar": "Itália, Alemanha",
+                    "oque_aconteceu": "Benito Mussolini tornou-se primeiro-ministro da Itália em 1922 (Marcha sobre Roma). Adolf Hitler foi nomeado chanceler da Alemanha em 1933 (Incêndio do Reichstag) e rapidamente estabeleceu uma ditadura.",
+                    "oque_mudou": "Instauração de regimes totalitários: partido único, culto ao líder, propaganda, polícia secreta (Gestapo, OVRA), perseguição a judeus (Nuremberg, 1935), rearmamento alemão (violando Versalhes), e expansão territorial agressiva (Anschluss da Áustria, 1938; invasão da Polônia, 1939).",
+                    "figuras_principais": [
+                        {"nome": "Adolf Hitler", "papel": "Líder da Alemanha nazista (Führer)"},
+                        {"nome": "Benito Mussolini", "papel": "Líder da Itália fascista (Duce)"},
+                        {"nome": "Francisco Franco", "papel": "Ditador espanhol (Guerra Civil de 1936-1939)"}
+                    ],
+                    "informacoes_adicionais": "Mein Kampf ('Minha Luta'), escrito por Hitler na prisão (1924), expôs sua ideologia racista e expansionista. As Leis de Nuremberg (1935) privaram judeus da cidadania alemã."
+                },
+                {
+                    "id": 12,
                     "nome": "Segunda Guerra Mundial",
                     "ano": "1939-1945 d.C.",
                     "lugar": "Europa, Ásia (Pacífico), África e Atlântico",
@@ -357,7 +667,7 @@
                     "informacoes_adicionais": "O Dia D (6 de junho de 1944) foi a maior invasão anfíbia da história. A guerra terminou na Europa em 8 de maio de 1945 e no Pacífico em 2 de setembro de 1945."
                 },
                 {
-                    "id": 7,
+                    "id": 13,
                     "nome": "Guerra Fria",
                     "ano": "1947-1991 d.C.",
                     "lugar": "Mundial (EUA vs URSS)",
@@ -373,7 +683,21 @@
                     "informacoes_adicionais": "A Crise dos Mísseis de Cuba (1962) foi o momento mais próximo de uma guerra nuclear. A corrida espacial levou o homem à Lua em 1969 (Apollo 11)."
                 },
                 {
-                    "id": 8,
+                    "id": 14,
+                    "nome": "Descolonização da África e Ásia",
+                    "ano": "1945-1975 d.C.",
+                    "lugar": "África, Ásia",
+                    "oque_aconteceu": "Índia (1947, Gandhi), Indonésia (1949), Argélia (1962, guerra sangrenta), e dezenas de nações africanas (1960: 'Ano da África', com 17 independências).",
+                    "oque_mudou": "Surgimento de mais de 100 novos estados, Guerra Fria se estendendo ao Terceiro Mundo (guerras civis patrocinadas por EUA/URSS), neocolonialismo (dependência econômica), e migração de ex-coloniais para as metrópoles.",
+                    "figuras_principais": [
+                        {"nome": "Mahatma Gandhi", "papel": "Líder da independência indiana (assassinado em 1948)"},
+                        {"nome": "Kwame Nkrumah", "papel": "Primeiro presidente de Gana (1957)"},
+                        {"nome": "Ho Chi Minh", "papel": "Líder da independência do Vietnã"}
+                    ],
+                    "informacoes_adicionais": "O Império Britânico, que em 1920 cobria 25% da Terra, retirou-se da maioria de suas colônias na década de 1960. Portugal, sob o Estado Novo, resistiu até a Revolução dos Cravos (1974)."
+                },
+                {
+                    "id": 15,
                     "nome": "Revolução Digital e Internet",
                     "ano": "1970-presente d.C.",
                     "lugar": "Mundial (iniciada nos EUA)",
@@ -384,7 +708,7 @@
                         {"nome": "Bill Gates", "papel": "Fundador da Microsoft"},
                         {"nome": "Steve Jobs", "papel": "Co-fundador da Apple"},
                         {"nome": "Mark Zuckerberg", "papel": "Fundador do Facebook"},
-                        {"nome": "Elon Musk", "papel": "Empreendedor (Tesla, SpaceX) e figura da tecnologia atual"}
+                        {"nome": "Elon Musk", "papel": "Empreendedor (Tesla, SpaceX)"}
                     ],
                     "informacoes_adicionais": "Em 2024, cerca de 5.4 bilhões de pessoas (67% da população mundial) usavam a internet. A inteligência artificial generativa (ChatGPT, 2022) representa nova revolução."
                 }
