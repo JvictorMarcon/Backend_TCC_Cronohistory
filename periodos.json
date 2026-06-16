@@ -14,57 +14,301 @@
                     "oque_aconteceu": "Diferentes espécies humanas aprenderam a controlar, produzir e manter o fogo para aquecimento, proteção e cocção de alimentos.",
                     "oque_mudou": "O fogo permitiu a expansão para climas frios, melhorou a digestão e a biodisponibilidade de nutrientes e fortaleceu os laços sociais.",
                     "figuras_principais": [
-                        {"nome": "Homo erectus", "papel": "Primeira espécie claramente associada ao uso sistemático do fogo"}
+                        {
+                            "nome": "Homo erectus",
+                            "papel": "Primeira espécie claramente associada ao uso sistemático do fogo"
+                        }
                     ],
-                    "informacoes_adicionais": "Evidências mais antigas vêm de sítios no Quênia (1.4 milhão anos) e Israel (780 mil anos)."
+                    "informacoes_adicionais": "Evidências antigas vêm de sítios arqueológicos na África e no Oriente Médio, embora o uso controlado do fogo ainda seja debatido entre pesquisadores."
                 },
                 {
                     "id": 2,
                     "nome": "Revolução Neolítica e surgimento da agricultura",
                     "ano": "c. 10.000 a.C. - 8.000 a.C.",
                     "lugar": "Crescente Fértil (Oriente Médio)",
-                    "oque_aconteceu": "Grupos humanos domesticaram plantas (trigo, cevada) e animais (ovelhas, cabras, bois), passando da caça-coleta para a produção de alimentos.",
-                    "oque_mudou": "Surgimento dos primeiros assentamentos permanentes, aumento populacional, divisão do trabalho, desigualdades sociais e desenvolvimento de tecnologias como cerâmica.",
+                    "oque_aconteceu": "Grupos humanos domesticaram plantas, como trigo e cevada, e animais, como ovelhas, cabras e bois, passando da caça-coleta para a produção de alimentos.",
+                    "oque_mudou": "Surgiram assentamentos permanentes, aumento populacional, divisão do trabalho, desigualdades sociais e tecnologias como a cerâmica.",
                     "figuras_principais": [
-                        {"nome": "Povos natufianos", "papel": "Cultura que iniciou a sedentarização no Levante"}
+                        {
+                            "nome": "Povos natufianos",
+                            "papel": "Cultura que iniciou formas importantes de sedentarização no Levante"
+                        }
                     ],
-                    "informacoes_adicionais": "Jericó e Çatalhöyük estão entre os primeiros grandes assentamentos neolíticos."
+                    "informacoes_adicionais": "Jericó e Çatalhöyük estão entre os assentamentos neolíticos mais conhecidos."
                 },
                 {
                     "id": 3,
                     "nome": "Primeiras ferramentas de pedra lascada",
                     "ano": "c. 2.6 milhões a.C.",
-                    "lugar": "Vale do Rio Omo (Etiópia)",
-                    "oque_aconteceu": "Os hominídeos mais antigos, possivelmente Australopithecus ou Homo habilis, começaram a lascar pedras para criar ferramentas cortantes, iniciando o Paleolítico.",
-                    "oque_mudou": "Início da tecnologia humana, permitindo processamento de carne, quebra de ossos e fabricação de outros instrumentos. Marcou a separação entre humanos e outros primatas.",
+                    "lugar": "África Oriental",
+                    "oque_aconteceu": "Hominídeos antigos começaram a lascar pedras para criar ferramentas cortantes, iniciando o Paleolítico.",
+                    "oque_mudou": "Foi um marco no início da tecnologia humana, permitindo cortar carne, quebrar ossos, raspar peles e fabricar outros instrumentos.",
                     "figuras_principais": [
-                        {"nome": "Homo habilis", "papel": "Primeira espécie associada à fabricação sistemática de ferramentas"}
+                        {
+                            "nome": "Homo habilis",
+                            "papel": "Uma das primeiras espécies associadas à fabricação sistemática de ferramentas"
+                        }
                     ],
-                    "informacoes_adicionais": "A indústria lítica mais antiga é chamada Olduvaiense, em referência ao desfiladeiro de Olduvai na Tanzânia."
+                    "informacoes_adicionais": "A indústria lítica Olduvaiense recebe esse nome por causa do desfiladeiro de Olduvai, na Tanzânia."
                 },
                 {
                     "id": 4,
                     "nome": "Primeiras manifestações artísticas (pinturas rupestres)",
                     "ano": "c. 40.000 a.C. - 35.000 a.C.",
-                    "lugar": "Europa Ocidental (Espanha, França, Alemanha) e Indonésia",
-                    "oque_aconteceu": "Humanos anatomicamente modernos (Homo sapiens) começaram a produzir pinturas em cavernas, esculturas em marfim e osso, e objetos rituais como as Vênus paleolíticas.",
-                    "oque_mudou": "Evidência de pensamento simbólico, linguagem complexa, rituais religiosos e cultura compartilhada. A arte rupestre pode ter sido usada em cerimôniais de caça ou iniciação.",
+                    "lugar": "Europa Ocidental e Indonésia",
+                    "oque_aconteceu": "Humanos anatomicamente modernos produziram pinturas em cavernas, esculturas em marfim e osso e objetos rituais.",
+                    "oque_mudou": "Essas obras mostram pensamento simbólico, linguagem complexa, rituais e cultura compartilhada.",
                     "figuras_principais": [
-                        {"nome": "Homo sapiens", "papel": "Autor das primeiras manifestações artísticas"}
+                        {
+                            "nome": "Homo sapiens",
+                            "papel": "Principal autor das primeiras manifestações artísticas conhecidas"
+                        }
                     ],
-                    "informacoes_adicionais": "As cavernas de Chauvet (França) e Altamira (Espanha) estão entre os sítios mais famosos, com pinturas de cavalos, bisões e mamutes."
+                    "informacoes_adicionais": "As cavernas de Chauvet e Altamira estão entre os sítios mais famosos, com pinturas de cavalos, bisões e mamutes."
                 },
                 {
                     "id": 5,
                     "nome": "Migração para a América",
                     "ano": "c. 20.000 a.C. - 15.000 a.C.",
-                    "lugar": "Estreito de Bering (Ponte de terra entre Ásia e América)",
-                    "oque_aconteceu": "Grupos de caçadores-coletores siberianos cruzaram a ponte de terra de Bering (Beringia) durante a última era glacial, seguindo manadas de mamutes e outros grandes mamíferos.",
-                    "oque_mudou": "Povoamento das Américas, desenvolvimento de culturas distintas (Clóvis, Folsom), extinção da megafauna e surgimento de civilizações posteriores (Olmecas, Maias, Incas, Astecas).",
+                    "lugar": "Beringia e Américas",
+                    "oque_aconteceu": "Grupos de caçadores-coletores migraram da Ásia para as Américas, possivelmente usando a região de Beringia durante a última era glacial.",
+                    "oque_mudou": "A migração levou ao povoamento das Américas e ao desenvolvimento de culturas distintas em diferentes regiões do continente.",
                     "figuras_principais": [
-                        {"nome": "Povos paleoíndios", "papel": "Primeiros habitantes das Américas"}
+                        {
+                            "nome": "Povos paleoíndios",
+                            "papel": "Primeiros habitantes das Américas"
+                        }
                     ],
-                    "informacoes_adicionais": "A cultura Clóvis (c. 13.000 a.C.) foi por muito tempo considerada a mais antiga das Américas, mas sítios como Monte Verde (Chile, 14.800 a.C.) sugerem ocupação mais antiga."
+                    "informacoes_adicionais": "Sítios como Monte Verde, no Chile, indicam ocupações antigas anteriores ou próximas à cultura Clóvis."
+                },
+                {
+                    "id": 6,
+                    "nome": "Surgimento do Homo sapiens",
+                    "ano": "c. 300.000 a.C.",
+                    "lugar": "África",
+                    "oque_aconteceu": "Humanos anatomicamente modernos surgiram na África, com características físicas próximas às dos humanos atuais.",
+                    "oque_mudou": "O surgimento do Homo sapiens permitiu o desenvolvimento de linguagens complexas, redes sociais maiores e culturas simbólicas mais elaboradas.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Homo sapiens",
+                            "papel": "Espécie humana moderna"
+                        }
+                    ],
+                    "informacoes_adicionais": "Fósseis encontrados na África ajudam a sustentar a teoria da origem africana da humanidade moderna."
+                },
+                {
+                    "id": 7,
+                    "nome": "Expansão humana para fora da África",
+                    "ano": "c. 70.000 a.C. - 50.000 a.C.",
+                    "lugar": "África, Oriente Médio, Ásia, Europa e Oceania",
+                    "oque_aconteceu": "Grupos de Homo sapiens deixaram a África e se espalharam por diferentes continentes.",
+                    "oque_mudou": "A expansão levou ao povoamento de grande parte do planeta e ao contato com outros grupos humanos, como neandertais e denisovanos.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Homo sapiens",
+                            "papel": "Responsável pela expansão global da humanidade moderna"
+                        }
+                    ],
+                    "informacoes_adicionais": "A migração provavelmente ocorreu em várias ondas, usando rotas terrestres e costeiras."
+                },
+                {
+                    "id": 8,
+                    "nome": "Primeiros rituais funerários",
+                    "ano": "c. 100.000 a.C. - 40.000 a.C.",
+                    "lugar": "África, Oriente Médio e Europa",
+                    "oque_aconteceu": "Humanos começaram a enterrar seus mortos com cuidado, às vezes acompanhados de objetos, pigmentos e sinais de ritual.",
+                    "oque_mudou": "Essas práticas indicam pensamento simbólico, possíveis crenças espirituais e maior complexidade cultural.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Homo sapiens",
+                            "papel": "Espécie associada a rituais simbólicos mais complexos"
+                        },
+                        {
+                            "nome": "Neandertais",
+                            "papel": "Possivelmente praticavam formas simples de sepultamento"
+                        }
+                    ],
+                    "informacoes_adicionais": "Sepultamentos antigos sugerem que a relação humana com a morte já envolvia memória e significado social."
+                },
+                {
+                    "id": 9,
+                    "nome": "Domesticação do cão",
+                    "ano": "c. 15.000 a.C. - 12.000 a.C.",
+                    "lugar": "Eurásia",
+                    "oque_aconteceu": "Lobos foram gradualmente domesticados por grupos humanos, dando origem aos primeiros cães.",
+                    "oque_mudou": "Os cães passaram a ajudar na caça, na proteção dos acampamentos e na companhia, criando uma das relações mais antigas entre humanos e animais domesticados.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Caçadores-coletores",
+                            "papel": "Grupos humanos que desenvolveram a convivência com lobos domesticados"
+                        }
+                    ],
+                    "informacoes_adicionais": "A domesticação do cão ocorreu antes da agricultura, ainda no modo de vida caçador-coletor."
+                },
+                {
+                    "id": 10,
+                    "nome": "Primeira metalurgia do cobre",
+                    "ano": "c. 5000 a.C. - 3500 a.C.",
+                    "lugar": "Oriente Médio, Anatólia e Bálcãs",
+                    "oque_aconteceu": "Comunidades humanas começaram a trabalhar metais, especialmente o cobre, produzindo ferramentas, armas e adornos.",
+                    "oque_mudou": "O uso de metais marcou uma transição tecnológica importante, aumentando a especialização do trabalho e o comércio entre comunidades.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Comunidades neolíticas",
+                            "papel": "Primeiros grupos a desenvolver técnicas de metalurgia"
+                        }
+                    ],
+                    "informacoes_adicionais": "A metalurgia do cobre abriu caminho para a Idade do Bronze."
+                },
+                {
+                    "id": 11,
+                    "nome": "Primeiras aldeias sedentárias",
+                    "ano": "c. 12.000 a.C. - 9.000 a.C.",
+                    "lugar": "Levante e Oriente Médio",
+                    "oque_aconteceu": "Grupos humanos passaram a viver por mais tempo em aldeias, mesmo antes da agricultura plena.",
+                    "oque_mudou": "A sedentarização favoreceu armazenamento de alimentos, construção de moradias permanentes e novas formas de organização social.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Povos natufianos",
+                            "papel": "Comunidades associadas à sedentarização inicial"
+                        }
+                    ],
+                    "informacoes_adicionais": "A sedentarização não aconteceu de uma vez; foi um processo gradual e variado."
+                },
+                {
+                    "id": 12,
+                    "nome": "Uso de instrumentos de osso e chifre",
+                    "ano": "c. 50.000 a.C. - 20.000 a.C.",
+                    "lugar": "Europa, África e Ásia",
+                    "oque_aconteceu": "Além da pedra, humanos passaram a usar ossos, chifres e madeira para produzir agulhas, arpões, pontas e ferramentas finas.",
+                    "oque_mudou": "Esses instrumentos ampliaram a caça, a pesca, a costura de roupas e a adaptação a ambientes frios.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Homo sapiens",
+                            "papel": "Principal produtor de ferramentas especializadas de osso e chifre"
+                        }
+                    ],
+                    "informacoes_adicionais": "Agulhas de osso indicam a produção de roupas mais ajustadas para climas rigorosos."
+                },
+                {
+                    "id": 13,
+                    "nome": "Povoamento da Austrália",
+                    "ano": "c. 65.000 a.C. - 50.000 a.C.",
+                    "lugar": "Austrália e ilhas próximas",
+                    "oque_aconteceu": "Grupos humanos chegaram à Austrália, provavelmente usando rotas marítimas curtas pelo Sudeste Asiático.",
+                    "oque_mudou": "O evento mostra que humanos já possuíam grande capacidade de adaptação e navegação simples em períodos muito antigos.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Primeiros povos aborígenes",
+                            "papel": "Habitantes antigos da Austrália"
+                        }
+                    ],
+                    "informacoes_adicionais": "As culturas aborígenes australianas estão entre as mais antigas tradições culturais contínuas do mundo."
+                },
+                {
+                    "id": 14,
+                    "nome": "Desenvolvimento de lâminas de pedra mais sofisticadas",
+                    "ano": "c. 45.000 a.C. - 20.000 a.C.",
+                    "lugar": "Europa, África e Ásia",
+                    "oque_aconteceu": "Humanos passaram a produzir lâminas menores, mais finas e especializadas para diferentes usos.",
+                    "oque_mudou": "A tecnologia lítica ficou mais eficiente, permitindo melhor aproveitamento dos materiais e maior variedade de ferramentas.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Homo sapiens",
+                            "papel": "Desenvolvedor de tecnologias líticas mais especializadas"
+                        }
+                    ],
+                    "informacoes_adicionais": "As lâminas de pedra eram usadas para cortar, raspar, perfurar e produzir outros objetos."
+                },
+                {
+                    "id": 15,
+                    "nome": "Construção de Göbekli Tepe",
+                    "ano": "c. 9600 a.C. - 8000 a.C.",
+                    "lugar": "Anatólia (atual Turquia)",
+                    "oque_aconteceu": "Grupos humanos construíram estruturas monumentais com pilares de pedra decorados com figuras de animais.",
+                    "oque_mudou": "Göbekli Tepe mostra que sociedades de caçadores-coletores podiam organizar grandes obras coletivas antes da agricultura totalmente consolidada.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Comunidades pré-neolíticas da Anatólia",
+                            "papel": "Construtoras das estruturas monumentais"
+                        }
+                    ],
+                    "informacoes_adicionais": "O sítio arqueológico desafia a ideia de que apenas sociedades agrícolas complexas construíam monumentos."
+                },
+                {
+                    "id": 16,
+                    "nome": "Domesticação de ovelhas e cabras",
+                    "ano": "c. 9000 a.C. - 7000 a.C.",
+                    "lugar": "Crescente Fértil",
+                    "oque_aconteceu": "Comunidades neolíticas passaram a criar ovelhas e cabras para obter carne, leite, couro e lã.",
+                    "oque_mudou": "A domesticação animal fortaleceu a economia agrícola, aumentou a segurança alimentar e modificou a relação humana com o ambiente.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Pastores neolíticos",
+                            "papel": "Grupos que domesticaram e criaram rebanhos"
+                        }
+                    ],
+                    "informacoes_adicionais": "A criação de animais também ajudou na troca entre comunidades e na formação de rotas comerciais locais."
+                },
+                {
+                    "id": 17,
+                    "nome": "Invenção da cerâmica",
+                    "ano": "c. 10.000 a.C. - 7000 a.C.",
+                    "lugar": "Ásia Oriental, Oriente Médio e outras regiões",
+                    "oque_aconteceu": "Comunidades humanas passaram a fabricar recipientes de argila cozida para armazenar, cozinhar e transportar alimentos.",
+                    "oque_mudou": "A cerâmica facilitou o armazenamento de excedentes agrícolas e contribuiu para a vida sedentária.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Comunidades neolíticas",
+                            "papel": "Produtoras das primeiras cerâmicas"
+                        }
+                    ],
+                    "informacoes_adicionais": "A cerâmica é uma fonte importante para arqueólogos identificarem culturas e períodos."
+                },
+                {
+                    "id": 18,
+                    "nome": "Formação das primeiras redes de troca",
+                    "ano": "c. 9000 a.C. - 5000 a.C.",
+                    "lugar": "Oriente Médio, Europa e Ásia",
+                    "oque_aconteceu": "Comunidades começaram a trocar materiais como obsidiana, conchas, pedras especiais, alimentos e objetos artesanais.",
+                    "oque_mudou": "As trocas aumentaram o contato entre grupos, espalharam tecnologias e criaram relações econômicas mais complexas.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Comunidades neolíticas",
+                            "papel": "Participantes das primeiras redes de troca"
+                        }
+                    ],
+                    "informacoes_adicionais": "A obsidiana era muito valorizada por permitir lâminas cortantes e finas."
+                },
+                {
+                    "id": 19,
+                    "nome": "Desenvolvimento da tecelagem",
+                    "ano": "c. 7000 a.C. - 5000 a.C.",
+                    "lugar": "Oriente Médio e Europa",
+                    "oque_aconteceu": "Comunidades começaram a produzir tecidos a partir de fibras vegetais e animais.",
+                    "oque_mudou": "A tecelagem melhorou vestimentas, redes, sacos e objetos de uso cotidiano, ampliando a especialização artesanal.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Artesãos neolíticos",
+                            "papel": "Produtores de tecidos e fibras trabalhadas"
+                        }
+                    ],
+                    "informacoes_adicionais": "Por serem perecíveis, tecidos antigos raramente sobrevivem, mas pesos de tear ajudam a identificar essa prática."
+                },
+                {
+                    "id": 20,
+                    "nome": "Crescimento das primeiras proto-cidades",
+                    "ano": "c. 7000 a.C. - 4000 a.C.",
+                    "lugar": "Oriente Médio e Anatólia",
+                    "oque_aconteceu": "Alguns assentamentos cresceram e passaram a concentrar grande população, produção artesanal e comércio.",
+                    "oque_mudou": "Essas proto-cidades prepararam o caminho para o surgimento das primeiras civilizações urbanas da Antiguidade.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Habitantes de Jericó e Çatalhöyük",
+                            "papel": "Exemplos de comunidades urbanizadas antigas"
+                        }
+                    ],
+                    "informacoes_adicionais": "A transição de aldeias para cidades foi lenta e variou muito entre regiões."
                 }
             ]
         },
@@ -82,127 +326,361 @@
                     "oque_aconteceu": "Os sumérios desenvolveram a escrita cuneiforme, inicialmente para registrar transações comerciais e administrativas.",
                     "oque_mudou": "A escrita permitiu o registro da história, leis, literatura e conhecimento científico, tornando possível a administração de grandes impérios.",
                     "figuras_principais": [
-                        {"nome": "Sumérios", "papel": "Povo criador da primeira escrita"}
+                        {
+                            "nome": "Sumérios",
+                            "papel": "Povo criador de uma das primeiras formas de escrita"
+                        }
                     ],
-                    "informacoes_adicionais": "Os tabletes mais antigos vêm de Uruk e continham pictogramas."
+                    "informacoes_adicionais": "Os tabletes mais antigos vêm de Uruk e continham pictogramas ligados à economia e administração."
                 },
                 {
                     "id": 2,
                     "nome": "Unificação do Egito",
                     "ano": "c. 3100 a.C.",
                     "lugar": "Vale do Nilo (Egito)",
-                    "oque_aconteceu": "O faraó Menes (ou Narmer) unificou o Alto e o Baixo Egito, estabelecendo a primeira dinastia e a capital em Mênfis.",
-                    "oque_mudou": "Início da civilização faraônica que duraria 3.000 anos. Desenvolvimento da escrita hieroglífica, arquitetura monumental (pirâmides), religião complexa e sistema administrativo centralizado.",
+                    "oque_aconteceu": "O faraó Menes, também associado a Narmer, unificou o Alto e o Baixo Egito, estabelecendo a primeira dinastia.",
+                    "oque_mudou": "Iniciou a civilização faraônica, com escrita hieroglífica, arquitetura monumental, religião complexa e administração centralizada.",
                     "figuras_principais": [
-                        {"nome": "Menes (Narmer)", "papel": "Primeiro faraó do Egito unificado"}
+                        {
+                            "nome": "Menes (Narmer)",
+                            "papel": "Primeiro faraó associado ao Egito unificado"
+                        }
                     ],
-                    "informacoes_adicionais": "A Paleta de Narmer, encontrada em Hieracômpolis, é um dos primeiros documentos históricos do Egito, mostrando a unificação."
+                    "informacoes_adicionais": "A Paleta de Narmer é uma das principais evidências simbólicas da unificação egípcia."
                 },
                 {
                     "id": 3,
                     "nome": "Código de Hamurabi",
                     "ano": "c. 1754 a.C.",
                     "lugar": "Babilônia (Mesopotâmia)",
-                    "oque_aconteceu": "O rei Hamurabi da Babilônia codificou 282 leis gravadas em uma estela de diorito, abrangendo comércio, propriedade, família, crimes e punições (incluindo 'olho por olho').",
-                    "oque_mudou": "Primeiro código legal abrangente a sobreviver até hoje. Influenciou o direito posterior, estabeleceu o princípio de leis escritas e públicas, e fortaleceu o estado babilônico.",
+                    "oque_aconteceu": "O rei Hamurabi codificou leis em uma estela, tratando de comércio, propriedade, família, crimes e punições.",
+                    "oque_mudou": "Fortaleceu o princípio de leis escritas e públicas, influenciando tradições jurídicas posteriores.",
                     "figuras_principais": [
-                        {"nome": "Hamurabi", "papel": "Rei da Babilônia que criou o código"}
+                        {
+                            "nome": "Hamurabi",
+                            "papel": "Rei da Babilônia responsável pelo código"
+                        }
                     ],
-                    "informacoes_adicionais": "A estela original está no Museu do Louvre, em Paris. As leis variavam conforme a classe social do ofensor e da vítima."
+                    "informacoes_adicionais": "A estela original está no Museu do Louvre, em Paris."
                 },
                 {
                     "id": 4,
                     "nome": "Guerras Médicas",
                     "ano": "499 a.C. - 449 a.C.",
-                    "lugar": "Grécia, Mar Egeu, Ásia Menor",
-                    "oque_aconteceu": "Cidades-estado gregas (lideradas por Atenas e Esparta) repeliram duas invasões do Império Persa de Dario I e Xerxes I, com vitórias em Maratona (490 a.C.), Termópilas (480 a.C.) e Salamina (480 a.C.).",
-                    "oque_mudou": "Preservação da cultura grega, surgimento do 'Século de Ouro' de Atenas (liderado por Péricles), rivalidade entre Atenas e Esparta que levou à Guerra do Peloponeso, e identidade grega unificada contra o 'bárbaro' persa.",
+                    "lugar": "Grécia, Mar Egeu e Ásia Menor",
+                    "oque_aconteceu": "Cidades-estado gregas, principalmente Atenas e Esparta, enfrentaram o Império Persa em uma série de conflitos.",
+                    "oque_mudou": "A vitória grega preservou a autonomia das pólis e favoreceu o crescimento político e cultural de Atenas.",
                     "figuras_principais": [
-                        {"nome": "Milcíades", "papel": "General ateniense vitorioso em Maratona"},
-                        {"nome": "Leônidas", "papel": "Rei de Esparta que liderou os 300 na Termópilas"},
-                        {"nome": "Temístocles", "papel": "Estrategista da vitória naval em Salamina"},
-                        {"nome": "Xerxes I", "papel": "Rei persa que liderou a segunda invasão"}
+                        {
+                            "nome": "Milcíades",
+                            "papel": "General ateniense em Maratona"
+                        },
+                        {
+                            "nome": "Leônidas",
+                            "papel": "Rei espartano ligado à resistência nas Termópilas"
+                        },
+                        {
+                            "nome": "Temístocles",
+                            "papel": "Estrategista ateniense na vitória naval de Salamina"
+                        },
+                        {
+                            "nome": "Xerxes I",
+                            "papel": "Rei persa da segunda invasão"
+                        }
                     ],
-                    "informacoes_adicionais": "A corrida de Filípides de Maratona a Atenas (42 km) para anunciar a vitória deu origem à maratona moderna."
+                    "informacoes_adicionais": "As batalhas de Maratona, Termópilas e Salamina se tornaram símbolos da resistência grega."
                 },
                 {
                     "id": 5,
                     "nome": "Alexandre, o Grande",
                     "ano": "336 a.C. - 323 a.C.",
-                    "lugar": "Macedônia, Grécia, Egito, Pérsia, Ásia Central, Índia",
-                    "oque_aconteceu": "Alexandre III da Macedônia, filho de Filipe II, conquistou o vasto Império Persa (de Dario III), chegou ao Egito (fundando Alexandria) e avançou até o rio Indo (atual Paquistão).",
-                    "oque_mudou": "Criação de um dos maiores impérios da antiguidade, disseminação da cultura helenística (fusão grega, egípcia e persa), início do período helenístico (323-31 a.C.), e difusão da língua grega no Mediterrâneo oriental.",
+                    "lugar": "Macedônia, Grécia, Egito, Pérsia, Ásia Central e Índia",
+                    "oque_aconteceu": "Alexandre III da Macedônia conquistou o Império Persa, chegou ao Egito e avançou até a região do rio Indo.",
+                    "oque_mudou": "Criou um vasto império e espalhou a cultura helenística, misturando elementos gregos, egípcios, persas e orientais.",
                     "figuras_principais": [
-                        {"nome": "Alexandre, o Grande", "papel": "Rei e conquistador macedônio"},
-                        {"nome": "Aristóteles", "papel": "Filósofo e tutor de Alexandre"}
+                        {
+                            "nome": "Alexandre, o Grande",
+                            "papel": "Rei e conquistador macedônio"
+                        },
+                        {
+                            "nome": "Aristóteles",
+                            "papel": "Filósofo e tutor de Alexandre"
+                        }
                     ],
-                    "informacoes_adicionais": "Alexandre morreu na Babilônia aos 32 anos, sem deixar herdeiro adulto. Seu império foi dividido entre seus generais (Ptolomeu, Seleuco, Antígono, Lisímaco)."
+                    "informacoes_adicionais": "Após sua morte, o império foi dividido entre seus generais."
                 },
                 {
                     "id": 6,
                     "nome": "Guerras Púnicas",
                     "ano": "264 a.C. - 146 a.C.",
-                    "lugar": "Mediterrâneo Ocidental (Itália, Sicília, Norte da África, Península Ibérica)",
-                    "oque_aconteceu": "Três guerras entre a República Romana e Cartago (fenícios). Aníbal cruzou os Alpes com elefantes na Segunda Guerra (218 a.C.). Na Terceira, Cipião Emiliano arrasou Cartago.",
-                    "oque_mudou": "Roma tornou-se a potência dominante do Mediterrâneo ocidental, anexou Sicília, Sardenha, Córsega, Hispânia e Norte da África, e destruiu sua maior rival comercial.",
+                    "lugar": "Mediterrâneo Ocidental",
+                    "oque_aconteceu": "Roma e Cartago travaram três guerras pelo controle do comércio e dos territórios mediterrâneos.",
+                    "oque_mudou": "Roma destruiu Cartago e tornou-se a principal potência do Mediterrâneo ocidental.",
                     "figuras_principais": [
-                        {"nome": "Aníbal Barca", "papel": "General cartaginês"},
-                        {"nome": "Cipião Africano", "papel": "General romano que derrotou Aníbal em Zama (202 a.C.)"},
-                        {"nome": "Catão, o Velho", "papel": "Senador romano que encerrava discursos com 'Cartago deve ser destruída'"}
+                        {
+                            "nome": "Aníbal Barca",
+                            "papel": "General cartaginês"
+                        },
+                        {
+                            "nome": "Cipião Africano",
+                            "papel": "General romano que derrotou Aníbal em Zama"
+                        },
+                        {
+                            "nome": "Catão, o Velho",
+                            "papel": "Senador romano defensor da destruição de Cartago"
+                        }
                     ],
-                    "informacoes_adicionais": "Após a destruição de Cartago em 146 a.C., os romanos salgaram a terra para que nada mais crescesse (versão lendária, mas historicamente disputada)."
+                    "informacoes_adicionais": "Aníbal ficou famoso por atravessar os Alpes com elefantes durante a Segunda Guerra Púnica."
                 },
                 {
                     "id": 7,
                     "nome": "Democracia ateniense",
                     "ano": "508 a.C. - 507 a.C.",
                     "lugar": "Atenas (Grécia Antiga)",
-                    "oque_aconteceu": "Clístenes instituiu reformas que estabeleceram a democracia direta em Atenas, onde cidadãos livres votavam na Assembleia e eram sorteados para cargos públicos.",
-                    "oque_mudou": "Criação do primeiro sistema democrático registrado, influenciando profundamente o pensamento político ocidental.",
+                    "oque_aconteceu": "Clístenes instituiu reformas que organizaram a democracia direta em Atenas.",
+                    "oque_mudou": "Criou uma das primeiras experiências democráticas registradas, influenciando o pensamento político ocidental.",
                     "figuras_principais": [
-                        {"nome": "Clístenes", "papel": "Reformador que instituiu a democracia ateniense"},
-                        {"nome": "Péricles", "papel": "Líder que fortaleceu a democracia no século de ouro"}
+                        {
+                            "nome": "Clístenes",
+                            "papel": "Reformador que instituiu a democracia ateniense"
+                        },
+                        {
+                            "nome": "Péricles",
+                            "papel": "Líder que fortaleceu a democracia no século de ouro ateniense"
+                        }
                     ],
-                    "informacoes_adicionais": "Excluía mulheres, escravos e estrangeiros. A participação era vista como dever cívico."
+                    "informacoes_adicionais": "A democracia ateniense excluía mulheres, escravos e estrangeiros."
                 },
                 {
                     "id": 8,
                     "nome": "Fundação do Império Romano",
                     "ano": "27 a.C.",
                     "lugar": "Roma",
-                    "oque_aconteceu": "Otávio Augusto tornou-se o primeiro imperador romano, encerrando a República e iniciando o período imperial que duraria cerca de 500 anos no Ocidente.",
-                    "oque_mudou": "Estabelecimento da Pax Romana (200 anos de paz e prosperidade), expansão máxima do Império, desenvolvimento do direito romano e do cristianismo como religião imperial.",
+                    "oque_aconteceu": "Otávio Augusto tornou-se o primeiro imperador romano, encerrando a República.",
+                    "oque_mudou": "Iniciou o período imperial, marcado pela Pax Romana, expansão territorial, direito romano e grandes obras públicas.",
                     "figuras_principais": [
-                        {"nome": "Otávio Augusto", "papel": "Primeiro imperador romano"},
-                        {"nome": "Júlio César", "papel": "Ditador cujo assassinato levou ao fim da República"}
+                        {
+                            "nome": "Otávio Augusto",
+                            "papel": "Primeiro imperador romano"
+                        },
+                        {
+                            "nome": "Júlio César",
+                            "papel": "Ditador cujo assassinato contribuiu para o fim da República"
+                        }
                     ],
-                    "informacoes_adicionais": "Augusto fundou o corpo de bombeiros e a guarda pretoriana, e instituiu impostos sobre heranças."
+                    "informacoes_adicionais": "Augusto consolidou instituições imperiais mantendo a aparência de continuidade republicana."
                 },
                 {
                     "id": 9,
                     "nome": "Nascimento de Jesus Cristo",
                     "ano": "c. 4 a.C. - 6 d.C.",
                     "lugar": "Belém (Judéia)",
-                    "oque_aconteceu": "Jesus de Nazaré, considerado pelos cristãos como o Filho de Deus e Messias, nasceu em Belém e iniciou um movimento que pregaria o amor ao próximo e a salvação eterna.",
-                    "oque_mudou": "Surgimento do Cristianismo, que se tornaria a maior religião do mundo, influenciando profundamente a cultura, arte, filosofia e direito ocidentais.",
+                    "oque_aconteceu": "Jesus de Nazaré nasceu na Judéia e iniciou um movimento religioso baseado em ensinamentos como amor ao próximo, perdão e salvação.",
+                    "oque_mudou": "O cristianismo surgiu e posteriormente influenciou profundamente a cultura, a arte, a filosofia e o direito ocidentais.",
                     "figuras_principais": [
-                        {"nome": "Jesus Cristo", "papel": "Fundador do Cristianismo"},
-                        {"nome": "Maria", "papel": "Mãe de Jesus"}
+                        {
+                            "nome": "Jesus Cristo",
+                            "papel": "Figura central do Cristianismo"
+                        },
+                        {
+                            "nome": "Maria",
+                            "papel": "Mãe de Jesus"
+                        }
                     ],
-                    "informacoes_adicionais": "O calendário ocidental (d.C.) tem como marco seu nascimento."
+                    "informacoes_adicionais": "O calendário ocidental tradicional usa o nascimento de Jesus como referência simbólica."
                 },
                 {
                     "id": 10,
                     "nome": "Queda do Império Romano do Ocidente",
                     "ano": "476 d.C.",
                     "lugar": "Itália",
-                    "oque_aconteceu": "O general germânico Odoacro depôs o imperador Rômulo Augusto, último imperador romano do Ocidente, e enviou as insígnias imperiais ao imperador do Oriente.",
-                    "oque_mudou": "Marcou o fim da Antiguidade e início da Idade Média na Europa Ocidental, desintegração da administração romana e surgimento de reinos germânicos.",
+                    "oque_aconteceu": "O general germânico Odoacro depôs Rômulo Augusto, último imperador romano do Ocidente.",
+                    "oque_mudou": "Marcou o fim tradicional da Antiguidade e o início da Idade Média na Europa Ocidental.",
                     "figuras_principais": [
-                        {"nome": "Rômulo Augusto", "papel": "Último imperador romano do Ocidente"},
-                        {"nome": "Odoacro", "papel": "General germânico que depôs o imperador"}
+                        {
+                            "nome": "Rômulo Augusto",
+                            "papel": "Último imperador romano do Ocidente"
+                        },
+                        {
+                            "nome": "Odoacro",
+                            "papel": "General germânico que depôs o imperador"
+                        }
                     ],
-                    "informacoes_adicionais": "O Império Romano do Oriente (Bizantino) continuou por quase mil anos, até 1453."
+                    "informacoes_adicionais": "O Império Romano do Oriente continuou existindo por quase mil anos, até 1453."
+                },
+                {
+                    "id": 11,
+                    "nome": "Formação do Império Persa Aquemênida",
+                    "ano": "c. 550 a.C.",
+                    "lugar": "Pérsia, Mesopotâmia, Egito e Ásia Menor",
+                    "oque_aconteceu": "Ciro, o Grande, unificou os persas e iniciou a expansão do Império Aquemênida.",
+                    "oque_mudou": "O império desenvolveu administração eficiente, estradas, correios, satrapias e relativa tolerância cultural.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Ciro, o Grande",
+                            "papel": "Fundador do Império Persa Aquemênida"
+                        },
+                        {
+                            "nome": "Dario I",
+                            "papel": "Organizador administrativo do império"
+                        }
+                    ],
+                    "informacoes_adicionais": "A Estrada Real Persa facilitava a comunicação entre regiões distantes."
+                },
+                {
+                    "id": 12,
+                    "nome": "Fundação da República Romana",
+                    "ano": "509 a.C.",
+                    "lugar": "Roma",
+                    "oque_aconteceu": "Segundo a tradição romana, o último rei, Tarquínio, o Soberbo, foi expulso, dando início à República Romana.",
+                    "oque_mudou": "Roma passou a ser governada por instituições como Senado, magistrados e assembleias, influenciando sistemas políticos posteriores.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Lúcio Júnio Bruto",
+                            "papel": "Líder tradicionalmente associado à expulsão da monarquia romana"
+                        }
+                    ],
+                    "informacoes_adicionais": "A República Romana durou quase cinco séculos, até a ascensão de Augusto."
+                },
+                {
+                    "id": 13,
+                    "nome": "Guerra do Peloponeso",
+                    "ano": "431 a.C. - 404 a.C.",
+                    "lugar": "Grécia Antiga",
+                    "oque_aconteceu": "Atenas e Esparta lideraram blocos rivais em uma longa guerra pelo controle do mundo grego.",
+                    "oque_mudou": "A guerra enfraqueceu as cidades-estado gregas e abriu espaço para a ascensão da Macedônia.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Péricles",
+                            "papel": "Líder ateniense no início do conflito"
+                        },
+                        {
+                            "nome": "Lisandro",
+                            "papel": "General espartano decisivo na vitória contra Atenas"
+                        },
+                        {
+                            "nome": "Tucídides",
+                            "papel": "Historiador que registrou a guerra"
+                        }
+                    ],
+                    "informacoes_adicionais": "A obra de Tucídides é considerada uma das primeiras grandes análises políticas e históricas do Ocidente."
+                },
+                {
+                    "id": 14,
+                    "nome": "Édito de Milão",
+                    "ano": "313 d.C.",
+                    "lugar": "Império Romano",
+                    "oque_aconteceu": "Constantino e Licínio concederam liberdade religiosa aos cristãos no Império Romano.",
+                    "oque_mudou": "O cristianismo deixou de ser perseguido oficialmente e ganhou espaço político e social.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Constantino",
+                            "papel": "Imperador romano que favoreceu a legalização do cristianismo"
+                        },
+                        {
+                            "nome": "Licínio",
+                            "papel": "Coautor do acordo de tolerância religiosa"
+                        }
+                    ],
+                    "informacoes_adicionais": "Décadas depois, o cristianismo niceno se tornaria religião oficial do Império Romano."
+                },
+                {
+                    "id": 15,
+                    "nome": "Divisão definitiva do Império Romano",
+                    "ano": "395 d.C.",
+                    "lugar": "Império Romano do Ocidente e do Oriente",
+                    "oque_aconteceu": "Após a morte de Teodósio I, o Império Romano foi dividido entre seus filhos Honório e Arcádio.",
+                    "oque_mudou": "A divisão separou definitivamente o Ocidente latino do Oriente grego-bizantino, com trajetórias políticas diferentes.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Teodósio I",
+                            "papel": "Último imperador a governar o Império Romano unificado"
+                        },
+                        {
+                            "nome": "Honório",
+                            "papel": "Imperador romano do Ocidente"
+                        },
+                        {
+                            "nome": "Arcádio",
+                            "papel": "Imperador romano do Oriente"
+                        }
+                    ],
+                    "informacoes_adicionais": "O Oriente sobreviveu como Império Bizantino até 1453."
+                },
+                {
+                    "id": 16,
+                    "nome": "Civilização do Vale do Indo",
+                    "ano": "c. 2600 a.C. - 1900 a.C.",
+                    "lugar": "Vale do Rio Indo (atual Paquistão e noroeste da Índia)",
+                    "oque_aconteceu": "Cidades como Harappa e Mohenjo-Daro desenvolveram planejamento urbano, sistemas de drenagem e comércio.",
+                    "oque_mudou": "Mostrou alto nível de organização urbana na Antiguidade e contribuiu para o desenvolvimento de sociedades complexas no sul da Ásia.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Povos harapenses",
+                            "papel": "Habitantes da Civilização do Vale do Indo"
+                        }
+                    ],
+                    "informacoes_adicionais": "A escrita harapense ainda não foi completamente decifrada."
+                },
+                {
+                    "id": 17,
+                    "nome": "Dinastia Qin e unificação da China",
+                    "ano": "221 a.C.",
+                    "lugar": "China",
+                    "oque_aconteceu": "Qin Shi Huang unificou diversos reinos chineses e tornou-se o primeiro imperador da China.",
+                    "oque_mudou": "Padronizou pesos, medidas, escrita e moeda, fortalecendo a centralização política chinesa.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Qin Shi Huang",
+                            "papel": "Primeiro imperador da China unificada"
+                        }
+                    ],
+                    "informacoes_adicionais": "Seu túmulo é famoso pelo Exército de Terracota."
+                },
+                {
+                    "id": 18,
+                    "nome": "Primeiros Jogos Olímpicos antigos",
+                    "ano": "776 a.C.",
+                    "lugar": "Olímpia (Grécia)",
+                    "oque_aconteceu": "Cidades gregas passaram a participar de competições atléticas em honra a Zeus.",
+                    "oque_mudou": "Os jogos fortaleceram a identidade cultural grega e criaram uma tradição esportiva de grande influência histórica.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Atletas gregos",
+                            "papel": "Competidores das pólis gregas"
+                        }
+                    ],
+                    "informacoes_adicionais": "Durante os jogos, havia trégua sagrada entre cidades participantes."
+                },
+                {
+                    "id": 19,
+                    "nome": "Ashoka e a expansão do Budismo",
+                    "ano": "c. 268 a.C. - 232 a.C.",
+                    "lugar": "Índia",
+                    "oque_aconteceu": "O imperador Ashoka, da dinastia Máuria, adotou o Budismo após a Guerra de Kalinga e passou a promover princípios de não violência.",
+                    "oque_mudou": "O Budismo se espalhou pela Ásia, influenciando cultura, arte, filosofia e política em várias regiões.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Ashoka",
+                            "papel": "Imperador indiano que promoveu o Budismo"
+                        }
+                    ],
+                    "informacoes_adicionais": "Os éditos de Ashoka foram gravados em pedras e pilares pelo império."
+                },
+                {
+                    "id": 20,
+                    "nome": "Édito de Tessalônica",
+                    "ano": "380 d.C.",
+                    "lugar": "Império Romano",
+                    "oque_aconteceu": "O imperador Teodósio I declarou o cristianismo niceno como religião oficial do Império Romano.",
+                    "oque_mudou": "O cristianismo tornou-se religião dominante do império, alterando profundamente instituições, cultura e política.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Teodósio I",
+                            "papel": "Imperador que oficializou o cristianismo niceno"
+                        }
+                    ],
+                    "informacoes_adicionais": "A decisão fortaleceu a Igreja e reduziu o espaço público das religiões tradicionais romanas."
                 }
             ]
         },
@@ -216,130 +694,369 @@
                     "id": 1,
                     "nome": "Reino Franco e Carlos Magno",
                     "ano": "768 d.C. - 814 d.C.",
-                    "lugar": "França, Alemanha, Itália, Países Baixos",
-                    "oque_aconteceu": "Carlos Magno (rei dos francos) conquistou vastos territórios na Europa ocidental, foi coroado 'Imperador dos Romanos' pelo Papa Leão III em 800 d.C., fundando o Império Carolíngio.",
-                    "oque_mudou": "Renascimento carolíngio (renovação cultural, cópia de manuscritos antigos), fortalecimento da Igreja, unificação temporária da Europa ocidental, e modelo de governo que inspiraria futuros impérios (Sacro Império).",
+                    "lugar": "França, Alemanha, Itália e Países Baixos",
+                    "oque_aconteceu": "Carlos Magno conquistou vastos territórios na Europa Ocidental e foi coroado Imperador dos Romanos pelo Papa Leão III em 800.",
+                    "oque_mudou": "Promoveu o Renascimento carolíngio, fortaleceu a Igreja e criou um modelo de império cristão na Europa medieval.",
                     "figuras_principais": [
-                        {"nome": "Carlos Magno", "papel": "Imperador e rei dos francos"},
-                        {"nome": "Papa Leão III", "papel": "Papa que coroou Carlos Magno"}
+                        {
+                            "nome": "Carlos Magno",
+                            "papel": "Imperador e rei dos francos"
+                        },
+                        {
+                            "nome": "Papa Leão III",
+                            "papel": "Papa que coroou Carlos Magno"
+                        }
                     ],
-                    "informacoes_adicionais": "Carlos Magno é considerado 'Pai da Europa' por unificar grande parte do continente. O Tratado de Verdun (843) dividiu seu império entre seus netos, originando França, Alemanha e Lotaríngia."
+                    "informacoes_adicionais": "O Tratado de Verdun, em 843, dividiu seu império entre seus netos."
                 },
                 {
                     "id": 2,
                     "nome": "Hégira (fundação do Islã)",
                     "ano": "622 d.C.",
-                    "lugar": "Meca e Medina (atual Arábia Saudita)",
-                    "oque_aconteceu": "O profeta Maomé fugiu de Meca para Medina, estabelecendo a primeira comunidade muçulmana e iniciando o calendário islâmico.",
-                    "oque_mudou": "Fundação do Islã como potência política e religiosa, unificação das tribos árabes e início da expansão islâmica que criaria um império do Mediterrâneo à Ásia.",
+                    "lugar": "Meca e Medina",
+                    "oque_aconteceu": "Maomé migrou de Meca para Medina, formando a primeira comunidade muçulmana organizada.",
+                    "oque_mudou": "A Hégira marcou o início do calendário islâmico e fortaleceu o Islã como força religiosa e política.",
                     "figuras_principais": [
-                        {"nome": "Maomé", "papel": "Profeta do Islã"}
+                        {
+                            "nome": "Maomé",
+                            "papel": "Profeta do Islã"
+                        }
                     ],
-                    "informacoes_adicionais": "O ano de 622 é o Ano 1 do calendário islâmico (Hijri)."
+                    "informacoes_adicionais": "O ano de 622 corresponde ao Ano 1 do calendário islâmico."
                 },
                 {
                     "id": 3,
                     "nome": "Idade de Ouro Islâmica",
                     "ano": "750 d.C. - 1258 d.C.",
-                    "lugar": "Califado Abássida (Bagdá), Córdoba (Espanha), Cairo",
-                    "oque_aconteceu": "Período de florescimento cultural, científico e econômico no mundo islâmico. A Casa da Sabedoria em Bagdá traduziu e expandiu conhecimentos gregos, indianos e persas.",
-                    "oque_mudou": "Avanços em matemática (álgebra, algoritmos), medicina (Avicena, Al-Razi), astronomia, química (alquimia), óptica (Alhazen), preservação de textos antigos e transmissão à Europa através da Espanha.",
+                    "lugar": "Bagdá, Córdoba, Cairo e outros centros islâmicos",
+                    "oque_aconteceu": "O mundo islâmico viveu grande florescimento científico, filosófico, cultural e econômico.",
+                    "oque_mudou": "Avanços em matemática, medicina, astronomia, óptica e filosofia foram preservados e transmitidos a outras regiões.",
                     "figuras_principais": [
-                        {"nome": "Al-Khwarizmi", "papel": "Matemático que desenvolveu a álgebra"},
-                        {"nome": "Avicena (Ibn Sina)", "papel": "Médico e filósofo, autor do 'Cânone da Medicina'"},
-                        {"nome": "Averróis (Ibn Rushd)", "papel": "Filósofo que comentou Aristóteles"}
+                        {
+                            "nome": "Al-Khwarizmi",
+                            "papel": "Matemático ligado ao desenvolvimento da álgebra"
+                        },
+                        {
+                            "nome": "Avicena (Ibn Sina)",
+                            "papel": "Médico e filósofo"
+                        },
+                        {
+                            "nome": "Averróis (Ibn Rushd)",
+                            "papel": "Filósofo comentarista de Aristóteles"
+                        }
                     ],
-                    "informacoes_adicionais": "A conquista mongol de Bagdá em 1258 marcou o fim do período, mas centros islâmicos em outros lugares continuaram florescentes."
+                    "informacoes_adicionais": "A Casa da Sabedoria em Bagdá foi um importante centro de tradução e estudo."
                 },
                 {
                     "id": 4,
                     "nome": "Cisma do Oriente",
                     "ano": "1054 d.C.",
                     "lugar": "Constantinopla e Roma",
-                    "oque_aconteceu": "Conflitos entre o Papa de Roma e o Patriarca de Constantinopla levaram à excomunhão mútua, dividindo o cristianismo entre Igreja Católica (Ocidente) e Igreja Ortodoxa (Oriente).",
-                    "oque_mudou": "Divisão permanente das igrejas cristãs com diferenças doutrinárias que persistem até hoje, influenciando a geopolítica europeia.",
+                    "oque_aconteceu": "Conflitos entre o Papa de Roma e o Patriarca de Constantinopla levaram à divisão entre Igreja Católica e Igreja Ortodoxa.",
+                    "oque_mudou": "A divisão marcou profundamente a história religiosa e política da Europa.",
                     "figuras_principais": [
-                        {"nome": "Papa Leão IX", "papel": "Papa que enviou legados a Constantinopla"},
-                        {"nome": "Patriarca Miguel Cerulário", "papel": "Patriarca que rompeu com Roma"}
+                        {
+                            "nome": "Papa Leão IX",
+                            "papel": "Papa ligado ao conflito com Constantinopla"
+                        },
+                        {
+                            "nome": "Patriarca Miguel Cerulário",
+                            "papel": "Patriarca de Constantinopla no momento do cisma"
+                        }
                     ],
-                    "informacoes_adicionais": "Em 1965, as excomunhões foram levantadas, mas a divisão persiste."
+                    "informacoes_adicionais": "As excomunhões mútuas foram levantadas em 1965, mas a separação religiosa permanece."
                 },
                 {
                     "id": 5,
                     "nome": "Conquista normanda da Inglaterra",
                     "ano": "1066 d.C.",
-                    "lugar": "Inglaterra (Hastings)",
-                    "oque_aconteceu": "Guilherme, Duque da Normandia (França), derrotou o rei Haroldo II na Batalha de Hastings, tornando-se rei da Inglaterra.",
-                    "oque_mudou": "Fim da era anglo-saxônica, introdução do feudalismo na Inglaterra, fusão das línguas (francês dos nobres com inglês dos camponeses, gerando o inglês moderno), e estreitamento dos laitos com a França, gerando séculos de conflito.",
+                    "lugar": "Inglaterra",
+                    "oque_aconteceu": "Guilherme, Duque da Normandia, derrotou Haroldo II na Batalha de Hastings e tornou-se rei da Inglaterra.",
+                    "oque_mudou": "Introduziu estruturas feudais normandas e transformou a língua, a política e a nobreza inglesas.",
                     "figuras_principais": [
-                        {"nome": "Guilherme, o Conquistador", "papel": "Duque da Normandia e rei da Inglaterra"},
-                        {"nome": "Haroldo II", "papel": "Último rei anglo-saxão da Inglaterra"}
+                        {
+                            "nome": "Guilherme, o Conquistador",
+                            "papel": "Duque da Normandia e rei da Inglaterra"
+                        },
+                        {
+                            "nome": "Haroldo II",
+                            "papel": "Último rei anglo-saxão da Inglaterra"
+                        }
                     ],
-                    "informacoes_adicionais": "A Tapeçaria de Bayeux é um bordado de 70 metros que narra a conquista. O Domesday Book (1086) foi um censo detalhado da Inglaterra encomendado por Guilherme."
+                    "informacoes_adicionais": "A Tapeçaria de Bayeux narra visualmente a conquista normanda."
                 },
                 {
                     "id": 6,
                     "nome": "As Cruzadas",
-                    "ano": "1095-1291 d.C.",
+                    "ano": "1095 d.C. - 1291 d.C.",
                     "lugar": "Jerusalém e Oriente Médio",
-                    "oque_aconteceu": "O Papa Urbano II convocou os cristãos europeus a retomarem Jerusalém do controle muçulmano. A Primeira Cruzada conquistou a cidade em 1099, estabelecendo Estados Cruzados.",
-                    "oque_mudou": "Expansão do comércio entre Europa e Oriente, enfraquecimento do feudalismo, intercâmbio cultural e fortalecimento do poder papal.",
+                    "oque_aconteceu": "Expedições militares cristãs foram organizadas para conquistar ou manter territórios considerados sagrados.",
+                    "oque_mudou": "Expandiram o comércio, intensificaram contatos entre Ocidente e Oriente e fortaleceram temporariamente o poder papal.",
                     "figuras_principais": [
-                        {"nome": "Papa Urbano II", "papel": "Convocador da Primeira Cruzada"},
-                        {"nome": "Saladino", "papel": "Sultão muçulmano que reconquistou Jerusalém em 1187"},
-                        {"nome": "Ricardo Coração de Leão", "papel": "Rei inglês na Terceira Cruzada"}
+                        {
+                            "nome": "Papa Urbano II",
+                            "papel": "Convocador da Primeira Cruzada"
+                        },
+                        {
+                            "nome": "Saladino",
+                            "papel": "Sultão que reconquistou Jerusalém"
+                        },
+                        {
+                            "nome": "Ricardo Coração de Leão",
+                            "papel": "Rei inglês na Terceira Cruzada"
+                        }
                     ],
-                    "informacoes_adicionais": "Houve oito cruzadas principais; a última fortaleza cruzada, Acre, caiu em 1291. A Quarta Cruzada (1204) saqueou Constantinopla, aprofundando o Cisma."
+                    "informacoes_adicionais": "A queda de Acre em 1291 marcou o fim dos principais Estados Cruzados."
                 },
                 {
                     "id": 7,
                     "nome": "Carta Magna",
                     "ano": "1215 d.C.",
                     "lugar": "Inglaterra",
-                    "oque_aconteceu": "O rei João Sem Terra, pressionado por nobres rebeldes, selou a Carta Magna, documento que limitava os poderes do monarca e garantia direitos como julgamento justo.",
-                    "oque_mudou": "Estabeleceu o princípio de que o rei não está acima da lei, influenciando o constitucionalismo, o devido processo legal e os direitos humanos.",
+                    "oque_aconteceu": "O rei João Sem Terra foi pressionado por nobres a aceitar a Carta Magna, limitando poderes reais.",
+                    "oque_mudou": "Estabeleceu a ideia de que o rei também deveria obedecer à lei, influenciando o constitucionalismo.",
                     "figuras_principais": [
-                        {"nome": "João Sem Terra", "papel": "Rei que assinou a Carta Magna"}
+                        {
+                            "nome": "João Sem Terra",
+                            "papel": "Rei que selou a Carta Magna"
+                        }
                     ],
-                    "informacoes_adicionais": "A cláusula 39 (julgamento justo) é a mais famosa e influente. Apenas 3 das 63 cláusulas originais ainda estão em vigor."
+                    "informacoes_adicionais": "A cláusula sobre julgamento justo se tornou uma das mais famosas."
                 },
                 {
                     "id": 8,
                     "nome": "Guerra dos Cem Anos",
-                    "ano": "1337-1453 d.C.",
+                    "ano": "1337 d.C. - 1453 d.C.",
                     "lugar": "França e Países Baixos",
-                    "oque_aconteceu": "Conflito dinástico entre as casas de Valois (França) e Plantageneta (Inglaterra) pela sucessão ao trono francês. Joana d'Arc liderou os franceses no cerco de Orleans (1429).",
-                    "oque_mudou": "Fortalecimento do sentimento nacional francês e inglês, desenvolvimento de exércitos profissionais (com arqueiros ingleses e artilharia francesa), expulsão da Inglaterra da França (exceto Calais), e enfraquecimento da nobreza feudal.",
+                    "oque_aconteceu": "França e Inglaterra travaram uma longa guerra por disputas dinásticas e territoriais.",
+                    "oque_mudou": "Fortaleceu identidades nacionais, enfraqueceu a nobreza feudal e impulsionou exércitos mais profissionais.",
                     "figuras_principais": [
-                        {"nome": "Joana d'Arc", "papel": "Heroína francesa, queimada na fogueira em 1431, canonizada em 1920"},
-                        {"nome": "Henrique V", "papel": "Rei inglês vitorioso em Azincourt (1415)"}
+                        {
+                            "nome": "Joana d'Arc",
+                            "papel": "Heroína francesa ligada à virada da guerra"
+                        },
+                        {
+                            "nome": "Henrique V",
+                            "papel": "Rei inglês vitorioso em Azincourt"
+                        }
                     ],
-                    "informacoes_adicionais": "A guerra inspirou as peças históricas de Shakespeare. Joana d'Arc foi capturada pelos borgonheses (aliados ingleses) e entregue à Inquisição inglesa."
+                    "informacoes_adicionais": "A guerra terminou no mesmo ano da Queda de Constantinopla."
                 },
                 {
                     "id": 9,
                     "nome": "Peste Negra",
-                    "ano": "1347-1351 d.C.",
+                    "ano": "1347 d.C. - 1351 d.C.",
                     "lugar": "Europa",
-                    "oque_aconteceu": "Uma pandemia de peste bubônica matou entre 30% e 60% da população europeia (cerca de 25 a 50 milhões de pessoas).",
-                    "oque_mudou": "Crise demográfica e econômica, escassez de mão de obra, aumento dos salários, enfraquecimento do sistema feudal e da Igreja.",
+                    "oque_aconteceu": "Uma pandemia de peste bubônica devastou a Europa, matando uma parcela enorme da população.",
+                    "oque_mudou": "Causou crise demográfica, escassez de mão de obra, aumento de salários e enfraquecimento do feudalismo.",
                     "figuras_principais": [
-                        {"nome": "Yersinia pestis", "papel": "Bactéria causadora da peste"}
+                        {
+                            "nome": "Yersinia pestis",
+                            "papel": "Bactéria causadora da peste"
+                        }
                     ],
-                    "informacoes_adicionais": "O termo 'quarentena' vem do período de 40 dias de isolamento para navios em Veneza. Houve surtos recorrentes até o século XVIII."
+                    "informacoes_adicionais": "O termo quarentena se relaciona a práticas de isolamento usadas em cidades comerciais."
                 },
                 {
                     "id": 10,
                     "nome": "Queda de Constantinopla",
                     "ano": "1453 d.C.",
                     "lugar": "Constantinopla (atual Istambul)",
-                    "oque_aconteceu": "O sultão otomano Mehmed II tomou Constantinopla, capital do Império Bizantino, após um cerco de 53 dias.",
-                    "oque_mudou": "Fim do Império Bizantino, início da hegemonia otomana, fuga de estudiosos gregos para a Itália (contribuindo para o Renascimento) e bloqueio das rotas comerciais com a Ásia (incentivando as Grandes Navegações).",
+                    "oque_aconteceu": "O sultão otomano Mehmed II conquistou Constantinopla após um cerco de 53 dias.",
+                    "oque_mudou": "Marcou o fim do Império Bizantino e é usado como marco tradicional do fim da Idade Média.",
                     "figuras_principais": [
-                        {"nome": "Mehmed II", "papel": "Sultão otomano conquistador"},
-                        {"nome": "Constantino XI Paleólogo", "papel": "Último imperador bizantino"}
+                        {
+                            "nome": "Mehmed II",
+                            "papel": "Sultão otomano conquistador"
+                        },
+                        {
+                            "nome": "Constantino XI Paleólogo",
+                            "papel": "Último imperador bizantino"
+                        }
                     ],
-                    "informacoes_adicionais": "A data de 1453 é o marco tradicional entre Idade Média e Idade Moderna. Hagia Sophia foi convertida em mesquita (hoje museu)."
+                    "informacoes_adicionais": "A conquista fortaleceu o Império Otomano e afetou rotas comerciais entre Europa e Ásia."
+                },
+                {
+                    "id": 11,
+                    "nome": "Feudalismo europeu",
+                    "ano": "c. 800 d.C. - 1200 d.C.",
+                    "lugar": "Europa Ocidental",
+                    "oque_aconteceu": "A sociedade europeia organizou-se em torno de relações de vassalagem, posse de terras e trabalho servil.",
+                    "oque_mudou": "O poder político ficou fragmentado, a economia rural ganhou força e a nobreza local passou a ter grande influência.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Senhores feudais",
+                            "papel": "Controlavam terras e exerciam poder local"
+                        },
+                        {
+                            "nome": "Servos",
+                            "papel": "Trabalhadores ligados à terra"
+                        }
+                    ],
+                    "informacoes_adicionais": "O feudalismo variou bastante entre regiões e períodos."
+                },
+                {
+                    "id": 12,
+                    "nome": "Renascimento comercial e urbano",
+                    "ano": "c. 1000 d.C. - 1300 d.C.",
+                    "lugar": "Europa Ocidental",
+                    "oque_aconteceu": "O comércio cresceu, cidades se expandiram e novas rotas mercantis ligaram feiras, portos e centros urbanos.",
+                    "oque_mudou": "O crescimento urbano enfraqueceu parte da economia feudal e fortaleceu burgueses, artesãos e comerciantes.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Mercadores",
+                            "papel": "Impulsionaram o comércio de longa distância"
+                        },
+                        {
+                            "nome": "Artesãos urbanos",
+                            "papel": "Produziam bens nas cidades e corporações de ofício"
+                        }
+                    ],
+                    "informacoes_adicionais": "As feiras de Champagne foram importantes pontos comerciais medievais."
+                },
+                {
+                    "id": 13,
+                    "nome": "Fundação das primeiras universidades europeias",
+                    "ano": "c. 1088 d.C. - 1200 d.C.",
+                    "lugar": "Bolonha, Paris, Oxford e outras cidades",
+                    "oque_aconteceu": "Instituições de ensino superior surgiram para estudar direito, teologia, medicina e artes liberais.",
+                    "oque_mudou": "As universidades fortaleceram a produção intelectual e formaram elites religiosas, jurídicas e administrativas.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Mestres universitários",
+                            "papel": "Professores responsáveis pelo ensino medieval"
+                        },
+                        {
+                            "nome": "Estudantes medievais",
+                            "papel": "Integrantes das corporações universitárias"
+                        }
+                    ],
+                    "informacoes_adicionais": "A Universidade de Bolonha é frequentemente citada como uma das mais antigas da Europa."
+                },
+                {
+                    "id": 14,
+                    "nome": "Reconquista Ibérica",
+                    "ano": "711 d.C. - 1492 d.C.",
+                    "lugar": "Península Ibérica",
+                    "oque_aconteceu": "Reinos cristãos avançaram gradualmente sobre territórios muçulmanos na Península Ibérica.",
+                    "oque_mudou": "Formou bases políticas para Portugal e Espanha e influenciou a expansão marítima posterior.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Reis cristãos ibéricos",
+                            "papel": "Lideraram a expansão territorial cristã"
+                        },
+                        {
+                            "nome": "Governantes muçulmanos de Al-Andalus",
+                            "papel": "Controlavam territórios islâmicos na península"
+                        }
+                    ],
+                    "informacoes_adicionais": "O processo terminou em 1492 com a tomada de Granada pelos Reis Católicos."
+                },
+                {
+                    "id": 15,
+                    "nome": "Invasões vikings",
+                    "ano": "c. 793 d.C. - 1066 d.C.",
+                    "lugar": "Europa do Norte, Ilhas Britânicas, França e Atlântico Norte",
+                    "oque_aconteceu": "Povos nórdicos realizaram ataques, comércio, colonização e navegação por várias regiões europeias.",
+                    "oque_mudou": "As invasões estimularam defesas locais, mudanças políticas e novas redes comerciais no Atlântico Norte.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Vikings",
+                            "papel": "Navegadores, guerreiros e comerciantes escandinavos"
+                        }
+                    ],
+                    "informacoes_adicionais": "Vikings chegaram à Islândia, Groenlândia e até à América do Norte antes de Colombo."
+                },
+                {
+                    "id": 16,
+                    "nome": "Sacro Império Romano-Germânico",
+                    "ano": "962 d.C.",
+                    "lugar": "Europa Central",
+                    "oque_aconteceu": "Otão I foi coroado imperador, dando origem ao Sacro Império Romano-Germânico.",
+                    "oque_mudou": "Criou uma importante estrutura política na Europa Central, misturando poder imperial, nobreza regional e autoridade religiosa.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Otão I",
+                            "papel": "Primeiro imperador do Sacro Império Romano-Germânico"
+                        }
+                    ],
+                    "informacoes_adicionais": "O império existiu formalmente até 1806."
+                },
+                {
+                    "id": 17,
+                    "nome": "Querela das Investiduras",
+                    "ano": "1075 d.C. - 1122 d.C.",
+                    "lugar": "Europa Ocidental",
+                    "oque_aconteceu": "Papado e imperadores disputaram o direito de nomear bispos e controlar cargos eclesiásticos.",
+                    "oque_mudou": "O conflito redefiniu relações entre Igreja e poder político, fortalecendo a autoridade papal em vários momentos.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Papa Gregório VII",
+                            "papel": "Defensor da autoridade papal"
+                        },
+                        {
+                            "nome": "Henrique IV",
+                            "papel": "Imperador em conflito com o papado"
+                        }
+                    ],
+                    "informacoes_adicionais": "A Concordata de Worms, em 1122, tentou solucionar a disputa."
+                },
+                {
+                    "id": 18,
+                    "nome": "Império Mongol",
+                    "ano": "1206 d.C. - 1368 d.C.",
+                    "lugar": "Ásia e Europa Oriental",
+                    "oque_aconteceu": "Gêngis Khan unificou tribos mongóis e iniciou a formação do maior império terrestre contínuo da história.",
+                    "oque_mudou": "O império conectou rotas comerciais, espalhou tecnologias e também causou grandes destruições em várias regiões conquistadas.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Gêngis Khan",
+                            "papel": "Fundador do Império Mongol"
+                        },
+                        {
+                            "nome": "Kublai Khan",
+                            "papel": "Líder mongol que governou a China Yuan"
+                        }
+                    ],
+                    "informacoes_adicionais": "A chamada Pax Mongolica favoreceu comércio e circulação pela Eurásia."
+                },
+                {
+                    "id": 19,
+                    "nome": "Marco Polo e as viagens ao Oriente",
+                    "ano": "1271 d.C. - 1295 d.C.",
+                    "lugar": "Europa, Ásia Central e China",
+                    "oque_aconteceu": "Marco Polo viajou pela Ásia e relatou experiências no Império Mongol e na China.",
+                    "oque_mudou": "Seus relatos ampliaram o interesse europeu pelo Oriente e por rotas comerciais asiáticas.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Marco Polo",
+                            "papel": "Viajante veneziano"
+                        },
+                        {
+                            "nome": "Kublai Khan",
+                            "papel": "Governante mongol mencionado nos relatos"
+                        }
+                    ],
+                    "informacoes_adicionais": "Embora alguns detalhes sejam debatidos, seus relatos tiveram grande impacto no imaginário europeu."
+                },
+                {
+                    "id": 20,
+                    "nome": "Crise do século XIV",
+                    "ano": "c. 1300 d.C. - 1400 d.C.",
+                    "lugar": "Europa",
+                    "oque_aconteceu": "Fomes, guerras, peste, revoltas camponesas e instabilidade econômica atingiram a Europa.",
+                    "oque_mudou": "A crise abalou o feudalismo, transformou relações de trabalho e preparou mudanças sociais da Baixa Idade Média.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Camponeses europeus",
+                            "papel": "População mais afetada por fome, impostos e epidemias"
+                        },
+                        {
+                            "nome": "Nobreza feudal",
+                            "papel": "Grupo dominante pressionado pelas mudanças econômicas"
+                        }
+                    ],
+                    "informacoes_adicionais": "A crise do século XIV marcou o início de profundas transformações que levariam à Idade Moderna."
                 }
             ]
         },
@@ -352,139 +1069,426 @@
                 {
                     "id": 1,
                     "nome": "Imprensa de Gutenberg",
-                    "ano": "c. 1440-1455 d.C.",
+                    "ano": "c. 1440 d.C. - 1455 d.C.",
                     "lugar": "Mainz, Alemanha",
-                    "oque_aconteceu": "Johannes Gutenberg desenvolveu a prensa de tipos móveis, imprimindo a Bíblia de 42 linhas (Bíblia de Gutenberg) por volta de 1455.",
-                    "oque_mudou": "Democratização do conhecimento, queda drástica do custo de livros, disseminação de ideias (Reforma, Renascimento, Iluminismo), aumento do alfabetismo, padronização de línguas e formação da opinião pública.",
+                    "oque_aconteceu": "Johannes Gutenberg desenvolveu a prensa de tipos móveis e imprimiu a Bíblia de Gutenberg.",
+                    "oque_mudou": "A imprensa barateou livros, espalhou ideias e favoreceu o Renascimento, a Reforma e o Iluminismo.",
                     "figuras_principais": [
-                        {"nome": "Johannes Gutenberg", "papel": "Inventor da prensa de tipos móveis na Europa"}
+                        {
+                            "nome": "Johannes Gutenberg",
+                            "papel": "Inventor da prensa de tipos móveis na Europa"
+                        }
                     ],
-                    "informacoes_adicionais": "Até Gutenberg, os livros eram copiados à mão, principalmente por monges. A imprensa é frequentemente listada como a invenção mais importante do segundo milênio."
+                    "informacoes_adicionais": "A imprensa acelerou a circulação do conhecimento de forma gigantesca para a época."
                 },
                 {
                     "id": 2,
                     "nome": "Descobrimento do Brasil",
                     "ano": "1500 d.C.",
                     "lugar": "Brasil (Porto Seguro, atual Bahia)",
-                    "oque_aconteceu": "A frota portuguesa liderada por Pedro Álvares Cabral, a caminho das Índias, avistou terras que seriam chamadas de Ilha de Vera Cruz, depois Brasil.",
-                    "oque_mudou": "Início da colonização portuguesa na América do Sul, exploração do pau-brasil, escravidão de indígenas, introdução da cana-de-açúcar e, mais tarde, tráfico de escravos africanos, formação da maior nação lusófona do mundo.",
+                    "oque_aconteceu": "A frota portuguesa liderada por Pedro Álvares Cabral chegou às terras que seriam chamadas de Brasil.",
+                    "oque_mudou": "Iniciou a colonização portuguesa na América do Sul, com exploração do pau-brasil, produção açucareira e escravidão.",
                     "figuras_principais": [
-                        {"nome": "Pedro Álvares Cabral", "papel": "Capitão-mor da frota que descobriu o Brasil"},
-                        {"nome": "Pero Vaz de Caminha", "papel": "Escrivão que descreveu o Brasil em carta a D. Manuel I"}
+                        {
+                            "nome": "Pedro Álvares Cabral",
+                            "papel": "Capitão-mor da frota portuguesa"
+                        },
+                        {
+                            "nome": "Pero Vaz de Caminha",
+                            "papel": "Escrivão que descreveu a chegada em carta ao rei"
+                        }
                     ],
-                    "informacoes_adicionais": "A carta de Caminha é o primeiro documento escrito sobre o Brasil. O Tratado de Tordesilhas (1494) dividia o mundo entre Portugal e Espanha, mas Cabral pode ter se desviado intencionalmente para reivindicar a terra."
+                    "informacoes_adicionais": "A carta de Caminha é um dos primeiros documentos escritos sobre o Brasil."
                 },
                 {
                     "id": 3,
                     "nome": "Chegada de Colombo à América",
                     "ano": "1492 d.C.",
                     "lugar": "Caribe",
-                    "oque_aconteceu": "Cristóvão Colombo, a serviço da Espanha, chegou à América, inaugurando o contato permanente entre a Europa e o continente americano.",
-                    "oque_mudou": "Início da colonização europeia da América, intercâmbio colombiano (troca de plantas, animais, doenças e cultura), genocídio de povos indígenas e ascensão da Europa como centro mundial.",
+                    "oque_aconteceu": "Cristóvão Colombo, financiado pela Espanha, chegou à América ao tentar alcançar as Índias pelo oeste.",
+                    "oque_mudou": "Iniciou contato permanente entre Europa e América, colonização europeia, intercâmbio colombiano e destruição de muitas sociedades indígenas.",
                     "figuras_principais": [
-                        {"nome": "Cristóvão Colombo", "papel": "Navegador que liderou a expedição"},
-                        {"nome": "Reis Católicos", "papel": "Fernando e Isabel, monarcas espanhóis financiadores"}
+                        {
+                            "nome": "Cristóvão Colombo",
+                            "papel": "Navegador que liderou a expedição"
+                        },
+                        {
+                            "nome": "Reis Católicos",
+                            "papel": "Fernando e Isabel, financiadores da viagem"
+                        }
                     ],
-                    "informacoes_adicionais": "Colombo fez quatro viagens à América e nunca aceitou que tinha descoberto um novo continente, insistindo que havia chegado à Ásia."
+                    "informacoes_adicionais": "Colombo realizou quatro viagens e morreu acreditando ter chegado a regiões da Ásia."
                 },
                 {
                     "id": 4,
                     "nome": "Reforma Protestante",
                     "ano": "1517 d.C.",
                     "lugar": "Alemanha",
-                    "oque_aconteceu": "Martinho Lutero publicou suas 95 Teses criticando a venda de indulgências, iniciando a Reforma Protestante.",
-                    "oque_mudou": "Divisão da cristandade ocidental, surgimento do Protestantismo, guerras religiosas, tradução da Bíblia para línguas vernáculas e fortalecimento dos estados contra o papa.",
+                    "oque_aconteceu": "Martinho Lutero publicou suas 95 Teses criticando práticas da Igreja, como a venda de indulgências.",
+                    "oque_mudou": "Dividiu a cristandade ocidental, fortaleceu igrejas protestantes e provocou conflitos religiosos e políticos.",
                     "figuras_principais": [
-                        {"nome": "Martinho Lutero", "papel": "Teólogo e líder da Reforma"},
-                        {"nome": "João Calvino", "papel": "Líder da Reforma na Suíça"},
-                        {"nome": "Henrique VIII", "papel": "Rei inglês que criou a Igreja Anglicana"}
+                        {
+                            "nome": "Martinho Lutero",
+                            "papel": "Teólogo e líder da Reforma"
+                        },
+                        {
+                            "nome": "João Calvino",
+                            "papel": "Líder reformador na Suíça"
+                        },
+                        {
+                            "nome": "Henrique VIII",
+                            "papel": "Rei inglês ligado à criação da Igreja Anglicana"
+                        }
                     ],
-                    "informacoes_adicionais": "A Dieta de Worms (1521) condenou Lutero, que foi escondido e traduziu o Novo Testamento para o alemão."
+                    "informacoes_adicionais": "A tradução da Bíblia para línguas vernáculas ampliou o acesso religioso fora do controle exclusivo do clero."
                 },
                 {
                     "id": 5,
                     "nome": "Contrarreforma e Concílio de Trento",
-                    "ano": "1545-1563 d.C.",
+                    "ano": "1545 d.C. - 1563 d.C.",
                     "lugar": "Trento, Itália",
-                    "oque_aconteceu": "A Igreja Católica reuniu o Concílio de Trento para responder à Reforma, reafirmando a doutrina católica (sete sacramentos, purgatório, veneração de santos), condenando a justificação pela fé somente, e instituindo reformas disciplinares (proibiu a venda de indulgências, exigiu seminários para padres).",
-                    "oque_mudou": "Renovação do catolicismo, criação da Companhia de Jesus (jesuítas) para educação e missões, inquisição mais ativa, Index librorum prohibitorum (lista de livros proibidos), e barroco como estilo artístico de propaganda da fé.",
+                    "oque_aconteceu": "A Igreja Católica realizou o Concílio de Trento para responder à Reforma Protestante e reorganizar sua doutrina e disciplina.",
+                    "oque_mudou": "Reforçou doutrinas católicas, fortaleceu seminários, missões, jesuítas e o combate ao protestantismo.",
                     "figuras_principais": [
-                        {"nome": "Papa Paulo III", "papel": "Papa que convocou o Concílio de Trento"},
-                        {"nome": "Inácio de Loyola", "papel": "Fundador da Companhia de Jesus"}
+                        {
+                            "nome": "Papa Paulo III",
+                            "papel": "Papa que convocou o Concílio de Trento"
+                        },
+                        {
+                            "nome": "Inácio de Loyola",
+                            "papel": "Fundador da Companhia de Jesus"
+                        }
                     ],
-                    "informacoes_adicionais": "O Concílio de Trento, realizado em 25 sessões ao longo de 18 anos, foi um dos mais importantes da história da Igreja e definiu o catolicismo até o Concílio Vaticano II (1962-1965)."
+                    "informacoes_adicionais": "O Barroco foi usado como importante linguagem artística da fé católica."
                 },
                 {
                     "id": 6,
                     "nome": "Revolução Científica",
-                    "ano": "1543-1687 d.C.",
+                    "ano": "1543 d.C. - 1687 d.C.",
                     "lugar": "Europa",
-                    "oque_aconteceu": "Cientistas como Copérnico, Galileu e Newton desenvolveram o método científico e revolucionaram a compreensão do universo, com Newton publicando os 'Princípios Matemáticos' em 1687.",
-                    "oque_mudou": "Nascimento da ciência moderna, questionamento da autoridade da Igreja, desenvolvimento da física, astronomia e medicina, e influência no Iluminismo.",
+                    "oque_aconteceu": "Pensadores como Copérnico, Galileu, Kepler e Newton transformaram a compreensão do universo e da natureza.",
+                    "oque_mudou": "Nasceu a ciência moderna, baseada em observação, matemática, experimentação e questionamento da autoridade tradicional.",
                     "figuras_principais": [
-                        {"nome": "Nicolau Copérnico", "papel": "Propositor do modelo heliocêntrico"},
-                        {"nome": "Galileu Galilei", "papel": "Pai da astronomia observacional"},
-                        {"nome": "Isaac Newton", "papel": "Autor da lei da gravitação universal"},
-                        {"nome": "Johannes Kepler", "papel": "Descobridor das leis do movimento planetário"}
+                        {
+                            "nome": "Nicolau Copérnico",
+                            "papel": "Propositor do modelo heliocêntrico"
+                        },
+                        {
+                            "nome": "Galileu Galilei",
+                            "papel": "Astrônomo e defensor da observação científica"
+                        },
+                        {
+                            "nome": "Isaac Newton",
+                            "papel": "Autor da lei da gravitação universal"
+                        },
+                        {
+                            "nome": "Johannes Kepler",
+                            "papel": "Formulador das leis do movimento planetário"
+                        }
                     ],
-                    "informacoes_adicionais": "Galileu foi julgado pela Inquisição em 1633 e forçado a renunciar às suas descobertas. Newton também fez importantes contribuições à óptica e ao cálculo."
+                    "informacoes_adicionais": "A publicação de Newton em 1687 é considerada um marco da física moderna."
                 },
                 {
                     "id": 7,
                     "nome": "Revolução Gloriosa e Declaração de Direitos",
-                    "ano": "1688-1689 d.C.",
+                    "ano": "1688 d.C. - 1689 d.C.",
                     "lugar": "Inglaterra",
-                    "oque_aconteceu": "O parlamento inglês depôs o rei católico Jaime II e convidou os protestantes Guilherme de Orange e Maria para governar, estabelecendo a Declaração de Direitos (Bill of Rights).",
-                    "oque_mudou": "Estabelecimento da monarquia constitucional na Inglaterra, supremacia do parlamento, liberdades civis e influência direta nos sistemas políticos dos EUA e França.",
+                    "oque_aconteceu": "O Parlamento depôs Jaime II e convidou Guilherme de Orange e Maria para governar sob limites legais.",
+                    "oque_mudou": "Consolidou a monarquia constitucional inglesa e a supremacia do Parlamento.",
                     "figuras_principais": [
-                        {"nome": "Guilherme de Orange", "papel": "Rei após a Revolução Gloriosa"},
-                        {"nome": "John Locke", "papel": "Filósofo cujas ideias influenciaram a Declaração"}
+                        {
+                            "nome": "Guilherme de Orange",
+                            "papel": "Rei após a Revolução Gloriosa"
+                        },
+                        {
+                            "nome": "John Locke",
+                            "papel": "Filósofo associado às ideias liberais do período"
+                        }
                     ],
-                    "informacoes_adicionais": "A Revolução Gloriosa foi relativamente incruenta, ao contrário da Guerra Civil Inglesa (1642-1651). O Bill of Rights inspirou a Declaração de Direitos dos EUA (1791) e a Declaração Universal dos Direitos Humanos (1948)."
+                    "informacoes_adicionais": "O Bill of Rights inglês influenciou tradições constitucionais posteriores."
                 },
                 {
                     "id": 8,
                     "nome": "Iluminismo",
-                    "ano": "c. 1715-1789 d.C.",
-                    "lugar": "França (epicentro), Escócia, Alemanha, Américas",
-                    "oque_aconteceu": "Movimento intelectual que enfatizava a razão, a ciência, a liberdade individual e a tolerância religiosa contra a autoridade tradicional (monarquia absoluta e Igreja).",
-                    "oque_mudou": "Influenciou a Independência dos EUA (Declaração de Independência, 1776), a Revolução Francesa (Declaração dos Direitos do Homem, 1789), separação Igreja-Estado, liberdade de expressão, e desenvolvimento da economia de mercado (Adam Smith).",
+                    "ano": "c. 1715 d.C. - 1789 d.C.",
+                    "lugar": "França, Escócia, Alemanha e Américas",
+                    "oque_aconteceu": "Movimento intelectual valorizou razão, ciência, liberdade, tolerância e crítica ao absolutismo.",
+                    "oque_mudou": "Influenciou revoluções modernas, direitos civis, separação de poderes e liberdade de expressão.",
                     "figuras_principais": [
-                        {"nome": "Voltaire", "papel": "Defensor da liberdade de expressão e tolerância religiosa"},
-                        {"nome": "Jean-Jacques Rousseau", "papel": "Teórico do contrato social e soberania popular"},
-                        {"nome": "Montesquieu", "papel": "Defensor da separação dos poderes"},
-                        {"nome": "Denis Diderot", "papel": "Editor da Enciclopédia"},
-                        {"nome": "Immanuel Kant", "papel": "Filósofo alemão que definiu o Iluminismo como 'a saída do homem de sua menoridade'"}
+                        {
+                            "nome": "Voltaire",
+                            "papel": "Defensor da liberdade de expressão e tolerância"
+                        },
+                        {
+                            "nome": "Jean-Jacques Rousseau",
+                            "papel": "Teórico do contrato social"
+                        },
+                        {
+                            "nome": "Montesquieu",
+                            "papel": "Defensor da separação dos poderes"
+                        },
+                        {
+                            "nome": "Denis Diderot",
+                            "papel": "Editor da Enciclopédia"
+                        },
+                        {
+                            "nome": "Immanuel Kant",
+                            "papel": "Filósofo alemão do Iluminismo"
+                        }
                     ],
-                    "informacoes_adicionais": "A Enciclopédia (1751-1772) reuniu conhecimento de 140 colaboradores e foi proibida pela Igreja Católica, mas vendida secretamente."
+                    "informacoes_adicionais": "A Enciclopédia espalhou ideias científicas e filosóficas em linguagem acessível para a elite letrada."
                 },
                 {
                     "id": 9,
                     "nome": "Independência dos Estados Unidos",
                     "ano": "1776 d.C.",
                     "lugar": "Filadélfia",
-                    "oque_aconteceu": "As Treze Colônias declararam independência do Reino Unido através da Declaração de Independência, baseada em princípios iluministas.",
-                    "oque_mudou": "Criação dos Estados Unidos como primeira grande república moderna, inspiração para revoluções posteriores e estabelecimento de uma constituição escrita.",
+                    "oque_aconteceu": "As Treze Colônias declararam independência do Reino Unido por meio da Declaração de Independência.",
+                    "oque_mudou": "Criou uma república moderna baseada em constituição escrita e princípios iluministas.",
                     "figuras_principais": [
-                        {"nome": "George Washington", "papel": "Comandante e primeiro presidente"},
-                        {"nome": "Thomas Jefferson", "papel": "Principal autor da Declaração"},
-                        {"nome": "Benjamin Franklin", "papel": "Diplomata e líder intelectual"}
+                        {
+                            "nome": "George Washington",
+                            "papel": "Comandante e primeiro presidente dos EUA"
+                        },
+                        {
+                            "nome": "Thomas Jefferson",
+                            "papel": "Principal autor da Declaração"
+                        },
+                        {
+                            "nome": "Benjamin Franklin",
+                            "papel": "Diplomata e líder intelectual"
+                        }
                     ],
-                    "informacoes_adicionais": "A guerra pela independência durou até 1783, com vitória americana em Yorktown. A Constituição dos EUA (1787) é a mais antiga ainda em vigor."
+                    "informacoes_adicionais": "A guerra terminou em 1783, com reconhecimento da independência americana."
                 },
                 {
                     "id": 10,
                     "nome": "Revolução Industrial na Inglaterra (1ª fase)",
-                    "ano": "1760-1840 d.C.",
-                    "lugar": "Inglaterra (Midlands, Lancashire)",
-                    "oque_aconteceu": "Inovações tecnológicas como a máquina a vapor (James Watt), tear mecânico (Edmund Cartwright) e fiação mecânica (Richard Arkwright) mecanizaram a produção de tecidos de algodão. O carvão e o ferro substituíram a madeira.",
-                    "oque_mudou": "Início da industrialização, migração campo-cidade, surgimento do proletariado, crescimento populacional sem precedentes, poluição ambiental, e ascensão da Inglaterra como 'oficina do mundo'.",
+                    "ano": "1760 d.C. - 1840 d.C.",
+                    "lugar": "Inglaterra",
+                    "oque_aconteceu": "Máquinas a vapor, teares mecânicos e novas formas de produção transformaram a indústria têxtil e metalúrgica.",
+                    "oque_mudou": "A industrialização acelerou urbanização, produção em massa, poluição, crescimento do proletariado e poder econômico inglês.",
                     "figuras_principais": [
-                        {"nome": "James Watt", "papel": "Aperfeiçoou a máquina a vapor (patente em 1769)"},
-                        {"nome": "Richard Arkwright", "papel": "Inventor da spinning frame (1769)"},
-                        {"nome": "Adam Smith", "papel": "Economista da 'mão invisível' do mercado"}
+                        {
+                            "nome": "James Watt",
+                            "papel": "Aperfeiçoador da máquina a vapor"
+                        },
+                        {
+                            "nome": "Richard Arkwright",
+                            "papel": "Inventor ligado à fiação mecânica"
+                        },
+                        {
+                            "nome": "Adam Smith",
+                            "papel": "Economista do liberalismo econômico"
+                        }
                     ],
-                    "informacoes_adicionais": "O algodão processado na Inglaterra passou de 2,5 milhões de libras em 1760 para 22 milhões em 1787, a maioria proveniente de escravos nos EUA."
+                    "informacoes_adicionais": "A Inglaterra ficou conhecida como a oficina do mundo."
+                },
+                {
+                    "id": 11,
+                    "nome": "Renascimento Cultural",
+                    "ano": "c. 1300 d.C. - 1600 d.C.",
+                    "lugar": "Itália e Europa Ocidental",
+                    "oque_aconteceu": "Artistas e intelectuais retomaram valores da Antiguidade clássica, valorizando o humanismo, a razão e a observação da natureza.",
+                    "oque_mudou": "Transformou artes, ciência, filosofia e literatura, abrindo caminho para a mentalidade moderna.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Leonardo da Vinci",
+                            "papel": "Artista, inventor e estudioso renascentista"
+                        },
+                        {
+                            "nome": "Michelangelo",
+                            "papel": "Escultor, pintor e arquiteto"
+                        },
+                        {
+                            "nome": "Petrarca",
+                            "papel": "Humanista associado ao início do Renascimento"
+                        }
+                    ],
+                    "informacoes_adicionais": "O mecenato de famílias ricas, como os Médici, foi essencial para o florescimento artístico."
+                },
+                {
+                    "id": 12,
+                    "nome": "Tratado de Tordesilhas",
+                    "ano": "1494 d.C.",
+                    "lugar": "Tordesilhas, Espanha",
+                    "oque_aconteceu": "Portugal e Espanha dividiram entre si áreas de exploração no Atlântico por meio de uma linha imaginária.",
+                    "oque_mudou": "Influenciou a formação territorial do Brasil e a expansão colonial ibérica.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Reis Católicos",
+                            "papel": "Monarcas espanhóis envolvidos no acordo"
+                        },
+                        {
+                            "nome": "Dom João II",
+                            "papel": "Rei português associado às negociações"
+                        }
+                    ],
+                    "informacoes_adicionais": "O tratado foi mediado com aprovação papal e refletia a disputa marítima entre Portugal e Espanha."
+                },
+                {
+                    "id": 13,
+                    "nome": "Grandes Navegações",
+                    "ano": "c. 1415 d.C. - 1600 d.C.",
+                    "lugar": "Atlântico, África, Ásia e Américas",
+                    "oque_aconteceu": "Europeus, especialmente portugueses e espanhóis, exploraram rotas marítimas em busca de comércio, terras e riquezas.",
+                    "oque_mudou": "Iniciou uma economia mundial conectada, colonização europeia e intensa exploração de povos e recursos.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Vasco da Gama",
+                            "papel": "Navegador português que chegou à Índia por mar"
+                        },
+                        {
+                            "nome": "Cristóvão Colombo",
+                            "papel": "Navegador ligado à chegada europeia à América"
+                        },
+                        {
+                            "nome": "Fernão de Magalhães",
+                            "papel": "Líder da expedição que iniciou a primeira circum-navegação"
+                        }
+                    ],
+                    "informacoes_adicionais": "Instrumentos como bússola, astrolábio e caravelas facilitaram a navegação oceânica."
+                },
+                {
+                    "id": 14,
+                    "nome": "Conquista do Império Asteca",
+                    "ano": "1519 d.C. - 1521 d.C.",
+                    "lugar": "México",
+                    "oque_aconteceu": "Hernán Cortés, com aliados indígenas, conquistou Tenochtitlán e derrubou o Império Asteca.",
+                    "oque_mudou": "A conquista abriu caminho para o domínio espanhol no México e provocou grande destruição demográfica e cultural indígena.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Hernán Cortés",
+                            "papel": "Conquistador espanhol"
+                        },
+                        {
+                            "nome": "Montezuma II",
+                            "papel": "Imperador asteca durante a chegada espanhola"
+                        },
+                        {
+                            "nome": "Malintzin",
+                            "papel": "Intérprete e mediadora indígena"
+                        }
+                    ],
+                    "informacoes_adicionais": "Doenças trazidas pelos europeus agravaram drasticamente a crise das populações indígenas."
+                },
+                {
+                    "id": 15,
+                    "nome": "Conquista do Império Inca",
+                    "ano": "1532 d.C. - 1572 d.C.",
+                    "lugar": "Andes",
+                    "oque_aconteceu": "Francisco Pizarro capturou Atahualpa e iniciou a conquista espanhola do Império Inca.",
+                    "oque_mudou": "A conquista destruiu a estrutura política inca e integrou os Andes ao sistema colonial espanhol.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Francisco Pizarro",
+                            "papel": "Conquistador espanhol"
+                        },
+                        {
+                            "nome": "Atahualpa",
+                            "papel": "Imperador inca capturado pelos espanhóis"
+                        }
+                    ],
+                    "informacoes_adicionais": "Conflitos internos incas facilitaram a vitória espanhola."
+                },
+                {
+                    "id": 16,
+                    "nome": "União Ibérica",
+                    "ano": "1580 d.C. - 1640 d.C.",
+                    "lugar": "Portugal, Espanha e colônias ultramarinas",
+                    "oque_aconteceu": "Portugal e Espanha passaram a ser governados pelo mesmo rei após uma crise sucessória portuguesa.",
+                    "oque_mudou": "A união afetou o Brasil, facilitou ataques de inimigos da Espanha a territórios portugueses e influenciou invasões holandesas.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Filipe II da Espanha",
+                            "papel": "Rei que assumiu também a Coroa portuguesa"
+                        }
+                    ],
+                    "informacoes_adicionais": "A Restauração portuguesa ocorreu em 1640, encerrando a União Ibérica."
+                },
+                {
+                    "id": 17,
+                    "nome": "Invasões Holandesas no Brasil",
+                    "ano": "1624 d.C. - 1654 d.C.",
+                    "lugar": "Bahia e Pernambuco",
+                    "oque_aconteceu": "Holandeses tentaram controlar áreas produtoras de açúcar no Brasil, especialmente no Nordeste.",
+                    "oque_mudou": "Ocupações holandesas afetaram economia açucareira, urbanização de Recife e conflitos coloniais no Atlântico.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Maurício de Nassau",
+                            "papel": "Governador holandês em Pernambuco"
+                        },
+                        {
+                            "nome": "Companhia das Índias Ocidentais",
+                            "papel": "Empresa holandesa envolvida na ocupação"
+                        }
+                    ],
+                    "informacoes_adicionais": "A Insurreição Pernambucana contribuiu para expulsar os holandeses em 1654."
+                },
+                {
+                    "id": 18,
+                    "nome": "Guerra dos Trinta Anos",
+                    "ano": "1618 d.C. - 1648 d.C.",
+                    "lugar": "Europa Central",
+                    "oque_aconteceu": "Conflito religioso e político envolveu estados católicos e protestantes, especialmente no Sacro Império.",
+                    "oque_mudou": "Devastou regiões da Europa, enfraqueceu o Sacro Império e fortaleceu a ideia de soberania estatal.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Fernando II",
+                            "papel": "Imperador católico ligado ao início do conflito"
+                        },
+                        {
+                            "nome": "Gustavo Adolfo",
+                            "papel": "Rei sueco protestante que interveio na guerra"
+                        },
+                        {
+                            "nome": "Cardeal Richelieu",
+                            "papel": "Político francês que apoiou interesses contra os Habsburgo"
+                        }
+                    ],
+                    "informacoes_adicionais": "A Paz de Vestfália, em 1648, é considerada marco importante das relações internacionais modernas."
+                },
+                {
+                    "id": 19,
+                    "nome": "Absolutismo francês de Luís XIV",
+                    "ano": "1643 d.C. - 1715 d.C.",
+                    "lugar": "França",
+                    "oque_aconteceu": "Luís XIV centralizou o poder real, fortaleceu o Estado francês e transformou Versalhes em símbolo do absolutismo.",
+                    "oque_mudou": "Consolidou o modelo de monarquia absoluta, com forte controle da nobreza, administração centralizada e propaganda real.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Luís XIV",
+                            "papel": "Rei da França conhecido como Rei Sol"
+                        },
+                        {
+                            "nome": "Jean-Baptiste Colbert",
+                            "papel": "Ministro ligado ao mercantilismo francês"
+                        }
+                    ],
+                    "informacoes_adicionais": "A frase 'O Estado sou eu' é tradicionalmente associada a Luís XIV, embora sua autenticidade seja debatida."
+                },
+                {
+                    "id": 20,
+                    "nome": "Inconfidência Mineira",
+                    "ano": "1789 d.C.",
+                    "lugar": "Vila Rica, Minas Gerais",
+                    "oque_aconteceu": "Elite colonial mineira organizou uma conspiração contra a cobrança de impostos portugueses e o domínio metropolitano.",
+                    "oque_mudou": "O movimento não chegou a se concretizar, mas tornou-se símbolo da luta contra o domínio colonial no Brasil.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Tiradentes",
+                            "papel": "Participante executado e transformado em símbolo republicano"
+                        },
+                        {
+                            "nome": "Tomás Antônio Gonzaga",
+                            "papel": "Intelectual e inconfidente"
+                        },
+                        {
+                            "nome": "Cláudio Manuel da Costa",
+                            "papel": "Poeta e participante do movimento"
+                        }
+                    ],
+                    "informacoes_adicionais": "A derrama, cobrança forçada de impostos atrasados, foi um dos fatores de tensão em Minas Gerais."
                 }
             ]
         },
@@ -497,220 +1501,482 @@
                 {
                     "id": 1,
                     "nome": "Revolução Francesa",
-                    "ano": "1789-1799 d.C.",
+                    "ano": "1789 d.C. - 1799 d.C.",
                     "lugar": "França",
-                    "oque_aconteceu": "O povo francês, inspirado pelo Iluminismo, revoltou-se contra o absolutismo e a desigualdade, tomando a Bastilha em 14 de julho de 1789 e proclamando os Direitos do Homem e do Cidadão.",
-                    "oque_mudou": "Fim do Antigo Regime, ascensão da burguesia, disseminação dos ideais de liberdade, igualdade e fraternidade, inspiração para revoluções na Europa e América Latina, e surgimento de Napoleão Bonaparte.",
+                    "oque_aconteceu": "A população francesa, influenciada pelo Iluminismo e pela crise social, revoltou-se contra o absolutismo e os privilégios do Antigo Regime.",
+                    "oque_mudou": "A revolução derrubou estruturas feudais, fortaleceu a burguesia e espalhou ideais de liberdade, igualdade e cidadania.",
                     "figuras_principais": [
-                        {"nome": "Maximilien Robespierre", "papel": "Líder jacobino durante o Terror"},
-                        {"nome": "Napoleão Bonaparte", "papel": "General que tomou o poder em 1799"},
-                        {"nome": "Marquês de Lafayette", "papel": "Herói da independência americana e líder revolucionário"}
+                        {
+                            "nome": "Maximilien Robespierre",
+                            "papel": "Líder jacobino durante o Terror"
+                        },
+                        {
+                            "nome": "Napoleão Bonaparte",
+                            "papel": "General que tomou o poder em 1799"
+                        },
+                        {
+                            "nome": "Marquês de Lafayette",
+                            "papel": "Líder revolucionário e defensor de direitos"
+                        }
                     ],
-                    "informacoes_adicionais": "A Declaração dos Direitos do Homem e do Cidadão influenciou a Declaração Universal dos Direitos Humanos da ONU em 1948. A Revolução aboliu a escravidão (1794, restaurada por Napoleão em 1802, abolida definitivamente em 1848)."
+                    "informacoes_adicionais": "A Tomada da Bastilha, em 14 de julho de 1789, tornou-se símbolo da Revolução Francesa."
                 },
                 {
                     "id": 2,
                     "nome": "Era Napoleônica",
-                    "ano": "1799-1815 d.C.",
+                    "ano": "1799 d.C. - 1815 d.C.",
                     "lugar": "Europa",
-                    "oque_aconteceu": "Napoleão Bonaparte tornou-se cônsul (1799) e depois imperador (1804). Conquistou grande parte da Europa, impôs o Código Napoleônico, mas foi derrotado na Rússia (1812) e em Waterloo (1815).",
-                    "oque_mudou": "Disseminação de ideias revolucionárias (igualdade perante a lei, propriedade privada, fim dos privilégios feudais), despertar do nacionalismo, redesenho do mapa da Europa no Congresso de Viena (1815), e venda da Louisiana para os EUA (1803).",
+                    "oque_aconteceu": "Napoleão Bonaparte assumiu o poder na França, tornou-se imperador e conquistou grande parte da Europa.",
+                    "oque_mudou": "Espalhou reformas legais e administrativas, estimulou nacionalismos e redesenhou o mapa europeu.",
                     "figuras_principais": [
-                        {"nome": "Napoleão Bonaparte", "papel": "Imperador francês"},
-                        {"nome": "Duque de Wellington", "papel": "Comandante britânico em Waterloo"},
-                        {"nome": "Czar Alexandre I", "papel": "Líder russo na Campanha de 1812"}
+                        {
+                            "nome": "Napoleão Bonaparte",
+                            "papel": "Imperador francês"
+                        },
+                        {
+                            "nome": "Duque de Wellington",
+                            "papel": "Comandante britânico em Waterloo"
+                        },
+                        {
+                            "nome": "Czar Alexandre I",
+                            "papel": "Líder russo na Campanha de 1812"
+                        }
                     ],
-                    "informacoes_adicionais": "O Código Napoleônico influenciou o direito civil de muitos países, incluindo Brasil e Quebec (Canadá). Napoleão morreu exilado na ilha de Santa Helena em 1821."
+                    "informacoes_adicionais": "Napoleão foi derrotado definitivamente em Waterloo, em 1815."
                 },
                 {
                     "id": 3,
                     "nome": "Independências na América Latina",
-                    "ano": "1808-1826 d.C.",
+                    "ano": "1808 d.C. - 1826 d.C.",
                     "lugar": "América Espanhola e Portuguesa",
-                    "oque_aconteceu": "A invasão napoleônica da Espanha e Portugal enfraqueceu os impérios coloniais. Líderes como Simón Bolívar, José de San Martín e Dom Pedro I lideraram movimentos de independência.",
-                    "oque_mudou": "Surgimento de 18 novas nações na América Latina (Brasil, Argentina, México, Colômbia, Venezuela, etc.), fim do monopólio colonial, instabilidade política, caudilhismo, e manutenção da estrutura social desigual.",
+                    "oque_aconteceu": "A crise dos impérios ibéricos abriu espaço para movimentos de independência liderados por elites locais e líderes militares.",
+                    "oque_mudou": "Surgiram novas nações na América Latina, mas muitas mantiveram desigualdades sociais e instabilidade política.",
                     "figuras_principais": [
-                        {"nome": "Simón Bolívar", "papel": "Líder das independências do norte da América do Sul"},
-                        {"nome": "José de San Martín", "papel": "Líder das independências do sul (Argentina, Chile, Peru)"},
-                        {"nome": "Dom Pedro I", "papel": "Primeiro imperador do Brasil independente (1822)"},
-                        {"nome": "Miguel Hidalgo", "papel": "Líder da independência do México (1810)"}
+                        {
+                            "nome": "Simón Bolívar",
+                            "papel": "Líder das independências no norte da América do Sul"
+                        },
+                        {
+                            "nome": "José de San Martín",
+                            "papel": "Líder das independências no sul"
+                        },
+                        {
+                            "nome": "Dom Pedro I",
+                            "papel": "Primeiro imperador do Brasil independente"
+                        },
+                        {
+                            "nome": "Miguel Hidalgo",
+                            "papel": "Líder inicial da independência mexicana"
+                        }
                     ],
-                    "informacoes_adicionais": "Bolívar sonhava com uma federação latino-americana (Grã-Colômbia), mas se desfez em 1830. O Haiti tornou-se independente em 1804 (primeira república negra)."
+                    "informacoes_adicionais": "O Haiti tornou-se independente em 1804, antes da maioria dos países latino-americanos."
                 },
                 {
                     "id": 4,
                     "nome": "Primavera dos Povos (Revoluções de 1848)",
                     "ano": "1848 d.C.",
-                    "lugar": "Europa (França, Alemanha, Itália, Áustria, Hungria)",
-                    "oque_aconteceu": "Onda de revoluções liberais e nacionalistas contra monarquias absolutas e conservadoras. Na França, a monarquia de Luís Felipe foi derrubada e a Segunda República proclamada.",
-                    "oque_mudou": "Fim da servidão na Áustria e Hungria, abolição da escravidão nas colônias francesas, sufrágio universal masculino na França (curto período), e ascensão do nacionalismo alemão e italiano, levando às unificações (1871).",
+                    "lugar": "Europa",
+                    "oque_aconteceu": "Revoluções liberais, nacionalistas e sociais ocorreram em várias regiões europeias.",
+                    "oque_mudou": "Apesar de muitas derrotas imediatas, os movimentos pressionaram monarquias e fortaleceram ideias nacionalistas e liberais.",
                     "figuras_principais": [
-                        {"nome": "Luís Napoleão Bonaparte", "papel": "Eleito presidente da França (1848), depois imperador Napoleão III"},
-                        {"nome": "Karl Marx", "papel": "Publicou o Manifesto Comunista em 1848"},
-                        {"nome": "Lajos Kossuth", "papel": "Líder da revolução húngara"}
+                        {
+                            "nome": "Luís Napoleão Bonaparte",
+                            "papel": "Eleito presidente da França em 1848"
+                        },
+                        {
+                            "nome": "Karl Marx",
+                            "papel": "Autor do Manifesto Comunista em 1848"
+                        },
+                        {
+                            "nome": "Lajos Kossuth",
+                            "papel": "Líder da revolução húngara"
+                        }
                     ],
-                    "informacoes_adicionais": "Apesar de derrotadas em quase toda parte, as revoluções de 1848 foram o primeiro levante europeu simultâneo e abalaram a ordem da Restauração (Congresso de Viena)."
+                    "informacoes_adicionais": "1848 foi um dos anos mais turbulentos da política europeia do século XIX."
                 },
                 {
                     "id": 5,
                     "nome": "Unificação da Alemanha",
-                    "ano": "1864-1871 d.C.",
+                    "ano": "1864 d.C. - 1871 d.C.",
                     "lugar": "Alemanha",
-                    "oque_aconteceu": "O ministro prussiano Otto von Bismarck, através de 'guerras e discursos', liderou a unificação alemã: Guerra dos Ducados (1864, vs Dinamarca), Guerra Austro-Prussiana (1866), e Guerra Franco-Prussiana (1870-1871).",
-                    "oque_mudou": "Criação do Império Alemão (II Reich) em 1871 no Palácio de Versalhes, humilhação da França (perda da Alsácia-Lorena), equilíbrio de poder europeu alterado, e ascensão da Alemanha como potência industrial e militar.",
+                    "oque_aconteceu": "A Prússia, liderada por Bismarck, conduziu guerras e negociações que unificaram os estados alemães.",
+                    "oque_mudou": "Surgiu o Império Alemão, alterando o equilíbrio de poder europeu e aumentando tensões com a França.",
                     "figuras_principais": [
-                        {"nome": "Otto von Bismarck", "papel": "Chanceler prussiano, 'arquiteto' da unificação"},
-                        {"nome": "Guilherme I", "papel": "Rei da Prússia e primeiro imperador alemão"}
+                        {
+                            "nome": "Otto von Bismarck",
+                            "papel": "Chanceler prussiano e arquiteto da unificação"
+                        },
+                        {
+                            "nome": "Guilherme I",
+                            "papel": "Primeiro imperador alemão"
+                        }
                     ],
-                    "informacoes_adicionais": "A França declarou guerra (1870) devido a uma 'manipulação' de Bismarck do telegrama de Ems. O Império Alemão durou até 1918."
+                    "informacoes_adicionais": "O Império Alemão foi proclamado no Palácio de Versalhes em 1871."
                 },
                 {
                     "id": 6,
                     "nome": "Revolução Industrial (2ª fase)",
-                    "ano": "1870-1914 d.C.",
-                    "lugar": "Europa, EUA, Japão",
-                    "oque_aconteceu": "Novas tecnologias: eletricidade (Edison, Tesla, Westinghouse), petróleo (motor de combustão interna, Daimler, Benz), aço (processo Bessemer), linha de montagem (Ford, 1913), telégrafo, telefone (Bell), rádio (Marconi).",
-                    "oque_mudou": "Produção em massa, surgimento de grandes corporações (Rockefeller, Carnegie), urbanização acelerada, automóvel, avião (Irmãos Wright, 1903), cinema, quarentena redução de doenças infecciosas, e imperialismo para matérias-primas (petróleo, borracha, cobre).",
+                    "ano": "1870 d.C. - 1914 d.C.",
+                    "lugar": "Europa, EUA e Japão",
+                    "oque_aconteceu": "Eletricidade, aço, petróleo, motor de combustão, telefone, rádio e linha de montagem transformaram a produção.",
+                    "oque_mudou": "A produção em massa cresceu, grandes corporações surgiram e a disputa por matérias-primas intensificou o imperialismo.",
                     "figuras_principais": [
-                        {"nome": "Thomas Edison", "papel": "Lâmpada elétrica, fonógrafo"},
-                        {"nome": "Nikola Tesla", "papel": "Corrente alternada, motor elétrico"},
-                        {"nome": "Henry Ford", "papel": "Linha de montagem, Ford T (1908)"},
-                        {"nome": "Karl Benz", "papel": "Primeiro automóvel com motor de combustão (1886)"}
+                        {
+                            "nome": "Thomas Edison",
+                            "papel": "Inventor e empresário ligado à eletricidade"
+                        },
+                        {
+                            "nome": "Nikola Tesla",
+                            "papel": "Inventor ligado à corrente alternada"
+                        },
+                        {
+                            "nome": "Henry Ford",
+                            "papel": "Popularizador da linha de montagem"
+                        },
+                        {
+                            "nome": "Karl Benz",
+                            "papel": "Pioneiro do automóvel moderno"
+                        }
                     ],
-                    "informacoes_adicionais": "A produção de aço passou de 500.000 toneladas em 1860 para 28 milhões em 1900. O Ford T, produzido entre 1908 e 1927, vendeu 15 milhões de unidades, democratizando o carro."
+                    "informacoes_adicionais": "A Segunda Revolução Industrial mudou transportes, comunicação, guerra e vida urbana."
                 },
                 {
                     "id": 7,
                     "nome": "Imperialismo e Partilha da África",
-                    "ano": "1881-1914 d.C.",
-                    "lugar": "África, Ásia, Oceania",
-                    "oque_aconteceu": "Potências europeias (Reino Unido, França, Alemanha, Bélgica, Portugal, Itália) dividiram quase toda a África na Conferência de Berlim (1884-1885). Na Ásia, a Índia britânica, Indochina francesa e o desmembramento da China.",
-                    "oque_mudou": "Exploração de recursos (diamantes, ouro, borracha, marfim), genocídio no Estado Livre do Congo (10 milhões de mortos), imposição de fronteiras artificiais, missões cristãs e educação ocidental, resistência anticolonial (Expedição dos Ashanti, Guerra Zulu).",
+                    "ano": "1881 d.C. - 1914 d.C.",
+                    "lugar": "África, Ásia e Oceania",
+                    "oque_aconteceu": "Potências europeias dividiram territórios africanos e asiáticos em busca de matérias-primas, mercados e prestígio.",
+                    "oque_mudou": "Gerou exploração econômica, fronteiras artificiais, violência colonial e resistências anticoloniais.",
                     "figuras_principais": [
-                        {"nome": "Leopoldo II", "papel": "Rei belga que explorou o Congo como propriedade privada"},
-                        {"nome": "Cecil Rhodes", "papel": "Imperialista britânico na África Austral (Rodésia)"},
-                        {"nome": "Otto von Bismarck", "papel": "Organizador da Conferência de Berlim"}
+                        {
+                            "nome": "Leopoldo II",
+                            "papel": "Rei belga ligado à exploração do Congo"
+                        },
+                        {
+                            "nome": "Cecil Rhodes",
+                            "papel": "Imperialista britânico na África Austral"
+                        },
+                        {
+                            "nome": "Otto von Bismarck",
+                            "papel": "Organizador da Conferência de Berlim"
+                        }
                     ],
-                    "informacoes_adicionais": "Em 1914, apenas Libéria e Etiópia permaneciam independentes na África. 'O sol nunca se põe no Império Britânico' (cobria 25% da Terra)."
+                    "informacoes_adicionais": "A Conferência de Berlim, de 1884 a 1885, regulou a partilha colonial da África entre potências europeias."
                 },
                 {
                     "id": 8,
                     "nome": "Primeira Guerra Mundial",
-                    "ano": "1914-1918 d.C.",
-                    "lugar": "Principalmente Europa (trincheiras da França, Bélgica, Rússia, Itália e Bálcãs)",
-                    "oque_aconteceu": "O assassinato do arquiduque Francisco Ferdinando (Áustria) desencadeou alianças militares (Tríplice Entente vs Tríplice Aliança). A guerra de trincheiras, com novas tecnologias (metralhadoras, tanques, aviões, gás tóxico), matou cerca de 20 milhões.",
-                    "oque_mudou": "Fim dos impérios Alemão, Austro-Húngaro, Otomano e Russo, surgimento de novos países (Polônia, Tchecoslováquia, Iugoslávia), criação da Liga das Nações, crise econômica na Europa e ascensão dos EUA como potência.",
+                    "ano": "1914 d.C. - 1918 d.C.",
+                    "lugar": "Principalmente Europa",
+                    "oque_aconteceu": "O assassinato de Francisco Ferdinando desencadeou alianças militares e uma guerra marcada por trincheiras, metralhadoras, tanques, aviões e gás tóxico.",
+                    "oque_mudou": "A guerra derrubou impérios, redesenhou fronteiras, criou a Liga das Nações e fortaleceu os Estados Unidos como potência.",
                     "figuras_principais": [
-                        {"nome": "Francisco Ferdinando", "papel": "Arquiduque austríaco cujo assassinato iniciou a guerra"},
-                        {"nome": "Woodrow Wilson", "papel": "Presidente dos EUA que propôs os 14 Pontos e a Liga das Nações"},
-                        {"nome": "Kaiser Guilherme II", "papel": "Imperador alemão que abdicou no fim da guerra"}
+                        {
+                            "nome": "Francisco Ferdinando",
+                            "papel": "Arquiduque austríaco cujo assassinato iniciou a crise"
+                        },
+                        {
+                            "nome": "Woodrow Wilson",
+                            "papel": "Presidente dos EUA que propôs os 14 Pontos"
+                        },
+                        {
+                            "nome": "Kaiser Guilherme II",
+                            "papel": "Imperador alemão que abdicou no fim da guerra"
+                        }
                     ],
-                    "informacoes_adicionais": "A guerra terminou em 11 de novembro de 1918 às 11h. O Tratado de Versalhes (1919) impôs duras condições à Alemanha, alimentando o revanchismo que levaria à Segunda Guerra."
+                    "informacoes_adicionais": "O armistício foi assinado em 11 de novembro de 1918."
                 },
                 {
                     "id": 9,
                     "nome": "Revolução Russa e criação da URSS",
                     "ano": "1917 d.C.",
                     "lugar": "Rússia",
-                    "oque_aconteceu": "A Revolução de Fevereiro depôs o czar Nicolau II. A Revolução de Outubro, liderada por Lenin e os bolcheviques, tomou o poder, estabelecendo o primeiro estado socialista do mundo.",
-                    "oque_mudou": "Criação da União das Repúblicas Socialistas Soviéticas (URSS) em 1922, inspiração para movimentos comunistas globais, retirada da Rússia da Primeira Guerra e polarização ideológica que levaria à Guerra Fria.",
+                    "oque_aconteceu": "A Revolução de Fevereiro derrubou o czar e a Revolução de Outubro levou os bolcheviques ao poder.",
+                    "oque_mudou": "Criou o primeiro Estado socialista duradouro, inspirou movimentos comunistas e alterou a política mundial.",
                     "figuras_principais": [
-                        {"nome": "Vladimir Lenin", "papel": "Líder da Revolução de Outubro e primeiro governante da URSS"},
-                        {"nome": "Leon Trotsky", "papel": "Organizador do Exército Vermelho"},
-                        {"nome": "Josef Stalin", "papel": "Sucessor de Lenin que transformou a URSS em superpotência"},
-                        {"nome": "Nicolau II", "papel": "Último czar da Rússia (executado em 1918)"}
+                        {
+                            "nome": "Vladimir Lenin",
+                            "papel": "Líder bolchevique"
+                        },
+                        {
+                            "nome": "Leon Trotsky",
+                            "papel": "Organizador do Exército Vermelho"
+                        },
+                        {
+                            "nome": "Josef Stalin",
+                            "papel": "Sucessor de Lenin"
+                        },
+                        {
+                            "nome": "Nicolau II",
+                            "papel": "Último czar da Rússia"
+                        }
                     ],
-                    "informacoes_adicionais": "A família real russa foi executada pelos bolcheviques em 1918. A URSS durou até 1991."
+                    "informacoes_adicionais": "A URSS foi criada formalmente em 1922 e existiu até 1991."
                 },
                 {
                     "id": 10,
                     "nome": "Grande Depressão",
-                    "ano": "1929-1939 d.C.",
-                    "lugar": "Mundial (iniciada nos EUA)",
-                    "oque_aconteceu": "A quebra da Bolsa de Valores de Nova York em outubro de 1929 (Quinta-Feira Negra) desencadeou uma crise econômica global, com queda drástica da produção, desemprego em massa (25% nos EUA) e falências bancárias.",
-                    "oque_mudou": "Ascensão do intervencionismo estatal (New Deal de Franklin Roosevelt), surgimento do fascismo e nazismo como alternativas, protecionismo comercial, e contribuição direta para a Segunda Guerra Mundial.",
+                    "ano": "1929 d.C. - 1939 d.C.",
+                    "lugar": "Mundial, iniciada nos EUA",
+                    "oque_aconteceu": "A quebra da Bolsa de Nova York desencadeou crise econômica mundial, desemprego em massa e falências.",
+                    "oque_mudou": "A crise fortaleceu o intervencionismo estatal, o New Deal e contribuiu para instabilidades que antecederam a Segunda Guerra.",
                     "figuras_principais": [
-                        {"nome": "Franklin D. Roosevelt", "papel": "Presidente dos EUA que implementou o New Deal"},
-                        {"nome": "Herbert Hoover", "papel": "Presidente dos EUA no início da crise, visto como omisso"},
-                        {"nome": "John Maynard Keynes", "papel": "Economista que defendeu a intervenção estatal na economia"}
+                        {
+                            "nome": "Franklin D. Roosevelt",
+                            "papel": "Presidente dos EUA que implementou o New Deal"
+                        },
+                        {
+                            "nome": "Herbert Hoover",
+                            "papel": "Presidente dos EUA no início da crise"
+                        },
+                        {
+                            "nome": "John Maynard Keynes",
+                            "papel": "Economista defensor da intervenção estatal"
+                        }
                     ],
-                    "informacoes_adicionais": "O PIB dos EUA caiu 30% entre 1929 e 1933. O desemprego atingiu 25 milhões de pessoas nos países industrializados."
+                    "informacoes_adicionais": "O desemprego atingiu níveis altíssimos em vários países industrializados."
                 },
                 {
                     "id": 11,
                     "nome": "Ascensão do Nazismo e Fascismo",
-                    "ano": "1922-1933 d.C.",
-                    "lugar": "Itália, Alemanha",
-                    "oque_aconteceu": "Benito Mussolini tornou-se primeiro-ministro da Itália em 1922 (Marcha sobre Roma). Adolf Hitler foi nomeado chanceler da Alemanha em 1933 (Incêndio do Reichstag) e rapidamente estabeleceu uma ditadura.",
-                    "oque_mudou": "Instauração de regimes totalitários: partido único, culto ao líder, propaganda, polícia secreta (Gestapo, OVRA), perseguição a judeus (Nuremberg, 1935), rearmamento alemão (violando Versalhes), e expansão territorial agressiva (Anschluss da Áustria, 1938; invasão da Polônia, 1939).",
+                    "ano": "1922 d.C. - 1933 d.C.",
+                    "lugar": "Itália e Alemanha",
+                    "oque_aconteceu": "Mussolini chegou ao poder na Itália e Hitler tornou-se chanceler da Alemanha, consolidando regimes totalitários.",
+                    "oque_mudou": "A ascensão desses regimes levou à perseguição política e racial, militarização e expansão territorial agressiva.",
                     "figuras_principais": [
-                        {"nome": "Adolf Hitler", "papel": "Líder da Alemanha nazista (Führer)"},
-                        {"nome": "Benito Mussolini", "papel": "Líder da Itália fascista (Duce)"},
-                        {"nome": "Francisco Franco", "papel": "Ditador espanhol (Guerra Civil de 1936-1939)"}
+                        {
+                            "nome": "Adolf Hitler",
+                            "papel": "Líder da Alemanha nazista"
+                        },
+                        {
+                            "nome": "Benito Mussolini",
+                            "papel": "Líder da Itália fascista"
+                        },
+                        {
+                            "nome": "Francisco Franco",
+                            "papel": "Ditador espanhol ligado ao contexto fascista europeu"
+                        }
                     ],
-                    "informacoes_adicionais": "Mein Kampf ('Minha Luta'), escrito por Hitler na prisão (1924), expôs sua ideologia racista e expansionista. As Leis de Nuremberg (1935) privaram judeus da cidadania alemã."
+                    "informacoes_adicionais": "A crise econômica e o ressentimento pós-Primeira Guerra ajudaram o crescimento desses movimentos."
                 },
                 {
                     "id": 12,
                     "nome": "Segunda Guerra Mundial",
-                    "ano": "1939-1945 d.C.",
-                    "lugar": "Europa, Ásia (Pacífico), África e Atlântico",
-                    "oque_aconteceu": "A invasão da Polônia pela Alemanha nazista (1º de setembro de 1939) desencadeou o conflito global entre Aliados (Reino Unido, URSS, EUA, China) e Eixo (Alemanha, Itália, Japão). Incluiu o Holocausto (6 milhões de judeus mortos), bombardeios estratégicos e bombas atômicas em Hiroshima e Nagasaki.",
-                    "oque_mudou": "Cerca de 70-85 milhões de mortos (a maioria civis), fim do nazismo, criação da Organização das Nações Unidas (ONU), início da Guerra Fria, divisão da Alemanha, independência de colônias na Ásia e África, e ascensão dos EUA e URSS como superpotências.",
+                    "ano": "1939 d.C. - 1945 d.C.",
+                    "lugar": "Europa, Ásia, África, Atlântico e Pacífico",
+                    "oque_aconteceu": "A invasão da Polônia pela Alemanha nazista desencadeou uma guerra global entre Aliados e Eixo.",
+                    "oque_mudou": "Causou dezenas de milhões de mortes, destruiu o nazismo, criou a ONU e iniciou a Guerra Fria.",
                     "figuras_principais": [
-                        {"nome": "Adolf Hitler", "papel": "Líder da Alemanha nazista (suicidou-se em 1945)"},
-                        {"nome": "Winston Churchill", "papel": "Primeiro-ministro do Reino Unido"},
-                        {"nome": "Franklin D. Roosevelt", "papel": "Presidente dos EUA (morreu em 1945)"},
-                        {"nome": "Josef Stalin", "papel": "Líder da URSS"},
-                        {"nome": "Harry S. Truman", "papel": "Presidente dos EUA que autorizou as bombas atômicas"}
+                        {
+                            "nome": "Adolf Hitler",
+                            "papel": "Líder da Alemanha nazista"
+                        },
+                        {
+                            "nome": "Winston Churchill",
+                            "papel": "Primeiro-ministro do Reino Unido"
+                        },
+                        {
+                            "nome": "Franklin D. Roosevelt",
+                            "papel": "Presidente dos EUA durante a maior parte da guerra"
+                        },
+                        {
+                            "nome": "Josef Stalin",
+                            "papel": "Líder da URSS"
+                        },
+                        {
+                            "nome": "Harry S. Truman",
+                            "papel": "Presidente dos EUA no final da guerra"
+                        }
                     ],
-                    "informacoes_adicionais": "O Dia D (6 de junho de 1944) foi a maior invasão anfíbia da história. A guerra terminou na Europa em 8 de maio de 1945 e no Pacífico em 2 de setembro de 1945."
+                    "informacoes_adicionais": "A guerra terminou na Europa em maio de 1945 e no Pacífico em setembro de 1945."
                 },
                 {
                     "id": 13,
                     "nome": "Guerra Fria",
-                    "ano": "1947-1991 d.C.",
-                    "lugar": "Mundial (EUA vs URSS)",
-                    "oque_aconteceu": "Conflito ideológico, político e militar indireto entre os EUA (capitalismo/democracia) e a URSS (comunismo/partido único). Incluiu corrida armamentista (arsenal nuclear), corrida espacial, espionagem, guerras por procuração (Coreia, Vietnã, Afeganistão) e a construção do Muro de Berlim (1961).",
-                    "oque_mudou": "Divisão do mundo em dois blocos (OTAN vs Pacto de Varsóvia), ameaça de aniquilação nuclear, avanços tecnológicos (foguetes, satélites, internet), descolonização da África e Ásia, queda do Muro de Berlim (1989) e dissolução da URSS (1991), com vitória do capitalismo liberal.",
+                    "ano": "1947 d.C. - 1991 d.C.",
+                    "lugar": "Mundial",
+                    "oque_aconteceu": "EUA e URSS disputaram influência global por meio de ideologia, armas, espionagem, tecnologia e guerras indiretas.",
+                    "oque_mudou": "O mundo foi dividido em blocos, houve corrida nuclear e espacial, conflitos por procuração e grandes transformações tecnológicas.",
                     "figuras_principais": [
-                        {"nome": "Harry S. Truman", "papel": "Presidente dos EUA que lançou a Doutrina Truman (1947)"},
-                        {"nome": "Josef Stalin", "papel": "Líder soviético no início da Guerra Fria"},
-                        {"nome": "John F. Kennedy", "papel": "Presidente dos EUA durante a Crise dos Mísseis de Cuba (1962)"},
-                        {"nome": "Ronald Reagan", "papel": "Presidente dos EUA que intensificou a corrida armamentista"},
-                        {"nome": "Mikhail Gorbachev", "papel": "Líder soviético cujas reformas (glasnost e perestroika) levaram ao fim da URSS"}
+                        {
+                            "nome": "Harry S. Truman",
+                            "papel": "Presidente dos EUA no início da Guerra Fria"
+                        },
+                        {
+                            "nome": "Josef Stalin",
+                            "papel": "Líder soviético no começo do conflito"
+                        },
+                        {
+                            "nome": "John F. Kennedy",
+                            "papel": "Presidente dos EUA na Crise dos Mísseis"
+                        },
+                        {
+                            "nome": "Ronald Reagan",
+                            "papel": "Presidente dos EUA no fim da Guerra Fria"
+                        },
+                        {
+                            "nome": "Mikhail Gorbachev",
+                            "papel": "Líder soviético das reformas finais"
+                        }
                     ],
-                    "informacoes_adicionais": "A Crise dos Mísseis de Cuba (1962) foi o momento mais próximo de uma guerra nuclear. A corrida espacial levou o homem à Lua em 1969 (Apollo 11)."
+                    "informacoes_adicionais": "A queda do Muro de Berlim e o fim da URSS simbolizaram o encerramento da Guerra Fria."
                 },
                 {
                     "id": 14,
                     "nome": "Descolonização da África e Ásia",
-                    "ano": "1945-1975 d.C.",
-                    "lugar": "África, Ásia",
-                    "oque_aconteceu": "Índia (1947, Gandhi), Indonésia (1949), Argélia (1962, guerra sangrenta), e dezenas de nações africanas (1960: 'Ano da África', com 17 independências).",
-                    "oque_mudou": "Surgimento de mais de 100 novos estados, Guerra Fria se estendendo ao Terceiro Mundo (guerras civis patrocinadas por EUA/URSS), neocolonialismo (dependência econômica), e migração de ex-coloniais para as metrópoles.",
+                    "ano": "1945 d.C. - 1975 d.C.",
+                    "lugar": "África e Ásia",
+                    "oque_aconteceu": "Colônias europeias conquistaram independência após a Segunda Guerra Mundial, muitas vezes por negociações ou guerras.",
+                    "oque_mudou": "Surgiram novos Estados, mas muitos enfrentaram neocolonialismo, conflitos internos e disputas da Guerra Fria.",
                     "figuras_principais": [
-                        {"nome": "Mahatma Gandhi", "papel": "Líder da independência indiana (assassinado em 1948)"},
-                        {"nome": "Kwame Nkrumah", "papel": "Primeiro presidente de Gana (1957)"},
-                        {"nome": "Ho Chi Minh", "papel": "Líder da independência do Vietnã"}
+                        {
+                            "nome": "Mahatma Gandhi",
+                            "papel": "Líder da independência indiana"
+                        },
+                        {
+                            "nome": "Kwame Nkrumah",
+                            "papel": "Primeiro presidente de Gana"
+                        },
+                        {
+                            "nome": "Ho Chi Minh",
+                            "papel": "Líder vietnamita"
+                        }
                     ],
-                    "informacoes_adicionais": "O Império Britânico, que em 1920 cobria 25% da Terra, retirou-se da maioria de suas colônias na década de 1960. Portugal, sob o Estado Novo, resistiu até a Revolução dos Cravos (1974)."
+                    "informacoes_adicionais": "O ano de 1960 ficou conhecido como Ano da África por causa do grande número de independências."
                 },
                 {
                     "id": 15,
                     "nome": "Revolução Digital e Internet",
-                    "ano": "1970-presente d.C.",
-                    "lugar": "Mundial (iniciada nos EUA)",
-                    "oque_aconteceu": "Desenvolvimento do microprocessador (1971), do computador pessoal (1970s-80s), da internet pública (1991), da world wide web (1993), dos smartphones (2007) e da inteligência artificial (2010s-2020s).",
-                    "oque_mudou": "Revolução na comunicação, comércio, educação e trabalho; globalização instantânea; redes sociais; economia digital (e-commerce, criptomoedas); desinformação; privacidade; automação e novas formas de emprego.",
+                    "ano": "1970 d.C. - presente",
+                    "lugar": "Mundial",
+                    "oque_aconteceu": "Microprocessadores, computadores pessoais, internet, web, smartphones e inteligência artificial transformaram a vida cotidiana.",
+                    "oque_mudou": "Mudou comunicação, comércio, educação, trabalho, cultura, privacidade e circulação de informações.",
                     "figuras_principais": [
-                        {"nome": "Tim Berners-Lee", "papel": "Inventor da world wide web"},
-                        {"nome": "Bill Gates", "papel": "Fundador da Microsoft"},
-                        {"nome": "Steve Jobs", "papel": "Co-fundador da Apple"},
-                        {"nome": "Mark Zuckerberg", "papel": "Fundador do Facebook"},
-                        {"nome": "Elon Musk", "papel": "Empreendedor (Tesla, SpaceX)"}
+                        {
+                            "nome": "Tim Berners-Lee",
+                            "papel": "Inventor da World Wide Web"
+                        },
+                        {
+                            "nome": "Bill Gates",
+                            "papel": "Fundador da Microsoft"
+                        },
+                        {
+                            "nome": "Steve Jobs",
+                            "papel": "Co-fundador da Apple"
+                        },
+                        {
+                            "nome": "Mark Zuckerberg",
+                            "papel": "Fundador do Facebook"
+                        },
+                        {
+                            "nome": "Elon Musk",
+                            "papel": "Empreendedor ligado à tecnologia contemporânea"
+                        }
                     ],
-                    "informacoes_adicionais": "Em 2024, cerca de 5.4 bilhões de pessoas (67% da população mundial) usavam a internet. A inteligência artificial generativa (ChatGPT, 2022) representa nova revolução."
+                    "informacoes_adicionais": "A inteligência artificial generativa se tornou um dos temas centrais da tecnologia no século XXI."
+                },
+                {
+                    "id": 16,
+                    "nome": "Independência do Brasil",
+                    "ano": "1822 d.C.",
+                    "lugar": "Brasil",
+                    "oque_aconteceu": "Dom Pedro proclamou a independência do Brasil em relação a Portugal, tornando-se depois imperador.",
+                    "oque_mudou": "O Brasil deixou de ser colônia portuguesa, mas manteve a monarquia, a escravidão e muitas estruturas sociais coloniais.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Dom Pedro I",
+                            "papel": "Proclamador da independência e primeiro imperador do Brasil"
+                        },
+                        {
+                            "nome": "José Bonifácio",
+                            "papel": "Articulador político da independência"
+                        }
+                    ],
+                    "informacoes_adicionais": "A independência foi reconhecida por Portugal em 1825."
+                },
+                {
+                    "id": 17,
+                    "nome": "Abolição da escravidão no Brasil",
+                    "ano": "1888 d.C.",
+                    "lugar": "Brasil",
+                    "oque_aconteceu": "A Lei Áurea aboliu oficialmente a escravidão no Brasil.",
+                    "oque_mudou": "O Brasil foi o último país das Américas a abolir a escravidão, mas a população liberta não recebeu reparação, terras ou inclusão social adequada.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Princesa Isabel",
+                            "papel": "Assinou a Lei Áurea"
+                        },
+                        {
+                            "nome": "Luís Gama",
+                            "papel": "Advogado e abolicionista"
+                        },
+                        {
+                            "nome": "André Rebouças",
+                            "papel": "Engenheiro e abolicionista"
+                        }
+                    ],
+                    "informacoes_adicionais": "A abolição ocorreu em 13 de maio de 1888."
+                },
+                {
+                    "id": 18,
+                    "nome": "Chegada do homem à Lua",
+                    "ano": "1969 d.C.",
+                    "lugar": "Lua",
+                    "oque_aconteceu": "A missão Apollo 11 levou Neil Armstrong e Buzz Aldrin à superfície lunar.",
+                    "oque_mudou": "Foi um marco da corrida espacial e demonstrou o avanço tecnológico dos EUA durante a Guerra Fria.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Neil Armstrong",
+                            "papel": "Primeiro ser humano a pisar na Lua"
+                        },
+                        {
+                            "nome": "Buzz Aldrin",
+                            "papel": "Segundo astronauta a pisar na Lua"
+                        },
+                        {
+                            "nome": "Michael Collins",
+                            "papel": "Piloto do módulo de comando"
+                        }
+                    ],
+                    "informacoes_adicionais": "O pouso lunar ocorreu em 20 de julho de 1969."
+                },
+                {
+                    "id": 19,
+                    "nome": "Queda do Muro de Berlim",
+                    "ano": "1989 d.C.",
+                    "lugar": "Berlim, Alemanha",
+                    "oque_aconteceu": "Manifestantes derrubaram barreiras do Muro de Berlim após abertura das fronteiras pela Alemanha Oriental.",
+                    "oque_mudou": "A queda simbolizou o enfraquecimento do bloco socialista europeu e abriu caminho para a reunificação alemã.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Mikhail Gorbachev",
+                            "papel": "Líder soviético cujas reformas influenciaram o contexto"
+                        },
+                        {
+                            "nome": "Helmut Kohl",
+                            "papel": "Chanceler da Alemanha Ocidental durante a reunificação"
+                        }
+                    ],
+                    "informacoes_adicionais": "O muro caiu em 9 de novembro de 1989."
+                },
+                {
+                    "id": 20,
+                    "nome": "Dissolução da União Soviética",
+                    "ano": "1991 d.C.",
+                    "lugar": "URSS",
+                    "oque_aconteceu": "A União Soviética foi dissolvida após crise econômica, reformas políticas, nacionalismos internos e perda de controle do Partido Comunista.",
+                    "oque_mudou": "Marcou o fim da Guerra Fria, a independência de várias repúblicas soviéticas e a reorganização da política mundial.",
+                    "figuras_principais": [
+                        {
+                            "nome": "Mikhail Gorbachev",
+                            "papel": "Último líder da União Soviética"
+                        },
+                        {
+                            "nome": "Boris Yeltsin",
+                            "papel": "Líder russo no processo de transição"
+                        }
+                    ],
+                    "informacoes_adicionais": "A bandeira soviética foi retirada do Kremlin em dezembro de 1991."
                 }
             ]
         }
