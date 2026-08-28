@@ -16,8 +16,8 @@ from config import PERIODS_SCHEMA, SYSTEM_INSTRUCTION
 # Carrega as variáveis de ambiente e inicia o Gemini
 load_dotenv()
 
-SUPABASE_URL = str(os.getenv("url") or os.getenv("SUPABASE_URL", "")).strip()
-SUPABASE_KEY = str(os.getenv("key") or os.getenv("SUPABASE_KEY") or os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY", "")).strip()
+SUPABASE_URL = str(os.getenv("url"))
+SUPABASE_KEY = str(os.getenv("key"))
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 ADM_USUARIO = os.getenv("ADM_USUARIO")
 ADM_SENHA = os.getenv("ADM_SENHA")
