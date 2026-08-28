@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: chronohistory-backend
+    runtime: python
+    buildCommand: pip install -r Backend_TCC/requirements.txt
+    startCommand: gunicorn --chdir Backend_TCC app:app
+    envVars:
+      - key: url
+        sync: false
+      - key: key
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ADM_USUARIO
+        sync: false
+      - key: ADM_SENHA
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: USERS_TABLE
+        value: usuario
+      - key: FRONTEND_ORIGINS
+        sync: false
+      - key: SESSION_COOKIE_SAMESITE
+        value: None
+      - key: SESSION_COOKIE_SECURE
+        value: "true"
