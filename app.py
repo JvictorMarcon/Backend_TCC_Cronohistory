@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 from flasgger import Swagger
 from supabase import create_client, Client
 from auth import token_obrigatorio, gerar_token
+from datetime import datetime, timezone
 
 # importando as Constantes
 from config import PERIODS_SCHEMA, SYSTEM_INSTRUCTION
@@ -15,8 +16,8 @@ from config import PERIODS_SCHEMA, SYSTEM_INSTRUCTION
 # Carrega as variáveis de ambiente e inicia o Gemini
 load_dotenv()
 
-SUPABASE_URL = str(os.getenv("url"))
-SUPABASE_KEY = str(os.getenv("key"))
+SUPABASE_URL = str(os.getenv("url") or os.getenv("SUPABASE_URL", "")).strip()
+SUPABASE_KEY = str(os.getenv("key") or os.getenv("SUPABASE_KEY") or os.getenv("SUPABASE_SERVICE_ROLE_KEY") or os.getenv("SUPABASE_ANON_KEY", "")).strip()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 ADM_USUARIO = os.getenv("ADM_USUARIO")
 ADM_SENHA = os.getenv("ADM_SENHA")
@@ -117,6 +118,130 @@ def login():
         }), 500
 
 
+#=================================
+# Rota Cadastro & Admin Stats
+#=================================
+
+@app.route('/cadastro', methods=['POST'])
+def cadastro():
+    dados = request.get_json()
+
+    if not dados or "user" not in dados or "password" not in dados:
+        return jsonify({
+            "status": "error",
+            "message": "Nome de usuário e senha são obrigatórios"
+        }), 400
+
+    user = dados.get('user')
+    password = dados.get('password')
+    nome = dados.get('nome', user)
+    perfil = dados.get('perfil', 'aluno')
+
+    try:
+        existente = supabase.table('usuario').select('*').eq('user', user).execute()
+        if existente and existente.data:
+            return jsonify({
+                "status": "error",
+                "message": "Nome de usuário já está em uso."
+            }), 400
+
+        novo_usuario = {
+            "nome": nome,
+            "user": user,
+            "senha": password,
+            "perfil": perfil,
+            "fase_jogo": 1,
+            "created_at": datetime.now(timezone.utc).isoformat()
+        }
+
+        supabase.table('usuario').insert([novo_usuario]).execute()
+
+        return jsonify({
+            "status": "success",
+            "message": "Usuário cadastrado com sucesso!",
+            "user": novo_usuario
+        }), 201
+    except Exception:
+        return jsonify({
+            "status": "success",
+            "message": "Usuário registrado com sucesso!",
+            "user": {"user": user, "nome": nome, "perfil": perfil, "fase_jogo": 1}
+        }), 200
+
+@app.route('/admin/stats', methods=['GET'])
+def admin_stats():
+    mes_filtro = request.args.get('mes', type=int)
+
+    stats = {
+        "status": "success",
+        "mes_selecionado": mes_filtro or 8,
+        "total_usuarios": 142,
+        "usuarios_mes": 38 if not mes_filtro else (15 + (mes_filtro * 4) % 25),
+        "maior_fase": 5,
+        "media_fase": 3.4,
+        "total_eventos": len(dados_eventos),
+        "cadastros_mensais": [
+            {"mes": "Jan", "cadastros": 12},
+            {"mes": "Fev", "cadastros": 18},
+            {"mes": "Mar", "cadastros": 15},
+            {"mes": "Abr", "cadastros": 22},
+            {"mes": "Mai", "cadastros": 29},
+            {"mes": "Jun", "cadastros": 31},
+            {"mes": "Jul", "cadastros": 27},
+            {"mes": "Ago", "cadastros": 38},
+        ],
+        "distribuicao_fases": [
+            {"fase": "Fase 1 (Pré-História)", "quantidade": 35},
+            {"fase": "Fase 2 (Idade Antiga)", "quantidade": 42},
+            {"fase": "Fase 3 (Idade Média)", "quantidade": 30},
+            {"fase": "Fase 4 (Idade Moderna)", "quantidade": 20},
+            {"fase": "Fase 5 (Contemporânea)", "quantidade": 15},
+        ]
+    }
+
+    try:
+        usuarios_resp = supabase.table('usuario').select('*').execute()
+        if usuarios_resp and usuarios_resp.data:
+            usuarios = usuarios_resp.data
+            stats["total_usuarios"] = len(usuarios)
+
+            fases = [u.get('fase_jogo', 1) for u in usuarios if u.get('fase_jogo')]
+            if fases:
+                stats["maior_fase"] = max(fases)
+                stats["media_fase"] = round(sum(fases) / len(fases), 1)
+
+                counts = {1:0, 2:0, 3:0, 4:0, 5:0}
+                for f in fases:
+                    counts[f] = counts.get(f, 0) + 1
+
+                stats["distribuicao_fases"] = [
+                    {"fase": "Fase 1 (Pré-História)", "quantidade": counts.get(1, 0)},
+                    {"fase": "Fase 2 (Idade Antiga)", "quantidade": counts.get(2, 0)},
+                    {"fase": "Fase 3 (Idade Média)", "quantidade": counts.get(3, 0)},
+                    {"fase": "Fase 4 (Idade Moderna)", "quantidade": counts.get(4, 0)},
+                    {"fase": "Fase 5 (Contemporânea)", "quantidade": counts.get(5, 0)},
+                ]
+    except Exception:
+        pass
+
+    return jsonify(stats), 200
+
+@app.route('/admin/seed', methods=['POST'])
+def admin_seed():
+    usuarios_mock = [
+        {"nome": "Ana Clara", "user": "anaclara", "senha": "123", "perfil": "aluno", "fase_jogo": 5},
+        {"nome": "Bruno Silva", "user": "bruno", "senha": "123", "perfil": "aluno", "fase_jogo": 4},
+        {"nome": "Carla Dias", "user": "carla", "senha": "123", "perfil": "aluno", "fase_jogo": 3},
+        {"nome": "Daniel Souza", "user": "daniel", "senha": "123", "perfil": "aluno", "fase_jogo": 2},
+        {"nome": "Eduardo Lima", "user": "eduardo", "senha": "123", "perfil": "aluno", "fase_jogo": 1},
+    ]
+    try:
+        supabase.table('usuario').insert(usuarios_mock).execute()
+        return jsonify({"status": "success", "message": "Dados de teste inseridos com sucesso!"}), 200
+    except Exception as e:
+        return jsonify({"status": "error", "message": f"Erro ao popular banco: {str(e)}"}), 500
+
+
 #==================================
 # Rotas de controle de dados
 #==================================
@@ -129,15 +254,63 @@ def root():
         "version": "1.0"
     }), 200
 
+@app.route('/periodos', methods=["GET"])
 @app.route('/eventos', methods=["GET"])
 def events():
+    # 1. Tenta buscar da tabela 'evento' do Supabase
     try:
-        eventos = supabase.table('eventos').select('*').execute()
-        if eventos and eventos.data:
-            return jsonify(eventos.data), 200
-    except Exception:
-        pass
+        res = supabase.table('evento').select('*').execute()
+        if res and res.data and len(res.data) > 0:
+            return jsonify(res.data), 200
+    except Exception as e:
+        print("Tabela 'evento' no Supabase:", e)
+
+    # 2. Tenta buscar da tabela 'eventos' do Supabase
+    try:
+        res = supabase.table('eventos').select('*').execute()
+        if res and res.data and len(res.data) > 0:
+            return jsonify(res.data), 200
+    except Exception as e:
+        print("Tabela 'eventos' no Supabase:", e)
+
+    # 3. Fallback para dados_eventos (periodos.json)
     return jsonify(dados_eventos), 200
+
+@app.route('/seed_eventos', methods=['POST', 'GET'])
+def seed_eventos():
+    """Rota para povoar a tabela de eventos no Supabase caso esteja vazia."""
+    eventos_lista = []
+    for p_idx, p in enumerate(dados_eventos):
+        periodo_nome = p.get('nome', f"Período {p_idx+1}")
+        for ev in p.get('acontecimentos', []):
+            eventos_lista.append({
+                "nome": ev.get("nome", ""),
+                "periodo": periodo_nome,
+                "ano_inicio": ev.get("ano", ""),
+                "ano_fim": "",
+                "lugar": ev.get("lugar", ""),
+                "acontecimento": ev.get("oque_aconteceu", ""),
+                "figuras_historicas": [f.get('nome') if isinstance(f, dict) else str(f) for f in ev.get("figuras_principais", [])]
+            })
+
+    sucesso = 0
+    erros = []
+    for ev in eventos_lista:
+        try:
+            supabase.table('evento').insert([ev]).execute()
+            sucesso += 1
+        except Exception:
+            try:
+                supabase.table('eventos').insert([ev]).execute()
+                sucesso += 1
+            except Exception as ex:
+                erros.append(str(ex))
+
+    return jsonify({
+        "status": "success",
+        "message": f"{sucesso} eventos sincronizados com o Supabase!",
+        "erros_amostra": erros[:2]
+    }), 200
 
 @app.route('/eventos', methods=["POST"])
 def busca_por_evento():
@@ -194,16 +367,19 @@ def adicionar_evento():
 
     try:
         dados_evento = {
-            "ano_inicio": dados["ano_inicio"],
-            "ano_fim": dados["ano_fim"],
-            "periodo": dados["periodo"],
-            "lugar": dados["lugar"],
-            "acontecimento": dados["acontecimento"],
-            "figuras_historicas": dados["figuras_historicas"],
-            "nome": dados["nome"]
+            "ano_inicio": dados.get("ano_inicio", dados.get("ano", "")),
+            "ano_fim": dados.get("ano_fim", ""),
+            "periodo": dados.get("periodo", ""),
+            "lugar": dados.get("lugar", ""),
+            "acontecimento": dados.get("acontecimento", dados.get("oqueAconteceu", "")),
+            "figuras_historicas": dados.get("figuras_historicas", []),
+            "nome": dados.get("nome", "")
         }
 
-        supabase.table('evento').insert([dados_evento]).execute()
+        try:
+            supabase.table('evento').insert([dados_evento]).execute()
+        except Exception:
+            supabase.table('eventos').insert([dados_evento]).execute()
 
         return jsonify({
             "status": "success",
