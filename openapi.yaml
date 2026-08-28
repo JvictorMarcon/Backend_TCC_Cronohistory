@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: History Moments API
-  description: API para buscar e gerar informações e flashcards sobre períodos históricos utilizando a inteligência artificial do Gemini.
+  description: API para buscar e gerar informações e flashcards sobre períodos e imagens históricas.
   version: 1.0.0
 
 servers:
@@ -9,13 +9,106 @@ servers:
     description: Servidor de Desenvolvimento Local
 
 paths:
-  /:
-    get:
-      summary: Retorna o status e a versão da API
-      description: Endpoint básico para verificar se a API está online e operando.
+  /login:
+    post:
+      summary: Autentica um usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
       responses:
         '200':
-          description: API está online.
+          description: Login realizado com sucesso
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/AdminLoginResponse'
+                  - $ref: '#/components/schemas/UserLoginResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          description: Usuário ou senha incorretos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /:
+    get:
+      summary: Status da API
+      responses:
+        '200':
+          description: API está online
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RootResponse'
+
+  /eventos:
+    get:
+      summary: Lista eventos carregados localmente
+      responses:
+        '200':
+          description: Lista de eventos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+
+    post:
+      summary: Gera informações/flashcards para um período
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              minProperties: 1
+              properties:
+                periodo:
+                  type: string
+                  example: "Segunda Guerra Mundial"
+                evento:
+                  type: string
+                  description: Alias aceito para `periodo`.
+                  example: "Segunda Guerra Mundial"
+      responses:
+        '200':
+          description: Informações geradas com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [informações]
+                properties:
+                  informações:
+                    $ref: '#/components/schemas/GeneratedPeriod'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /adicionar_evento:
+    post:
+      summary: Adiciona um novo evento (insere no Supabase)
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventCreate'
+      responses:
+        '200':
+          description: Evento adicionado
           content:
             application/json:
               schema:
@@ -26,58 +119,64 @@ paths:
                     example: success
                   message:
                     type: string
-                    example: History moments API
-                  version:
-                    type: string
-                    example: "1.0"
+                    example: Evento adicionado com sucesso
+                  data:
+                    $ref: '#/components/schemas/Event'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
 
-  /periodos:
-    get:
-      summary: Lista os períodos históricos pré-existentes
-      description: Retorna os dados estáticos carregados a partir do arquivo JSON local.
-      responses:
-        '200':
-          description: Lista de períodos retornada com sucesso.
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  periodos:
-                    type: array
-                    items:
-                      type: object
-                    example: [{"id": 1, "nome": "Idade Média"}, {"id": 2, "nome": "Renascimento"}]
-
-    post:
-      summary: Gera informações/flashcards sobre um período específico
-      description: Envia o nome de um período histórico para que o Gemini gere informações estruturadas em JSON.
+  /editar_evento/{id}:
+    patch:
+      summary: Edita campos de um evento existente
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - periodo
-              properties:
-                periodo:
-                  type: string
-                  description: O nome do período histórico que deseja pesquisar.
-                  example: "Segunda Guerra Mundial"
+              $ref: '#/components/schemas/EventUpdate'
       responses:
         '200':
-          description: Informações do período geradas com sucesso.
+          description: Evento atualizado
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  informações:
-                    type: object
-                    description: Objeto dinâmico gerado pelo Gemini que segue o formato do seu `PERIODS_SCHEMA`.
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Evento atualizado com sucesso!
+                  data:
+                    $ref: '#/components/schemas/EventUpdate'
         '400':
-          description: Requisição inválida (corpo malformado ou ausência do campo 'periodo').
+          $ref: '#/components/responses/BadRequest'
+
+  /deletar_evento/{id}:
+    delete:
+      summary: Deleta um evento por ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Evento deletado
           content:
             application/json:
               schema:
@@ -85,12 +184,80 @@ paths:
                 properties:
                   status:
                     type: string
-                    example: error
+                    example: success
                   message:
                     type: string
-                    example: Insira um período para poder receber as informações
+                    example: Evento deletado com sucesso!
+                  data:
+                    type: integer
+                    description: ID do evento deletado
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /imagens:
+    get:
+      summary: Lista imagens armazenadas
+      responses:
+        '200':
+          description: Lista de imagens
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Image'
+        '502':
+          description: Erro ao buscar imagens (Supabase)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    post:
+      summary: Adiciona uma nova imagem
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageCreate'
+      responses:
+        '200':
+          description: Imagem adicionada com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Imagem adicionada com sucesso
+                  data:
+                    $ref: '#/components/schemas/Image'
+        '400':
+          $ref: '#/components/responses/BadRequest'
         '500':
-          description: Erro interno ao processar a requisição ou falha na integração com a API do Gemini.
+          $ref: '#/components/responses/InternalError'
+
+  /imagens/{id}:
+    delete:
+      summary: Deleta uma imagem por ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Imagem deletada
           content:
             application/json:
               schema:
@@ -98,7 +265,340 @@ paths:
                 properties:
                   status:
                     type: string
-                    example: error
+                    example: success
                   message:
                     type: string
-                    example: "Erro ao gerar os flashcards: [Detalhes do Erro]"
+                    example: Imagem deletada com sucesso!
+                  data:
+                    type: integer
+                    description: ID da imagem deletada
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+    patch:
+      summary: Atualiza campos de uma imagem existente
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageUpdate'
+      responses:
+        '200':
+          description: Imagem atualizada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Imagem atualizada com sucesso!
+                  data:
+                    $ref: '#/components/schemas/ImageUpdate'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    LoginRequest:
+      type: object
+      required: [user, password]
+      properties:
+        user:
+          type: string
+        password:
+          type: string
+          format: password
+
+    AdminLoginResponse:
+      type: object
+      required: [message, token]
+      properties:
+        message:
+          type: string
+          example: Login realizado com sucesso
+        token:
+          type: string
+
+    UserLoginResponse:
+      type: object
+      required: [status, message, user]
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Login realizado com sucesso!
+        user:
+          $ref: '#/components/schemas/AuthenticatedUser'
+
+    AuthenticatedUser:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: true
+        user:
+          type: string
+        password:
+          type: string
+          format: password
+        fase_jogo:
+          nullable: true
+
+    GeneratedPeriod:
+      type: object
+      required: [periodo_unico]
+      properties:
+        periodo_unico:
+          $ref: '#/components/schemas/Period'
+
+    Period:
+      type: object
+      required: [id, nome, periodo, resumo, descricao_detalhada, acontecimentos]
+      properties:
+        id:
+          type: integer
+        nome:
+          type: string
+        periodo:
+          type: string
+        resumo:
+          type: string
+        descricao_detalhada:
+          type: string
+        caracteristicas_principais:
+          type: array
+          items:
+            type: string
+        acontecimentos:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoricalEvent'
+        legado:
+          type: string
+        curiosidades:
+          type: array
+          items:
+            type: string
+
+    HistoricalEvent:
+      type: object
+      required: [id, nome, ano, lugar, oque_aconteceu, oque_mudou, figuras_principais]
+      properties:
+        id:
+          type: integer
+        nome:
+          type: string
+        ano:
+          type: string
+        lugar:
+          type: string
+        oque_aconteceu:
+          type: string
+        oque_mudou:
+          type: string
+        figuras_principais:
+          type: array
+          items:
+            $ref: '#/components/schemas/HistoricalFigure'
+        informacoes_adicionais:
+          type: string
+
+    HistoricalFigure:
+      type: object
+      required: [nome, papel]
+      properties:
+        nome:
+          type: string
+        papel:
+          type: string
+
+    RootResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: History moments API
+        version:
+          type: string
+          example: "1.0"
+
+    Event:
+      type: object
+      properties:
+        id:
+          type: integer
+        ano_inicio:
+          type: integer
+        ano_fim:
+          type: integer
+        periodo:
+          type: string
+        lugar:
+          type: string
+        acontecimento:
+          type: string
+        figuras_historicas:
+          type: array
+          items:
+            type: string
+        nome:
+          type: string
+
+    EventCreate:
+      type: object
+      required: [ano_inicio, ano_fim, periodo, lugar, acontecimento, figuras_historicas, nome]
+      properties:
+        ano_inicio:
+          type: integer
+        ano_fim:
+          type: integer
+        periodo:
+          type: string
+        lugar:
+          type: string
+        acontecimento:
+          type: string
+        figuras_historicas:
+          type: array
+          items:
+            type: string
+        nome:
+          type: string
+
+    EventUpdate:
+      type: object
+      properties:
+        ano_inicio:
+          type: integer
+        ano_fim:
+          type: integer
+        periodo:
+          type: string
+        lugar:
+          type: string
+        acontecimento:
+          type: string
+        figuras_historicas:
+          type: array
+          items:
+            type: string
+        nome:
+          type: string
+
+    Image:
+      type: object
+      properties:
+        id:
+          type: integer
+        titulo:
+          type: string
+        pintor:
+          type: string
+        periodo:
+          type: string
+        ano:
+          type: integer
+        contexto:
+          type: string
+        url:
+          type: string
+
+    ImageCreate:
+      type: object
+      required: [titulo, pintor, periodo, ano, contexto, url]
+      properties:
+        titulo:
+          type: string
+        pintor:
+          type: string
+        periodo:
+          type: string
+        ano:
+          type: integer
+        contexto:
+          type: string
+        url:
+          type: string
+
+    ImageUpdate:
+      type: object
+      properties:
+        titulo:
+          type: string
+        pintor:
+          type: string
+        periodo:
+          type: string
+        ano:
+          type: integer
+        contexto:
+          type: string
+        url:
+          type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+        data:
+          description: Detalhes adicionais do erro, quando disponíveis.
+
+    AuthErrorResponse:
+      type: object
+      properties:
+        erro:
+          type: string
+
+  responses:
+    BadRequest:
+      description: Requisição inválida
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+    InternalError:
+      description: Erro interno do servidor
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+    Unauthorized:
+      description: Token ausente, inválido ou expirado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AuthErrorResponse'
