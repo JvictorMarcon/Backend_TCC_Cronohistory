@@ -14,8 +14,8 @@ from datetime import datetime, timezone
 # importando as Constantes
 from config import PERIODS_SCHEMA, SYSTEM_INSTRUCTION
 
-# Carrega as variáveis de ambiente e inicia o Gemini
-load_dotenv()
+# Carrega as variáveis do arquivo junto ao backend, independentemente do diretório de execução.
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 SUPABASE_URL = str(os.getenv("url") or os.getenv("SUPABASE_URL", "")).strip()
 SUPABASE_KEY = str(
@@ -28,11 +28,17 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 ADM_USUARIO = os.getenv("ADM_USUARIO")
 ADM_SENHA = os.getenv("ADM_SENHA")
 USERS_TABLE = os.getenv("USERS_TABLE", "usuario").strip()
-FRONTEND_ORIGINS = [
-    origin.strip()
-    for origin in os.getenv("FRONTEND_ORIGINS", "*").split(",")
-    if origin.strip()
+origens_padrao = [
+    "https://tcc-chronohistory.vercel.app",
+    "http://127.0.0.1:5502",
+    "http://localhost:5502",
 ]
+origens_configuradas = [
+    origin.strip().rstrip('/')
+    for origin in os.getenv("FRONTEND_ORIGINS", "").split(",")
+    if origin.strip() and origin.strip() != "*"
+]
+FRONTEND_ORIGINS = list(dict.fromkeys(origens_configuradas + origens_padrao))
 
 # Clientes
 client = genai.Client(api_key=GEMINI_API_KEY)
@@ -68,6 +74,20 @@ def requer_sessao_adm(f):
             return jsonify({"status": "error", "message": "Acesso restrito ao administrador."}), 403
         return f(*args, **kwargs)
     return decorated
+
+
+def obter_colunas_tabela(tabela):
+    """Retorna as colunas disponíveis na tabela."""
+    try:
+        # Tenta fazer uma query para detectar as colunas
+        resultado = supabase.table(tabela).select('*').limit(1).execute()
+        if resultado.data and len(resultado.data) > 0:
+            return list(resultado.data[0].keys())
+        else:
+            # Se a tabela estiver vazia, retorna colunas mínimas esperadas
+            return ['id', 'user', 'senha', 'nome']
+    except Exception:
+        return ['id', 'user', 'senha', 'nome']
 
 
 def tabela_usuarios():
@@ -215,31 +235,35 @@ def cadastro():
                 "message": "Nome de usuário já está em uso. Escolha outro."
             }), 400
 
+        # Detecta quais colunas existem na tabela
+        colunas_disponiveis = obter_colunas_tabela(tabela)
+        
+        # Cria payload apenas com campos que existem na tabela
         payload = {
             "nome": nome,
             "user": user,
             "senha": password,
-            "perfil": perfil,
-            "fase_jogo": 1,
-            "created_at": datetime.now(timezone.utc).isoformat()
         }
-        try:
-            supabase.table(tabela).insert([payload]).execute()
-        except Exception as erro_com_data:
-            # Algumas tabelas antigas não possuem created_at.
-            payload.pop("created_at")
-            try:
-                supabase.table(tabela).insert([payload]).execute()
-            except Exception as erro_sem_data:
-                raise RuntimeError(
-                    f'Falha ao inserir em {tabela}: {erro_sem_data}. '
-                    f'Tentativa com created_at: {erro_com_data}'
-                ) from erro_sem_data
+        
+        # Adiciona campos opcionais se a tabela suportar
+        if 'perfil' in colunas_disponiveis:
+            payload['perfil'] = 'aluno'
+        
+        # Tenta fase_jogo primeiro, depois fase_quiz
+        if 'fase_jogo' in colunas_disponiveis:
+            payload['fase_jogo'] = 1
+        elif 'fase_quiz' in colunas_disponiveis:
+            payload['fase_quiz'] = 1
+            
+        if 'created_at' in colunas_disponiveis:
+            payload['created_at'] = datetime.now(timezone.utc).isoformat()
+
+        supabase.table(tabela).insert([payload]).execute()
 
         return jsonify({
             "status": "success",
             "message": "Usuário cadastrado com sucesso!",
-            "user": {"user": user, "nome": nome, "perfil": perfil, "fase_jogo": 1}
+            "user": {"user": user, "nome": nome, "perfil": "aluno", "fase_jogo": 1}
         }), 201
     except Exception as erro:
         return jsonify({
