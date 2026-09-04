@@ -109,7 +109,7 @@ def generate_history(evento):
     """
     # Faz a chamada para o modelo pedindo uma resposta em JSON
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-Lite",
         contents=prompt_content,
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_INSTRUCTION,
@@ -419,14 +419,6 @@ def events():
     except Exception as e:
         print("Tabela 'evento' no Supabase:", e)
 
-    # 2. Tenta buscar da tabela 'eventos' do Supabase
-    try:
-        res = supabase.table('eventos').select('*').execute()
-        if res and res.data and len(res.data) > 0:
-            return jsonify(res.data), 200
-    except Exception as e:
-        print("Tabela 'eventos' no Supabase:", e)
-
     # 3. Fallback para dados_eventos (periodos.json)
     return jsonify(dados_eventos), 200
 
@@ -444,7 +436,8 @@ def seed_eventos():
                 "ano_fim": "",
                 "lugar": ev.get("lugar", ""),
                 "acontecimento": ev.get("oque_aconteceu", ""),
-                "figuras_historicas": [f.get('nome') if isinstance(f, dict) else str(f) for f in ev.get("figuras_principais", [])]
+                "figuras_historicas": [f.get('nome') if isinstance(f, dict) else str(f) for f in ev.get("figuras_principais", [])],
+                "imagem": ev.get("imagem", "")
             })
 
     sucesso = 0
@@ -503,31 +496,29 @@ def busca_por_evento():
 @app.route('/adicionar_evento', methods=['POST'])
 @token_obrigatorio
 def adicionar_evento():
-    dados = request.get_json()
+    dados = request.get_json() or {}
 
-    if not dados:
+    nome = dados.get("nome", "").strip()
+    if not nome:
         return jsonify({
             "status": "error",
-            "message": "Preencha os campos para adicionar o evento"
-        }), 400
-
-    campos_obrigatorios = ['ano_inicio', 'ano_fim', 'periodo', 'lugar', 'acontecimento', 'figuras_historicas', 'nome']
-
-    if not all(campo in dados for campo in campos_obrigatorios):
-        return jsonify({
-            "status": "error",
-            "message": "Preencha todos os campos obrigatórios"
+            "message": "O nome do evento é obrigatório."
         }), 400
 
     try:
+        figuras = dados.get("figuras_historicas", [])
+        if isinstance(figuras, str):
+            figuras = [f.strip() for f in figuras.split(",") if f.strip()]
+
         dados_evento = {
-            "ano_inicio": dados.get("ano_inicio", dados.get("ano", "")),
-            "ano_fim": dados.get("ano_fim", ""),
-            "periodo": dados.get("periodo", ""),
-            "lugar": dados.get("lugar", ""),
-            "acontecimento": dados.get("acontecimento", dados.get("oqueAconteceu", "")),
-            "figuras_historicas": dados.get("figuras_historicas", []),
-            "nome": dados.get("nome", "")
+            "nome": nome,
+            "periodo": dados.get("periodo", "Idade Contemporânea"),
+            "ano_inicio": str(dados.get("ano_inicio", dados.get("ano", ""))),
+            "ano_fim": str(dados.get("ano_fim", "")),
+            "lugar": str(dados.get("lugar", "")),
+            "acontecimento": str(dados.get("acontecimento", dados.get("oqueAconteceu", ""))),
+            "figuras_historicas": figuras,
+            "imagem": str(dados.get("imagem", dados.get("imagemUrl", "")))
         }
 
         try:
@@ -537,7 +528,7 @@ def adicionar_evento():
 
         return jsonify({
             "status": "success",
-            "message": "Evento adicionado com sucesso",
+            "message": "Evento adicionado com sucesso!",
             "data": dados_evento
         }), 200
     except Exception as e:
@@ -557,7 +548,7 @@ def editar_evento(id):
             "message": "Preencha todos os campos"
         }), 400
 
-    campos_editaveis = ['ano_inicio', 'ano_fim', 'periodo', 'lugar', 'acontecimento', 'figuras_historicas', 'nome']
+    campos_editaveis = ['ano_inicio', 'ano_fim', 'periodo', 'lugar', 'acontecimento', 'figuras_historicas', 'nome', 'imagem', 'imagemUrl']
 
     campos_para_atualizar = {
         campo: dados[campo]
@@ -626,37 +617,32 @@ def buscar_imagens():
 @app.route('/imagens', methods=['POST'])
 @token_obrigatorio
 def adicionar_imagens():
-    dados = request.get_json()
+    dados = request.get_json() or {}
 
-    if not dados:
+    titulo = dados.get("titulo", "").strip()
+    url = dados.get("url", "").strip()
+
+    if not titulo or not url:
         return jsonify({
             "status": "error",
-            "message": "Preencha os campos para adicionar a imagem"
-        }), 400
-
-    campos_obrigatorios = ['titulo', 'pintor', 'periodo', 'ano', 'contexto', 'url']
-
-    if not all(campo in dados for campo in campos_obrigatorios):
-        return jsonify({
-            "status": "error",
-            "message": "Preencha todos os campos obrigatórios para adicionar a imagem"
+            "message": "Título e URL da imagem são obrigatórios."
         }), 400
 
     try:
         dados_imagens = {
-            "titulo": dados["titulo"],
-            "pintor": dados["pintor"],
-            "periodo": dados["periodo"],
-            "ano": dados["ano"],
-            "contexto": dados["contexto"],
-            "url": dados["url"]
+            "titulo": titulo,
+            "pintor": str(dados.get("pintor", "Desconhecido")),
+            "periodo": str(dados.get("periodo", "Geral")),
+            "ano": str(dados.get("ano", "")),
+            "contexto": str(dados.get("contexto", "")),
+            "url": url
         }
 
         # Insere os dados na tabela imagens
         supabase.table("imagens").insert([dados_imagens]).execute()
         return jsonify({
             "status": "success",
-            "message": "Imagem adicionada com sucesso",
+            "message": "Imagem adicionada com sucesso!",
             "data": dados_imagens
         }), 200
     except Exception as e:
