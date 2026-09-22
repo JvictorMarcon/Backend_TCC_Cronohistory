@@ -144,13 +144,11 @@ def login():
     password = str(dados['password']).strip()
 
     # ── Login do Administrador (Direto / Credenciais Globais) ──
-    adm_user_env = str(os.getenv("ADM_USUARIO") or "CR0N0H1ST0R7").strip()
-    adm_pass_env = str(os.getenv("ADM_SENHA") or "CR0N0H1ST0R7").strip()
+    adm_user_env = str(os.getenv("ADM_USUARIO")).strip()
+    adm_pass_env = str(os.getenv("ADM_SENHA")).strip()
 
     is_adm_direct = (
-        (user == adm_user_env and password == adm_pass_env) or
-        (user == "CR0N0H1ST0R7" and password == "CR0N0H1ST0R7") or
-        (user.lower() in ["admin", "adm"] and password in [adm_pass_env, "admin", "admin123", "CR0N0H1ST0R7"])
+        (user == adm_user_env and password == adm_pass_env)
     )
 
     if is_adm_direct:
@@ -535,7 +533,6 @@ def adicionar_evento():
             "lugar": str(dados.get("lugar", "")),
             "acontecimento": str(dados.get("acontecimento", dados.get("oqueAconteceu", ""))),
             "figuras_historicas": figuras,
-            "imagem": str(dados.get("imagem", dados.get("imagemUrl", "")))
         }
 
         try:
@@ -565,7 +562,7 @@ def editar_evento(id):
             "message": "Preencha todos os campos"
         }), 400
 
-    campos_editaveis = ['ano_inicio', 'ano_termino', 'periodo', 'lugar', 'acontecimento', 'figuras_historicas', 'nome', 'imagem', 'imagemUrl']
+    campos_editaveis = ['ano_inicio', 'ano_termino', 'periodo', 'lugar', 'acontecimento', 'figuras_historicas', 'nome']
 
     campos_para_atualizar = {
         campo: dados[campo]
