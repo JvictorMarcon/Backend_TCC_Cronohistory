@@ -3,6 +3,7 @@ from functools import wraps
 import os
 import json
 from flask_cors import CORS
+from werkzeug.security import generate_password_hash, check_password_hash
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
@@ -103,6 +104,18 @@ def tabela_usuarios():
     raise RuntimeError('Nenhuma tabela de usuários acessível. Configure USERS_TABLE. ' + ' | '.join(erros))
 
 
+# ─── senha: hash (Werkzeug) com compatibilidade para contas antigas em texto puro ───
+def senha_confere(senha_armazenada, senha_informada):
+    senha_armazenada = str(senha_armazenada or "")
+    if senha_armazenada.startswith(("pbkdf2:", "scrypt:", "argon2:")):
+        try:
+            return check_password_hash(senha_armazenada, senha_informada)
+        except ValueError:
+            return False
+    # Conta antiga, criada antes do hashing: compara em texto puro
+    return senha_armazenada == senha_informada
+
+
 def generate_history(evento):
     prompt_content = f"""
     Procure mais informações sobre o evento {evento}
@@ -162,10 +175,20 @@ def login():
     # ── Login via Supabase ─────────────────────────────────
     try:
         tabela = tabela_usuarios()
-        pessoa = supabase.table(tabela).select('*').eq('user', user).eq('senha', password).limit(1).execute()
+        pessoa = supabase.table(tabela).select('*').eq('user', user).limit(1).execute()
 
-        if pessoa and pessoa.data:
+        if pessoa and pessoa.data and senha_confere(pessoa.data[0].get('senha'), password):
             usuario = pessoa.data[0]
+
+            # Conta antiga com senha em texto puro: migra para hash agora que a senha foi conferida
+            if not str(usuario.get('senha', '')).startswith(("pbkdf2:", "scrypt:", "argon2:")):
+                try:
+                    supabase.table(tabela).update(
+                        {"senha": generate_password_hash(password)}
+                    ).eq('id', usuario['id']).execute()
+                except Exception:
+                    pass
+
             perfil_usuario = str(usuario.get("perfil") or usuario.get("role") or "").strip().lower()
             is_adm = (
                 perfil_usuario in ["adm", "admin", "administrador"] or
@@ -259,7 +282,7 @@ def cadastro():
         payload = {
             "nome": nome,
             "user": user,
-            "senha": password,
+            "senha": generate_password_hash(password),
         }
         
         # Adiciona campos opcionais se a tabela suportar
@@ -399,12 +422,13 @@ def admin_usuarios():
 
 @app.route('/admin/seed', methods=['POST'])
 def admin_seed():
+    senha_padrao = generate_password_hash("123")
     usuarios_mock = [
-        {"nome": "Ana Clara", "user": "anaclara", "senha": "123", "perfil": "aluno", "fase_jogo": 5},
-        {"nome": "Bruno Silva", "user": "bruno", "senha": "123", "perfil": "aluno", "fase_jogo": 4},
-        {"nome": "Carla Dias", "user": "carla", "senha": "123", "perfil": "aluno", "fase_jogo": 3},
-        {"nome": "Daniel Souza", "user": "daniel", "senha": "123", "perfil": "aluno", "fase_jogo": 2},
-        {"nome": "Eduardo Lima", "user": "eduardo", "senha": "123", "perfil": "aluno", "fase_jogo": 1},
+        {"nome": "Ana Clara", "user": "anaclara", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 5},
+        {"nome": "Bruno Silva", "user": "bruno", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 4},
+        {"nome": "Carla Dias", "user": "carla", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 3},
+        {"nome": "Daniel Souza", "user": "daniel", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 2},
+        {"nome": "Eduardo Lima", "user": "eduardo", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 1},
     ]
     try:
         supabase.table('usuario').insert(usuarios_mock).execute()
