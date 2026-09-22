@@ -531,7 +531,7 @@ def adicionar_evento():
             "nome": nome,
             "periodo": dados.get("periodo", "Idade Contemporânea"),
             "ano_inicio": str(dados.get("ano_inicio", dados.get("ano", ""))),
-            "ano_fim": str(dados.get("ano_fim", "")),
+            "ano_termino": str(dados.get("ano_termino", dados.get("ano_fim", ""))),
             "lugar": str(dados.get("lugar", "")),
             "acontecimento": str(dados.get("acontecimento", dados.get("oqueAconteceu", ""))),
             "figuras_historicas": figuras,
@@ -565,13 +565,16 @@ def editar_evento(id):
             "message": "Preencha todos os campos"
         }), 400
 
-    campos_editaveis = ['ano_inicio', 'ano_fim', 'periodo', 'lugar', 'acontecimento', 'figuras_historicas', 'nome', 'imagem', 'imagemUrl']
+    campos_editaveis = ['ano_inicio', 'ano_termino', 'periodo', 'lugar', 'acontecimento', 'figuras_historicas', 'nome', 'imagem', 'imagemUrl']
 
     campos_para_atualizar = {
         campo: dados[campo]
         for campo in campos_editaveis
         if campo in dados
     }
+    # Compatibilidade: aceita 'ano_fim' vindo do frontend e mapeia para a coluna real 'ano_termino'
+    if 'ano_fim' in dados and 'ano_termino' not in campos_para_atualizar:
+        campos_para_atualizar['ano_termino'] = dados['ano_fim']
 
     if not campos_para_atualizar:
         return jsonify({
