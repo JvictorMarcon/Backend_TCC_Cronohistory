@@ -19,16 +19,10 @@ from config import PERIODS_SCHEMA, SYSTEM_INSTRUCTION
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 SUPABASE_URL = str(os.getenv("url") or os.getenv("SUPABASE_URL", "")).strip()
-SUPABASE_KEY = str(
-    os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-    or os.getenv("SUPABASE_KEY")
-    or os.getenv("key")
-    or os.getenv("SUPABASE_ANON_KEY", "")
-).strip()
+SUPABASE_KEY = str(os.getenv("key")).strip()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-ADM_USUARIO = str(os.getenv("ADM_USUARIO") or "CR0N0H1ST0R7").strip()
-ADM_SENHA = str(os.getenv("ADM_SENHA") or "CR0N0H1ST0R7").strip()
 USERS_TABLE = os.getenv("USERS_TABLE", "usuario").strip()
+
 origens_padrao = [
     "https://tcc-chronohistory.vercel.app",
     "http://127.0.0.1:5502",
@@ -258,7 +252,6 @@ def cadastro():
     user = str(dados.get('user')).strip()
     password = str(dados.get('password')).strip()
     nome = str(dados.get('nome', user)).strip()
-    perfil = str(dados.get('perfil', 'aluno')).strip()
 
     if not user or not password:
         return jsonify({
@@ -432,7 +425,7 @@ def root():
         "version": "1.0"
     }), 200
 
-@app.route('/periodos', methods=["GET"])
+
 @app.route('/eventos', methods=["GET"])
 def events():
     # 1. Tenta buscar da tabela 'evento' do Supabase
@@ -443,7 +436,7 @@ def events():
     except Exception as e:
         print("Tabela 'evento' no Supabase:", e)
 
-    # 3. Fallback para dados_eventos (periodos.json)
+    # 2. Fallback para dados_eventos (periodos.json)
     return jsonify(dados_eventos), 200
 
 @app.route('/seed_eventos', methods=['POST', 'GET'])
