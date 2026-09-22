@@ -420,23 +420,6 @@ def admin_usuarios():
     except Exception as e:
         return jsonify({"status": "error", "message": f"Erro ao listar usuários: {str(e)}"}), 500
 
-@app.route('/admin/seed', methods=['POST'])
-def admin_seed():
-    senha_padrao = generate_password_hash("123")
-    usuarios_mock = [
-        {"nome": "Ana Clara", "user": "anaclara", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 5},
-        {"nome": "Bruno Silva", "user": "bruno", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 4},
-        {"nome": "Carla Dias", "user": "carla", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 3},
-        {"nome": "Daniel Souza", "user": "daniel", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 2},
-        {"nome": "Eduardo Lima", "user": "eduardo", "senha": senha_padrao, "perfil": "aluno", "fase_jogo": 1},
-    ]
-    try:
-        supabase.table('usuario').insert(usuarios_mock).execute()
-        return jsonify({"status": "success", "message": "Dados de teste inseridos com sucesso!"}), 200
-    except Exception as e:
-        return jsonify({"status": "error", "message": f"Erro ao popular banco: {str(e)}"}), 500
-
-
 #==================================
 # Rotas de controle de dados
 #==================================
