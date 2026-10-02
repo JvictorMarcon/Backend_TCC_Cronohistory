@@ -16,7 +16,9 @@ CREATE TABLE public.usuario (
     email VARCHAR(255) UNIQUE,
     perfil VARCHAR(50) DEFAULT 'aluno',
     fase_jogo INT DEFAULT 1,
-    created_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    reset_codigo VARCHAR(255),
+    reset_codigo_expira TIMESTAMPTZ
 );
 CREATE INDEX idx_usuario_user ON public.usuario("user");
 

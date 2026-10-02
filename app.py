@@ -9,8 +9,9 @@ from google.genai import types
 from dotenv import load_dotenv
 from flasgger import Swagger
 from supabase import create_client, Client
-from auth import token_obrigatorio, gerar_token
-from datetime import datetime, timezone
+from auth import token_obrigatorio, gerar_token, gerar_codigo_reset
+from datetime import datetime, timedelta, timezone
+import resend
 
 # importando as Constantes
 from config import PERIODS_SCHEMA, SYSTEM_INSTRUCTION
@@ -22,6 +23,10 @@ SUPABASE_URL = str(os.getenv("url") or os.getenv("SUPABASE_URL", "")).strip()
 SUPABASE_KEY = str(os.getenv("key")).strip()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 USERS_TABLE = os.getenv("USERS_TABLE", "usuario").strip()
+RESEND_API_KEY = os.getenv("RESEND_API_KEY", "").strip()
+EMAIL_REMETENTE = os.getenv("EMAIL_REMETENTE", "Chronohistory <onboarding@resend.dev>").strip()
+
+resend.api_key = RESEND_API_KEY
 
 origens_padrao = [
     "https://tcc-chronohistory.vercel.app",
@@ -108,6 +113,40 @@ def senha_confere(senha_armazenada, senha_informada):
             return False
     # Conta antiga, criada antes do hashing: compara em texto puro
     return senha_armazenada == senha_informada
+
+
+def enviar_email_codigo_reset(email, nome, codigo):
+    """Envia por e-mail o código de 6 dígitos para redefinição de senha, via Resend."""
+    codigo_espacado = " ".join(codigo)  # "482917" -> "4 8 2 9 1 7", mais fácil de ler/digitar
+    html = f"""
+    <div style="background:#0a0910;padding:40px 20px;font-family:Georgia,'Times New Roman',serif;">
+      <div style="max-width:440px;margin:0 auto;background:#15121d;border:1px solid #352e42;
+                  border-radius:16px;padding:36px 32px;text-align:center;">
+        <p style="color:#d9b44a;letter-spacing:2px;font-size:12px;text-transform:uppercase;
+                   margin:0 0 18px;">Chronohistory</p>
+        <h1 style="color:#f5efe4;font-size:22px;margin:0 0 16px;">Redefinir sua senha</h1>
+        <p style="color:#bab2c9;font-size:14px;line-height:1.6;margin:0 0 24px;">
+          Olá, {nome}. Use o código abaixo para criar uma nova senha.
+          Ele é válido por <b style="color:#f5efe4;">15 minutos</b>.
+        </p>
+        <div style="display:inline-block;background:#1c1826;border:1px solid #d9b44a;
+                    border-radius:10px;padding:16px 28px;margin:0 0 24px;">
+          <span style="color:#d9b44a;font-size:28px;font-weight:bold;letter-spacing:6px;
+                       font-family:'Courier New',monospace;">{codigo_espacado}</span>
+        </div>
+        <p style="color:#837c94;font-size:12px;line-height:1.6;margin:0;">
+          Se você não pediu essa redefinição, pode ignorar este e-mail com segurança —
+          sua senha atual continua valendo.
+        </p>
+      </div>
+    </div>
+    """
+    resend.Emails.send({
+        "from": EMAIL_REMETENTE,
+        "to": [email],
+        "subject": f"{codigo} é o seu código de redefinição — Chronohistory",
+        "html": html,
+    })
 
 
 def generate_history(evento):
@@ -319,6 +358,114 @@ def cadastro():
             "status": "error",
             "message": f"Erro ao salvar usuário no banco de dados: {erro}"
         }), 500
+
+
+#=================================
+# Rotas de redefinição de senha
+#=================================
+
+def _parse_timestamp(valor):
+    """Converte o timestamp vindo do Supabase (string ISO) para datetime com timezone."""
+    if not valor:
+        return None
+    texto = str(valor).replace('Z', '+00:00')
+    try:
+        dt = datetime.fromisoformat(texto)
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt
+
+
+@app.route('/esqueci-senha', methods=['POST'])
+def esqueci_senha():
+    dados = request.get_json()
+    email = str((dados or {}).get('email', '')).strip().lower()
+
+    # Resposta genérica sempre, exista o e-mail ou não — evita que alguém
+    # descubra quais e-mails estão cadastrados testando este formulário.
+    resposta_generica = jsonify({
+        "status": "success",
+        "message": "Se esse e-mail estiver cadastrado, você vai receber um código de redefinição em instantes."
+    })
+
+    if not email or '@' not in email:
+        return resposta_generica, 200
+
+    try:
+        tabela = tabela_usuarios()
+        colunas_disponiveis = obter_colunas_tabela(tabela)
+        if 'email' not in colunas_disponiveis or 'reset_codigo' not in colunas_disponiveis:
+            print("Aviso: colunas reset_codigo/reset_codigo_expira não existem na tabela de usuários.")
+            return resposta_generica, 200
+
+        resultado = supabase.table(tabela).select('id, nome, user, email').eq('email', email).limit(1).execute()
+        if not resultado.data:
+            return resposta_generica, 200
+
+        usuario = resultado.data[0]
+        codigo = gerar_codigo_reset()
+        expira_em = datetime.now(timezone.utc) + timedelta(minutes=15)
+
+        supabase.table(tabela).update({
+            "reset_codigo": generate_password_hash(codigo),
+            "reset_codigo_expira": expira_em.isoformat(),
+        }).eq('id', usuario['id']).execute()
+
+        enviar_email_codigo_reset(email, usuario.get('nome') or usuario.get('user'), codigo)
+    except Exception as erro:
+        # Não revela o erro ao cliente (evitaria vazar se o e-mail existe ou não);
+        # fica registrado no log do servidor para depuração.
+        print(f"Erro ao processar /esqueci-senha: {erro}")
+
+    return resposta_generica, 200
+
+
+@app.route('/resetar-senha', methods=['POST'])
+def resetar_senha():
+    dados = request.get_json()
+    email = str((dados or {}).get('email', '')).strip().lower()
+    codigo = str((dados or {}).get('codigo', '')).strip()
+    nova_senha = str((dados or {}).get('password', '')).strip()
+
+    erro_generico = jsonify({"status": "error", "message": "Código inválido ou expirado. Peça um novo código."})
+
+    if not email or not codigo or not nova_senha:
+        return jsonify({"status": "error", "message": "E-mail, código e nova senha são obrigatórios."}), 400
+
+    if len(nova_senha) < 6:
+        return jsonify({"status": "error", "message": "A senha precisa ter pelo menos 6 caracteres."}), 400
+
+    try:
+        tabela = tabela_usuarios()
+        resultado = supabase.table(tabela).select('id, reset_codigo, reset_codigo_expira').eq('email', email).limit(1).execute()
+        if not resultado.data:
+            return erro_generico, 400
+
+        usuario = resultado.data[0]
+        codigo_hash = usuario.get('reset_codigo')
+        expira_em = _parse_timestamp(usuario.get('reset_codigo_expira'))
+
+        if not codigo_hash or not expira_em or datetime.now(timezone.utc) > expira_em:
+            return erro_generico, 400
+
+        if not check_password_hash(codigo_hash, codigo):
+            return erro_generico, 400
+
+        supabase.table(tabela).update({
+            "senha": generate_password_hash(nova_senha),
+            "reset_codigo": None,
+            "reset_codigo_expira": None,
+        }).eq('id', usuario['id']).execute()
+
+        return jsonify({
+            "status": "success",
+            "message": "Senha redefinida com sucesso! Faça login com a nova senha."
+        }), 200
+    except Exception as erro:
+        return jsonify({"status": "error", "message": f"Erro ao redefinir senha: {erro}"}), 500
+
 
 @app.route('/admin/stats', methods=['GET'])
 def admin_stats():

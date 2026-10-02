@@ -25,3 +25,7 @@ services:
         value: None
       - key: SESSION_COOKIE_SECURE
         value: "true"
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_REMETENTE
+        sync: false

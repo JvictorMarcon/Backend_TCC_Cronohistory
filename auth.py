@@ -1,4 +1,5 @@
 import jwt
+import secrets
 from datetime import datetime, timedelta, timezone
 from functools import wraps
 from flask import request, jsonify, current_app, session
@@ -32,6 +33,21 @@ def gerar_token(usuario):
     return token
 
 
+# ==========================
+# CÓDIGO DE REDEFINIÇÃO DE SENHA
+# ==========================
+def gerar_codigo_reset():
+    """
+    Gera um código numérico de 6 dígitos para confirmar um pedido de
+    redefinição de senha por e-mail. Usa `secrets` (não `random`) porque
+    esse código funciona como uma senha de uso único — precisa vir de um
+    gerador criptograficamente seguro, não de um PRNG previsível.
+
+    O código em si não é o que fica guardado no banco: quem chama essa
+    função é responsável por guardar seu hash (generate_password_hash),
+    o mesmo padrão já usado para a senha do usuário.
+    """
+    return str(secrets.randbelow(900_000) + 100_000)
 
 
 # ==========================
