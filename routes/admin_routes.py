@@ -2,7 +2,6 @@
 from functools import wraps
 from datetime import datetime, timezone
 from flask import Blueprint, request, jsonify, session
-
 from helpers import supabase, dados_eventos
 
 admin_bp = Blueprint('admin', __name__)
