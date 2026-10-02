@@ -116,7 +116,7 @@ def generate_history(evento):
     """
     # Faz a chamada para o modelo pedindo uma resposta em JSON
     response = client.models.generate_content(
-        model="gemini-3.1-flash-Lite",
+        model="gemini-3.1-flash-lite",
         contents=prompt_content,
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_INSTRUCTION,
