@@ -190,12 +190,21 @@ def cadastro():
         if 'created_at' in colunas_disponiveis:
             payload['created_at'] = datetime.now(timezone.utc).isoformat()
 
-        supabase.table(tabela).insert([payload]).execute()
+        resultado = supabase.table(tabela).insert([payload]).execute()
+        novo_id = resultado.data[0]['id'] if resultado.data else None
+
+        # Loga o usuário direto após o cadastro, igual ao /login faz
+        session['user'] = user
+        session['role'] = 'aluno'
+        session['nome'] = nome
+        session['id'] = novo_id
+        session['fase_jogo'] = 1
 
         return jsonify({
             "status": "success",
             "message": "Usuário cadastrado com sucesso!",
-            "user": {"user": user, "nome": nome, "perfil": "aluno", "fase_jogo": 1}
+            "role": "aluno",
+            "user": {"id": novo_id, "user": user, "nome": nome, "role": "aluno", "perfil": "aluno", "fase_jogo": 1}
         }), 201
     except Exception as erro:
         return jsonify({
