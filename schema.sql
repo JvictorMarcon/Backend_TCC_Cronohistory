@@ -13,6 +13,7 @@ CREATE TABLE public.usuario (
     "user" VARCHAR(100) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
     nome VARCHAR(150) NOT NULL,
+    email VARCHAR(255) UNIQUE,
     perfil VARCHAR(50) DEFAULT 'aluno',
     fase_jogo INT DEFAULT 1,
     created_at TIMESTAMPTZ DEFAULT NOW()

@@ -241,20 +241,27 @@ def me():
 def cadastro():
     dados = request.get_json()
 
-    if not dados or "user" not in dados or "password" not in dados:
+    if not dados or "user" not in dados or "password" not in dados or "email" not in dados:
         return jsonify({
             "status": "error",
-            "message": "Nome de usuário e senha são obrigatórios"
+            "message": "Nome de usuário, e-mail e senha são obrigatórios"
         }), 400
 
     user = str(dados.get('user')).strip()
     password = str(dados.get('password')).strip()
+    email = str(dados.get('email')).strip().lower()
     nome = str(dados.get('nome', user)).strip()
 
-    if not user or not password:
+    if not user or not password or not email:
         return jsonify({
             "status": "error",
-            "message": "Nome de usuário e senha não podem estar vazios"
+            "message": "Nome de usuário, e-mail e senha não podem estar vazios"
+        }), 400
+
+    if '@' not in email or '.' not in email.split('@')[-1]:
+        return jsonify({
+            "status": "error",
+            "message": "Informe um e-mail válido"
         }), 400
 
     try:
@@ -268,14 +275,25 @@ def cadastro():
 
         # Detecta quais colunas existem na tabela
         colunas_disponiveis = obter_colunas_tabela(tabela)
-        
+
+        if 'email' in colunas_disponiveis:
+            email_existente = supabase.table(tabela).select('id').eq('email', email).limit(1).execute()
+            if email_existente.data:
+                return jsonify({
+                    "status": "error",
+                    "message": "Este e-mail já está cadastrado. Faça login ou use outro e-mail."
+                }), 400
+
         # Cria payload apenas com campos que existem na tabela
         payload = {
             "nome": nome,
             "user": user,
             "senha": generate_password_hash(password),
         }
-        
+
+        if 'email' in colunas_disponiveis:
+            payload['email'] = email
+
         # Adiciona campos opcionais se a tabela suportar
         if 'perfil' in colunas_disponiveis:
             payload['perfil'] = 'aluno'
