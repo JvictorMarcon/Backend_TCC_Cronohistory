@@ -1,8 +1,14 @@
 """Rotas de autenticação: login, logout, sessão, cadastro e redefinição de senha."""
 import os
+import re
 from datetime import datetime, timedelta, timezone
 from flask import Blueprint, request, jsonify, session
 from werkzeug.security import generate_password_hash, check_password_hash
+
+# E-mail: exige algo@algo.algo, sem espaços e sem '@' duplicado.
+EMAIL_REGEX = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
+# Nome: letras (incluindo acentuadas), espaço, hífen e apóstrofo — sem números/símbolos.
+NOME_REGEX = re.compile(r"^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$")
 
 from auth import gerar_token, gerar_codigo_reset
 from helpers import (
@@ -124,27 +130,43 @@ def me():
 def cadastro():
     dados = request.get_json()
 
-    if not dados or "user" not in dados or "password" not in dados or "email" not in dados:
+    if not dados:
+        return jsonify({"status": "error", "message": "Dados do cadastro não enviados"}), 400
+
+    user = str(dados.get('user', '')).strip()
+    password = str(dados.get('password', '')).strip()
+    email = str(dados.get('email', '')).strip().lower()
+    nome = str(dados.get('nome', '')).strip()
+
+    # --- Nome: obrigatório, só letras/espaço/hífen/apóstrofo ---
+    if not nome:
+        return jsonify({"status": "error", "message": "O nome é obrigatório."}), 400
+    if not NOME_REGEX.match(nome):
         return jsonify({
             "status": "error",
-            "message": "Nome de usuário, e-mail e senha são obrigatórios"
+            "message": "O nome deve conter apenas letras e espaços."
         }), 400
 
-    user = str(dados.get('user')).strip()
-    password = str(dados.get('password')).strip()
-    email = str(dados.get('email')).strip().lower()
-    nome = str(dados.get('nome', user)).strip()
+    # --- Usuário: obrigatório ---
+    if not user:
+        return jsonify({"status": "error", "message": "O nome de usuário é obrigatório."}), 400
 
-    if not user or not password or not email:
+    # --- E-mail: obrigatório e com formato válido ---
+    if not email:
+        return jsonify({"status": "error", "message": "O e-mail é obrigatório."}), 400
+    if not EMAIL_REGEX.match(email):
         return jsonify({
             "status": "error",
-            "message": "Nome de usuário, e-mail e senha não podem estar vazios"
+            "message": "Informe um e-mail em um formato válido (ex.: usuario@email.com)."
         }), 400
 
-    if '@' not in email or '.' not in email.split('@')[-1]:
+    # --- Senha: obrigatória, entre 8 e 20 caracteres ---
+    if not password:
+        return jsonify({"status": "error", "message": "A senha é obrigatória."}), 400
+    if len(password) < 8 or len(password) > 20:
         return jsonify({
             "status": "error",
-            "message": "Informe um e-mail válido"
+            "message": "A senha deve ter entre 8 e 20 caracteres."
         }), 400
 
     try:

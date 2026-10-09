@@ -110,10 +110,21 @@ def adicionar_evento():
     dados = request.get_json() or {}
 
     nome = dados.get("nome", "").strip()
+    periodo = dados.get("periodo", "").strip()
+    acontecimento = str(dados.get("acontecimento", dados.get("oqueAconteceu", ""))).strip()
+
+    campos_faltando = []
     if not nome:
+        campos_faltando.append("nome do evento")
+    if not periodo:
+        campos_faltando.append("período histórico")
+    if not acontecimento:
+        campos_faltando.append("descrição / o que aconteceu")
+
+    if campos_faltando:
         return jsonify({
             "status": "error",
-            "message": "O nome do evento é obrigatório."
+            "message": "Preencha os campos obrigatórios: " + ", ".join(campos_faltando) + "."
         }), 400
 
     try:
@@ -123,11 +134,11 @@ def adicionar_evento():
 
         dados_evento = {
             "nome": nome,
-            "periodo": dados.get("periodo", "Idade Contemporânea"),
+            "periodo": periodo,
             "ano_inicio": str(dados.get("ano_inicio", dados.get("ano", ""))),
             "ano_termino": str(dados.get("ano_termino", dados.get("ano_fim", ""))),
             "lugar": str(dados.get("lugar", "")),
-            "acontecimento": str(dados.get("acontecimento", dados.get("oqueAconteceu", ""))),
+            "acontecimento": acontecimento,
             "figuras_historicas": figuras,
         }
 
@@ -174,6 +185,18 @@ def editar_evento(id):
         return jsonify({
             "status": "error",
             "message": "Nenhum campo válido para atualizar foi fornecido"
+        }), 400
+
+    # Campos obrigatórios não podem ser esvaziados numa edição
+    obrigatorios = {'nome': 'nome do evento', 'periodo': 'período histórico', 'acontecimento': 'descrição / o que aconteceu'}
+    vazios = [
+        label for campo, label in obrigatorios.items()
+        if campo in campos_para_atualizar and not str(campos_para_atualizar[campo]).strip()
+    ]
+    if vazios:
+        return jsonify({
+            "status": "error",
+            "message": "Estes campos não podem ficar vazios: " + ", ".join(vazios) + "."
         }), 400
 
     try:
