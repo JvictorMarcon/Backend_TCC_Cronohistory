@@ -168,10 +168,15 @@ def cadastro():
             "status": "error",
             "message": "A senha deve ter entre 8 e 20 caracteres."
         }), 400
+    if not re.search(r"[A-Za-z0-9À-ÖØ-öø-ÿ]", password):
+        return jsonify({
+            "status": "error",
+            "message": "A senha deve conter ao menos uma letra ou um número."
+        }), 400
 
     try:
         tabela = tabela_usuarios()
-        existente = supabase.table(tabela).select('id').eq('user', user).limit(1).execute()
+        existente =supabase.table(tabela).select('id').eq('user', user).limit(1).execute()
         if existente.data:
             return jsonify({
                 "status": "error",
