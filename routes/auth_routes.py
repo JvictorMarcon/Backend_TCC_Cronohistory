@@ -3,7 +3,7 @@ import os
 import re
 from datetime import datetime, timedelta, timezone
 from flask import Blueprint, request, jsonify, session
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import check_password_hash
 
 # E-mail: exige algo@algo.algo, sem espaços e sem '@' duplicado.
 EMAIL_REGEX = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
@@ -16,6 +16,7 @@ from helpers import (
     tabela_usuarios,
     obter_colunas_tabela,
     senha_confere,
+    gerar_hash_senha,
     _parse_timestamp,
     enviar_email_codigo_reset,
 )
@@ -69,7 +70,7 @@ def login():
             if not str(usuario.get('senha', '')).startswith(("pbkdf2:", "scrypt:", "argon2:")):
                 try:
                     supabase.table(tabela).update(
-                        {"senha": generate_password_hash(password)}
+                        {"senha": gerar_hash_senha(password)}
                     ).eq('id', usuario['id']).execute()
                 except Exception:
                     pass
@@ -198,7 +199,7 @@ def cadastro():
         payload = {
             "nome": nome,
             "user": user,
-            "senha": generate_password_hash(password),
+            "senha": gerar_hash_senha(password),
         }
 
         if 'email' in colunas_disponiveis:
@@ -271,7 +272,7 @@ def esqueci_senha():
         expira_em = datetime.now(timezone.utc) + timedelta(minutes=15)
 
         supabase.table(tabela).update({
-            "reset_codigo": generate_password_hash(codigo),
+            "reset_codigo": gerar_hash_senha(codigo),
             "reset_codigo_expira": expira_em.isoformat(),
         }).eq('id', usuario['id']).execute()
 
@@ -316,7 +317,7 @@ def resetar_senha():
             return erro_generico, 400
 
         supabase.table(tabela).update({
-            "senha": generate_password_hash(nova_senha),
+            "senha": gerar_hash_senha(nova_senha),
             "reset_codigo": None,
             "reset_codigo_expira": None,
         }).eq('id', usuario['id']).execute()
