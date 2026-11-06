@@ -2,7 +2,7 @@
 from functools import wraps
 from datetime import datetime, timezone
 from flask import Blueprint, request, jsonify, session
-from helpers import supabase, dados_eventos
+from helpers import supabase, dados_eventos, tabela_usuarios
 
 admin_bp = Blueprint('admin', __name__)
 
@@ -35,15 +35,7 @@ def admin_stats():
     }
 
     try:
-        usuarios_resp = None
-        for tbl in ['usuario', 'usuarios']:
-            try:
-                res = supabase.table(tbl).select('*').execute()
-                if res and res.data:
-                    usuarios_resp = res
-                    break
-            except Exception:
-                pass
+        usuarios_resp = supabase.table(tabela_usuarios()).select('*').execute()
 
         if usuarios_resp and usuarios_resp.data:
             usuarios = usuarios_resp.data
@@ -106,15 +98,10 @@ def admin_stats():
 def admin_usuarios():
     """Lista todos os usuários com detalhes para o painel do administrador."""
     try:
-        usuarios = []
-        for tbl in ['usuario', 'usuarios']:
-            try:
-                resp = supabase.table(tbl).select('id, user, nome, perfil, fase_jogo, created_at').execute()
-                if resp and resp.data:
-                    usuarios = resp.data
-                    break
-            except Exception:
-                pass
+        resp = supabase.table(tabela_usuarios()).select(
+            'id, user, nome, perfil, fase_jogo, created_at'
+        ).execute()
+        usuarios = resp.data if resp and resp.data else []
 
         # Ordena por data de cadastro mais recente
         usuarios.sort(

@@ -51,34 +51,62 @@ with open(caminho_arquivo, "r", encoding="utf-8") as arquivo:
     dados_eventos = json.load(arquivo)
 
 
+# Cache em memória do processo: tanto o nome da tabela de usuários quanto as
+# colunas disponíveis são, na prática, fixos durante a vida do servidor (o
+# schema do Supabase não muda sozinho). Sem isso, toda rota de autenticação
+# (login, cadastro, esqueci-senha, resetar-senha) pagava 1-2 round-trips
+# extras ao Supabase só pra "redescobrir" algo que já sabia da chamada
+# anterior — essa era a maior causa isolada de lentidão nessas rotas.
+_tabela_usuarios_cache = None
+_colunas_cache = {}
+
+
 def obter_colunas_tabela(tabela):
-    """Retorna as colunas disponíveis na tabela."""
+    """Retorna as colunas disponíveis na tabela (cacheado por tabela)."""
+    if tabela in _colunas_cache:
+        return _colunas_cache[tabela]
     try:
         # Tenta fazer uma query para detectar as colunas
         resultado = supabase.table(tabela).select('*').limit(1).execute()
         if resultado.data and len(resultado.data) > 0:
-            return list(resultado.data[0].keys())
-        else:
-            # Se a tabela estiver vazia, retorna colunas mínimas esperadas
-            return ['id', 'user', 'senha', 'nome']
+            colunas = list(resultado.data[0].keys())
+            _colunas_cache[tabela] = colunas  # só cacheia um resultado real
+            return colunas
+        # Tabela ainda vazia: não cacheia (a próxima chamada pode já ter dados)
+        return ['id', 'user', 'senha', 'nome']
     except Exception:
         return ['id', 'user', 'senha', 'nome']
 
 
 def tabela_usuarios():
-    """Retorna a tabela de usuários configurada ou a primeira tabela existente."""
+    """Retorna a tabela de usuários configurada ou a primeira tabela existente (cacheado)."""
+    global _tabela_usuarios_cache
+    if _tabela_usuarios_cache is not None:
+        return _tabela_usuarios_cache
+
     candidatos = [USERS_TABLE] + [tabela for tabela in ('usuario', 'usuarios') if tabela != USERS_TABLE]
     erros = []
     for tabela in candidatos:
         try:
             supabase.table(tabela).select('user').limit(1).execute()
+            _tabela_usuarios_cache = tabela
             return tabela
         except Exception as erro:
             erros.append(f'{tabela}: {erro}')
     raise RuntimeError('Nenhuma tabela de usuários acessível. Configure USERS_TABLE. ' + ' | '.join(erros))
 
 
-# ─── senha: hash (Werkzeug) com compatibilidade para contas antigas em texto puro ───
+# ─── senha: hash (Werkzeug) ──────────────────────────────────────────────
+# O padrão do Werkzeug (scrypt N=32768) leva ~170ms por chamada — perceptível
+# em CPU compartilhada (ex.: Render free tier), em toda tela de login/
+# cadastro. N=16384 ainda está dentro da faixa que a OWASP considera segura
+# pra scrypt, só que no dobro da velocidade (~70-90ms). check_password_hash
+# não precisa saber disso: ela lê o método direto do hash salvo, então hashes
+# antigos (gerados com o padrão anterior) continuam validando normalmente.
+def gerar_hash_senha(valor):
+    return generate_password_hash(valor, method="scrypt:16384:8:1")
+
+
 def senha_confere(senha_armazenada, senha_informada):
     senha_armazenada = str(senha_armazenada or "")
     if senha_armazenada.startswith(("pbkdf2:", "scrypt:", "argon2:")):
