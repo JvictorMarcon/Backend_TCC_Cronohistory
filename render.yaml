@@ -3,7 +3,7 @@ services:
     name: chronohistory-backend
     runtime: python
     buildCommand: pip install -r Backend_TCC/requirements.txt
-    startCommand: gunicorn --chdir Backend_TCC app:app
+    startCommand: gunicorn --chdir Backend_TCC app:app --workers 2 --threads 4 --worker-class gthread --timeout 60
     envVars:
       - key: url
         sync: false
