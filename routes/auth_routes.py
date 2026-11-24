@@ -19,6 +19,8 @@ from helpers import (
     gerar_hash_senha,
     _parse_timestamp,
     enviar_email_codigo_reset,
+    colunas_login,
+    executor,
 )
 
 auth_bp = Blueprint('auth', __name__)
@@ -61,7 +63,7 @@ def login():
     # ── Login via Supabase ─────────────────────────────────
     try:
         tabela = tabela_usuarios()
-        pessoa = supabase.table(tabela).select('*').eq('user', user).limit(1).execute()
+        pessoa = supabase.table(tabela).select(colunas_login(tabela)).eq('user', user).limit(1).execute()
 
         if pessoa and pessoa.data and senha_confere(pessoa.data[0].get('senha'), password):
             usuario = pessoa.data[0]
@@ -177,29 +179,37 @@ def cadastro():
 
     try:
         tabela = tabela_usuarios()
-        existente =supabase.table(tabela).select('id').eq('user', user).limit(1).execute()
-        if existente.data:
+        # Colunas já vêm do cache (preenchido no boot); só a 1ª vez custa uma ida ao banco.
+        colunas_disponiveis = obter_colunas_tabela(tabela)
+
+        # Três coisas independentes rodam AO MESMO TEMPO em vez de uma depois
+        # da outra: conferir o usuário, conferir o e-mail e calcular o hash
+        # da senha (scrypt). O tempo total passa a ser o da mais lenta.
+        f_usuario = executor.submit(
+            lambda: supabase.table(tabela).select('id').eq('user', user).limit(1).execute())
+        f_email = None
+        if 'email' in colunas_disponiveis:
+            f_email = executor.submit(
+                lambda: supabase.table(tabela).select('id').eq('email', email).limit(1).execute())
+        f_hash = executor.submit(gerar_hash_senha, password)
+
+        if f_usuario.result().data:
             return jsonify({
                 "status": "error",
                 "message": "Nome de usuário já está em uso. Escolha outro."
             }), 400
 
-        # Detecta quais colunas existem na tabela
-        colunas_disponiveis = obter_colunas_tabela(tabela)
-
-        if 'email' in colunas_disponiveis:
-            email_existente = supabase.table(tabela).select('id').eq('email', email).limit(1).execute()
-            if email_existente.data:
-                return jsonify({
-                    "status": "error",
-                    "message": "Este e-mail já está cadastrado. Faça login ou use outro e-mail."
-                }), 400
+        if f_email is not None and f_email.result().data:
+            return jsonify({
+                "status": "error",
+                "message": "Este e-mail já está cadastrado. Faça login ou use outro e-mail."
+            }), 400
 
         # Cria payload apenas com campos que existem na tabela
         payload = {
             "nome": nome,
             "user": user,
-            "senha": gerar_hash_senha(password),
+            "senha": f_hash.result(),
         }
 
         if 'email' in colunas_disponiveis:
