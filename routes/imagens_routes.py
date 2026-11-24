@@ -2,17 +2,21 @@
 from flask import Blueprint, request, jsonify
 
 from auth import token_obrigatorio
-from helpers import supabase
+from helpers import supabase, cache_get, cache_set, invalidar_cache
 
 imagens_bp = Blueprint('imagens', __name__)
 
 
 @imagens_bp.route('/imagens', methods=['GET'])
 def buscar_imagens():
+    em_cache = cache_get('imagens')
+    if em_cache is not None:
+        return jsonify(em_cache), 200
     try:
         dados_imagens = supabase.table("imagens").select("*").execute()
         if dados_imagens and dados_imagens.data is not None:
             if len(dados_imagens.data) > 0:
+                cache_set('imagens', dados_imagens.data)
                 return jsonify(dados_imagens.data), 200
 
             # Se a tabela imagens estiver vazia, busca os registros da tabela evento no Supabase
@@ -70,6 +74,7 @@ def adicionar_imagens():
 
         # Insere os dados na tabela imagens
         supabase.table("imagens").insert([dados_imagens]).execute()
+        invalidar_cache('imagens')
         return jsonify({
             "status": "success",
             "message": "Imagem adicionada com sucesso!",
@@ -92,6 +97,7 @@ def deletar_imagens(id):
         }), 400
     try:
         supabase.table('imagens').delete().eq('id', id).execute()
+        invalidar_cache('imagens')
         return jsonify({
             "status": "success",
             "message": "Imagem deletada com sucesso!",
@@ -131,6 +137,7 @@ def editar_imagens(id):
 
     try:
         supabase.table('imagens').update(campos_para_atualizar).eq('id', id).execute()
+        invalidar_cache('imagens')
 
         return jsonify({
             "status": "success",
