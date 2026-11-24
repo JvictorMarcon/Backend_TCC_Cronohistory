@@ -6,11 +6,10 @@ ser importado livremente pelos arquivos de rota sem gerar import circular.
 """
 import os
 import json
-import time
-import threading
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from werkzeug.security import generate_password_hash, check_password_hash
+from google import genai
+from google.genai import types
 from dotenv import load_dotenv
 from supabase import create_client, Client
 import resend
@@ -42,59 +41,8 @@ origens_configuradas = [
 FRONTEND_ORIGINS = list(dict.fromkeys(origens_configuradas + origens_padrao))
 
 # Clientes
+client = genai.Client(api_key=GEMINI_API_KEY)
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-
-# O SDK do Gemini é pesado (~1 s de import e dezenas de MB de memória) e só a
-# busca por IA usa. Carregá-lo sob demanda deixa o servidor subir mais rápido
-# depois de dormir (Render free) e sobra memória para os workers.
-_gemini_client = None
-_gemini_lock = threading.Lock()
-
-
-def _gemini():
-    global _gemini_client
-    if _gemini_client is None:
-        with _gemini_lock:
-            if _gemini_client is None:
-                from google import genai
-                _gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-    return _gemini_client
-
-# Pequeno pool para fazer em paralelo coisas independentes (ex.: no cadastro,
-# conferir usuário, conferir e-mail e calcular o hash da senha ao mesmo tempo).
-# scrypt e as chamadas HTTP liberam o GIL, então ganham tempo de verdade.
-executor = ThreadPoolExecutor(max_workers=4, thread_name_prefix="chrono")
-
-
-# ─── Cache de leitura com validade curta ─────────────────────────────────
-# /eventos e /imagens mudam raramente mas são lidos por todo visitante, e cada
-# leitura custa uma ida ao Supabase (~0,4 s). Guardamos o resultado por alguns
-# segundos; as rotas de escrita chamam invalidar_cache() para o próprio worker
-# enxergar a mudança na hora (os outros workers expiram em até TTL segundos).
-_cache_leitura = {}
-_cache_lock = threading.Lock()
-CACHE_TTL = 30
-
-
-def cache_get(chave):
-    item = _cache_leitura.get(chave)
-    if item and time.monotonic() - item[0] < CACHE_TTL:
-        return item[1]
-    return None
-
-
-def cache_set(chave, valor):
-    with _cache_lock:
-        _cache_leitura[chave] = (time.monotonic(), valor)
-
-
-def invalidar_cache(*chaves):
-    with _cache_lock:
-        if chaves:
-            for c in chaves:
-                _cache_leitura.pop(c, None)
-        else:
-            _cache_leitura.clear()
 
 caminho_arquivo = os.path.join(os.path.dirname(__file__), "periodos.json")
 
@@ -218,38 +166,12 @@ def enviar_email_codigo_reset(email, nome, codigo):
     })
 
 
-def aquecer():
-    """Pré-carrega o que o primeiro login/cadastro precisaria descobrir.
-
-    Roda em segundo plano na subida do servidor: abre a conexão com o Supabase
-    e preenche os caches de tabela/colunas, para o primeiro usuário não pagar
-    esses round-trips."""
-    try:
-        obter_colunas_tabela(tabela_usuarios())
-    except Exception as erro:
-        print(f"Aviso: pré-aquecimento falhou ({erro})")
-
-
-COLUNAS_LOGIN = ("id", "user", "senha", "nome", "perfil", "role", "fase_jogo", "fase_quiz")
-
-
-def colunas_login(tabela):
-    """Lista só as colunas que o login usa (evita trazer hash de reset, e-mail etc.).
-    Cai para '*' se as colunas ainda não são conhecidas."""
-    conhecidas = _colunas_cache.get(tabela)
-    if not conhecidas:
-        return "*"
-    escolhidas = [c for c in COLUNAS_LOGIN if c in conhecidas]
-    return ",".join(escolhidas) if "senha" in escolhidas and "user" in escolhidas else "*"
-
-
 def generate_history(evento):
     prompt_content = f"""
     Procure mais informações sobre o evento {evento}
     """
-    from google.genai import types
     # Faz a chamada para o modelo pedindo uma resposta em JSON
-    response = _gemini().models.generate_content(
+    response = client.models.generate_content(
         model="gemini-3.1-flash-lite",
         contents=prompt_content,
         config=types.GenerateContentConfig(

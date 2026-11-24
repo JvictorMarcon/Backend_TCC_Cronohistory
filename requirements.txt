@@ -6,4 +6,3 @@ flasgger
 supabase
 gunicorn
 resend
-flask-compress

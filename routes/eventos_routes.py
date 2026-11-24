@@ -3,7 +3,7 @@ import json
 from flask import Blueprint, request, jsonify
 
 from auth import token_obrigatorio
-from helpers import supabase, dados_eventos, generate_history, cache_get, cache_set, invalidar_cache
+from helpers import supabase, dados_eventos, generate_history
 
 eventos_bp = Blueprint('eventos', __name__)
 
@@ -19,16 +19,10 @@ def root():
 
 @eventos_bp.route('/eventos', methods=["GET"])
 def events():
-    # Leitura quente: responde da memória (validade curta) sem ir ao Supabase
-    em_cache = cache_get('eventos')
-    if em_cache is not None:
-        return jsonify(em_cache), 200
-
     # 1. Tenta buscar da tabela 'evento' do Supabase
     try:
         res = supabase.table('evento').select('*').execute()
         if res and res.data and len(res.data) > 0:
-            cache_set('eventos', res.data)
             return jsonify(res.data), 200
     except Exception as e:
         print("Tabela 'evento' no Supabase:", e)
@@ -152,7 +146,6 @@ def adicionar_evento():
             supabase.table('evento').insert([dados_evento]).execute()
         except Exception:
             supabase.table('eventos').insert([dados_evento]).execute()
-        invalidar_cache('eventos', 'imagens')
 
         return jsonify({
             "status": "success",
@@ -208,7 +201,6 @@ def editar_evento(id):
 
     try:
         supabase.table('evento').update(campos_para_atualizar).eq('id', id).execute()
-        invalidar_cache('eventos', 'imagens')
 
         return jsonify({
             "status": "success",
@@ -232,7 +224,6 @@ def deletar_evento(id):
         }), 400
     try:
         supabase.table('evento').delete().eq('id', id).execute()
-        invalidar_cache('eventos', 'imagens')
         return jsonify({
             "status": "success",
             "message": "Evento deletado com sucesso!",
