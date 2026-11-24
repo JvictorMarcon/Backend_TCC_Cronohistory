@@ -12,7 +12,8 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
-from supabase import create_client, Client
+import httpx
+from supabase import create_client, Client, ClientOptions
 import resend
 
 from config import PERIODS_SCHEMA, SYSTEM_INSTRUCTION
@@ -42,7 +43,20 @@ origens_configuradas = [
 FRONTEND_ORIGINS = list(dict.fromkeys(origens_configuradas + origens_padrao))
 
 # Clientes
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+# Cliente HTTP próprio para o Supabase. O padrão da biblioteca é UMA conexão
+# HTTP/2 compartilhada por todas as threads do servidor; sob requisições
+# simultâneas essa conexão cai ("ConnectionTerminated") e as rotas devolvem
+# 500/502 ou ficam penduradas. Aqui: HTTP/1.1 com um pequeno pool de conexões
+# reaproveitadas (cada thread usa a sua) e timeouts curtos — uma chamada presa
+# não segura mais a thread por 2 minutos.
+_http_supabase = httpx.Client(
+    http2=False,
+    timeout=httpx.Timeout(20.0, connect=8.0),
+    limits=httpx.Limits(max_connections=20, max_keepalive_connections=10, keepalive_expiry=60),
+)
+supabase: Client = create_client(
+    SUPABASE_URL, SUPABASE_KEY, options=ClientOptions(httpx_client=_http_supabase)
+)
 
 # O SDK do Gemini é pesado (~1 s de import e dezenas de MB de memória) e só a
 # busca por IA usa. Carregá-lo sob demanda deixa o servidor subir mais rápido
