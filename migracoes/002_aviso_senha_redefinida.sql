@@ -1,0 +1,12 @@
+-- ============================================================
+-- MIGRAÇÃO 002 — aviso "sua senha foi redefinida pelo administrador"
+-- Rode UMA vez no Supabase: SQL Editor > New query > cole e execute.
+--
+-- Só ACRESCENTA uma coluna vazia na tabela usuario: não altera nem apaga nada
+-- que já existe, e pode rodar de novo sem problema (IF NOT EXISTS).
+--
+-- Funcionamento: quando o administrador redefine a senha de alguém, esta coluna
+-- recebe a data/hora. Enquanto estiver preenchida, a pessoa vê um aviso obrigatório
+-- ao entrar e precisa criar uma senha nova; ao criar, a coluna volta a ficar vazia.
+-- ============================================================
+ALTER TABLE public.usuario ADD COLUMN IF NOT EXISTS senha_redefinida_em TIMESTAMPTZ;

@@ -1,4 +1,4 @@
-"""Rotas da conta logada: nome, senha, favoritos e preferências do site.
+"""Rotas da conta logada: perfil (nome, usuário, e-mail), senha, favoritos e preferências do site.
 
 Todas exigem sessão ativa (a mesma do /login). Favoritos e preferências ficam em
 tabelas próprias (veja migracoes/001_favoritos_e_preferencias.sql); se o SQL
@@ -14,14 +14,16 @@ from functools import wraps
 
 from flask import Blueprint, request, jsonify, session
 
-from helpers import supabase, tabela_usuarios, senha_confere, gerar_hash_senha
-from routes.auth_routes import NOME_REGEX
+from helpers import supabase, tabela_usuarios, senha_confere, gerar_hash_senha, usuario_reservado, limpar_aviso_senha
+from routes.auth_routes import NOME_REGEX, EMAIL_REGEX
 
 perfil_bp = Blueprint('perfil', __name__)
 
 MAX_FAVORITOS_POR_REQUISICAO = 500
 FONTES_VALIDAS = (90, 100, 115, 130)
 TEMAS_VALIDOS = ('claro', 'escuro')
+ESPACAMENTOS_VALIDOS = ('normal', 'amplo')
+USUARIO_REGEX = re.compile(r"^[A-Za-z0-9._-]{3,30}$")
 
 # Tentativas erradas de "senha atual" por usuário (evita adivinhar a senha de uma sessão aberta)
 _falhas_senha = {}
@@ -66,27 +68,127 @@ def _normalizar(texto):
     return ''.join(c for c in texto if not unicodedata.combining(c)).lower().strip()
 
 
-# ─── Nome ────────────────────────────────────────────────────────────────
+def _conferir_senha_atual(uid, armazenada, informada):
+    """Confere a senha atual com limite de tentativas. Devolve None se estiver certa,
+    ou a resposta de erro pronta para retornar."""
+    agora = time.monotonic()
+    fila = _falhas_senha.setdefault(uid, deque())
+    while fila and agora - fila[0] > JANELA_FALHAS:
+        fila.popleft()
+    if len(fila) >= LIMITE_FALHAS:
+        return _erro("Muitas tentativas com a senha atual errada. Aguarde alguns minutos.", 429)
+    if not senha_confere(armazenada, informada):
+        fila.append(agora)
+        return _erro("A senha atual está incorreta.", 400)
+    fila.clear()
+    return None
+
+
+def _linha_do_usuario(uid):
+    res = supabase.table(tabela_usuarios()).select('*').eq('id', uid).limit(1).execute()
+    return res.data[0] if res.data else None
+
+
+# ─── Perfil: nome, usuário e e-mail ──────────────────────────────────────
+@perfil_bp.route('/perfil', methods=['GET'])
+@exigir_login
+def ler_perfil():
+    try:
+        linha = _linha_do_usuario(session['id'])
+    except Exception as e:
+        return _falha_banco(e)
+    if not linha:
+        return _erro("Conta não encontrada.", 404)
+    fase = linha.get('fase_jogo') if linha.get('fase_jogo') is not None else linha.get('fase_quiz')
+    return jsonify({
+        "status": "success",
+        "user": linha.get('user'),
+        "nome": linha.get('nome'),
+        "email": linha.get('email'),
+        "fase_jogo": fase,
+        "criado_em": linha.get('created_at'),
+    }), 200
+
+
 @perfil_bp.route('/perfil', methods=['PATCH'])
 @exigir_login
 def atualizar_perfil():
     dados = request.get_json(silent=True) or {}
-    nome = ' '.join(str(dados.get('nome', '')).split())
-
-    if len(nome) < 2:
-        return _erro("Informe um nome com pelo menos 2 letras.", 400)
-    if len(nome) > 80:
-        return _erro("O nome pode ter no máximo 80 caracteres.", 400)
-    if not NOME_REGEX.match(nome):
-        return _erro("O nome deve conter apenas letras e espaços.", 400)
+    uid = session['id']
 
     try:
-        supabase.table(tabela_usuarios()).update({"nome": nome}).eq('id', session['id']).execute()
+        atual = _linha_do_usuario(uid)
     except Exception as e:
         return _falha_banco(e)
+    if not atual:
+        return _erro("Conta não encontrada.", 404)
 
-    session['nome'] = nome
-    return jsonify({"status": "success", "message": "Nome atualizado.", "nome": nome}), 200
+    mudancas = {}
+
+    if 'nome' in dados:
+        nome = ' '.join(str(dados.get('nome', '')).split())
+        if len(nome) < 2:
+            return _erro("Informe um nome com pelo menos 2 letras.", 400)
+        if len(nome) > 80:
+            return _erro("O nome pode ter no máximo 80 caracteres.", 400)
+        if not NOME_REGEX.match(nome):
+            return _erro("O nome deve conter apenas letras e espaços.", 400)
+        if nome != atual.get('nome'):
+            mudancas['nome'] = nome
+
+    if 'user' in dados:
+        novo_user = str(dados.get('user', '')).strip()
+        if novo_user != str(atual.get('user') or ''):
+            if not USUARIO_REGEX.match(novo_user):
+                return _erro("O usuário deve ter de 3 a 30 caracteres: letras, números, ponto, hífen ou sublinhado.", 400)
+            if usuario_reservado(novo_user):
+                return _erro("Esse nome de usuário não está disponível.", 400)
+            mudancas['user'] = novo_user
+
+    if 'email' in dados:
+        novo_email = str(dados.get('email', '')).strip().lower()
+        if novo_email != str(atual.get('email') or '').lower():
+            if not EMAIL_REGEX.match(novo_email):
+                return _erro("Informe um e-mail em um formato válido (ex.: usuario@email.com).", 400)
+            mudancas['email'] = novo_email
+
+    if not mudancas:
+        return jsonify({"status": "success", "message": "Nada para alterar.",
+                        "nome": atual.get('nome'), "user": atual.get('user'), "email": atual.get('email')}), 200
+
+    # trocar o login ou o e-mail muda a forma de entrar na conta: exige a senha atual
+    if 'user' in mudancas or 'email' in mudancas:
+        senha = str(dados.get('senha_atual', '')).strip()
+        if not senha:
+            return _erro("Informe a senha atual para alterar o usuário ou o e-mail.", 400)
+        erro = _conferir_senha_atual(uid, atual.get('senha'), senha)
+        if erro:
+            return erro
+
+    try:
+        tabela = tabela_usuarios()
+        # unicidade (o banco também garante, mas assim a mensagem sai certa)
+        if 'user' in mudancas:
+            outros = supabase.table(tabela).select('id').eq('user', mudancas['user']).execute().data or []
+            if any(str(o.get('id')) != str(uid) for o in outros):
+                return _erro("Esse nome de usuário já está em uso. Escolha outro.", 409)
+        if 'email' in mudancas:
+            outros = supabase.table(tabela).select('id').eq('email', mudancas['email']).execute().data or []
+            if any(str(o.get('id')) != str(uid) for o in outros):
+                return _erro("Esse e-mail já está cadastrado em outra conta.", 409)
+        supabase.table(tabela).update(mudancas).eq('id', uid).execute()
+    except Exception as e:
+        if 'duplicate' in str(e).lower() or '23505' in str(e):
+            return _erro("Esse usuário ou e-mail já está em uso.", 409)
+        return _falha_banco(e)
+
+    if 'nome' in mudancas:
+        session['nome'] = mudancas['nome']
+    if 'user' in mudancas:
+        session['user'] = mudancas['user']
+    novo = {**atual, **mudancas}
+    return jsonify({"status": "success", "message": "Perfil atualizado.",
+                    "nome": novo.get('nome'), "user": novo.get('user'), "email": novo.get('email')}), 200
 
 
 # ─── Senha ───────────────────────────────────────────────────────────────
@@ -106,13 +208,6 @@ def alterar_senha():
     if not re.search(r"[A-Za-z0-9À-ÖØ-öø-ÿ]", nova):
         return _erro("A nova senha deve conter ao menos uma letra ou um número.", 400)
 
-    agora = time.monotonic()
-    fila = _falhas_senha.setdefault(uid, deque())
-    while fila and agora - fila[0] > JANELA_FALHAS:
-        fila.popleft()
-    if len(fila) >= LIMITE_FALHAS:
-        return _erro("Muitas tentativas com a senha atual errada. Aguarde alguns minutos.", 429)
-
     try:
         tabela = tabela_usuarios()
         res = supabase.table(tabela).select('id,senha').eq('id', uid).limit(1).execute()
@@ -120,9 +215,9 @@ def alterar_senha():
             return _erro("Conta não encontrada.", 404)
         armazenada = res.data[0].get('senha')
 
-        if not senha_confere(armazenada, atual):
-            fila.append(agora)
-            return _erro("A senha atual está incorreta.", 400)
+        erro = _conferir_senha_atual(uid, armazenada, atual)
+        if erro:
+            return erro
         if senha_confere(armazenada, nova):
             return _erro("A nova senha precisa ser diferente da atual.", 400)
 
@@ -130,7 +225,7 @@ def alterar_senha():
     except Exception as e:
         return _falha_banco(e)
 
-    fila.clear()
+    limpar_aviso_senha(uid)  # se o administrador tinha redefinido a senha, o aviso some
     return jsonify({"status": "success", "message": "Senha alterada com sucesso."}), 200
 
 
@@ -203,6 +298,8 @@ def _limpar_preferencias(bruto):
         limpo['fonte'] = bruto['fonte']
     if bruto.get('tema') in TEMAS_VALIDOS:
         limpo['tema'] = bruto['tema']
+    if bruto.get('espacamento') in ESPACAMENTOS_VALIDOS:
+        limpo['espacamento'] = bruto['espacamento']
     for chave in ('reduzirMovimento', 'particulas'):
         if isinstance(bruto.get(chave), bool):
             limpo[chave] = bruto[chave]

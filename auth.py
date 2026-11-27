@@ -91,3 +91,19 @@ def token_obrigatorio(func):
         return func(*args, **kwargs)
 
     return verificar_token
+
+
+# ==========================
+# SENHA TEMPORÁRIA (redefinição feita pelo administrador)
+# ==========================
+# Sem caracteres que se confundem na leitura (0/O, 1/I/L): o administrador vai
+# passar esta senha para a pessoa por mensagem ou em voz alta.
+_ALFABETO_SENHA_TEMP = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"
+
+
+def gerar_senha_temporaria(tamanho=8):
+    """8 caracteres sorteados com `secrets` (gerador seguro), sempre com letra e número."""
+    while True:
+        senha = "".join(secrets.choice(_ALFABETO_SENHA_TEMP) for _ in range(tamanho))
+        if any(c.isdigit() for c in senha) and any(c.isalpha() for c in senha):
+            return senha

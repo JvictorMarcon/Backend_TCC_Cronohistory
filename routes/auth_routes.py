@@ -21,6 +21,9 @@ from helpers import (
     enviar_email_codigo_reset,
     colunas_login,
     executor,
+    usuario_reservado,
+    senha_redefinida,
+    limpar_aviso_senha,
 )
 
 auth_bp = Blueprint('auth', __name__)
@@ -94,6 +97,7 @@ def login():
                 "status": "success",
                 "message": "Login realizado com sucesso!",
                 "role": role_final,
+                "senha_redefinida": bool(usuario.get("senha_redefinida_em")),
                 "user": {
                     "id": usuario.get("id"),
                     "user": usuario.get("user", user),
@@ -125,7 +129,9 @@ def me():
         "nome": session.get('nome'),
         "role": session.get('role'),
         "id": session.get('id'),
-        "fase_jogo": session.get('fase_jogo')
+        "fase_jogo": session.get('fase_jogo'),
+        # true quando o administrador redefiniu a senha e a pessoa ainda não criou uma nova
+        "senha_redefinida": bool(session.get('id')) and session.get('role') != 'adm' and senha_redefinida(session.get('id'))
     }), 200
 
 
@@ -153,6 +159,8 @@ def cadastro():
     # --- Usuário: obrigatório ---
     if not user:
         return jsonify({"status": "error", "message": "O nome de usuário é obrigatório."}), 400
+    if usuario_reservado(user):
+        return jsonify({"status": "error", "message": "Esse nome de usuário não está disponível."}), 400
 
     # --- E-mail: obrigatório e com formato válido ---
     if not email:
@@ -331,6 +339,7 @@ def resetar_senha():
             "reset_codigo": None,
             "reset_codigo_expira": None,
         }).eq('id', usuario['id']).execute()
+        limpar_aviso_senha(usuario['id'])
 
         return jsonify({
             "status": "success",

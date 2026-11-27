@@ -20,7 +20,8 @@ CREATE TABLE public.usuario (
     fase_jogo INT DEFAULT 1,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     reset_codigo VARCHAR(255),
-    reset_codigo_expira TIMESTAMPTZ
+    reset_codigo_expira TIMESTAMPTZ,
+    senha_redefinida_em TIMESTAMPTZ  -- preenchida quando o administrador redefine a senha (migracoes/002)
 );
 CREATE INDEX idx_usuario_user ON public.usuario("user");
 

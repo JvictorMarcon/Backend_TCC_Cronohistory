@@ -244,7 +244,7 @@ def aquecer():
         print(f"Aviso: pré-aquecimento falhou ({erro})")
 
 
-COLUNAS_LOGIN = ("id", "user", "senha", "nome", "perfil", "role", "fase_jogo", "fase_quiz")
+COLUNAS_LOGIN = ("id", "user", "senha", "nome", "perfil", "role", "fase_jogo", "fase_quiz", "senha_redefinida_em")
 
 
 def colunas_login(tabela):
@@ -273,3 +273,59 @@ def generate_history(evento):
         )
     )
     return response.text
+
+
+# ─── nomes de usuário reservados ─────────────────────────────────────────
+# O /login considera administrador quem tem um destes nomes de usuário. Por isso
+# ninguém pode CRIAR uma conta nem TROCAR o próprio usuário para um deles.
+USUARIOS_RESERVADOS = {"admin", "adm", "administrador", "cr0n0h1st0r7"}
+
+
+def usuario_reservado(nome):
+    nome = str(nome or "").strip().lower()
+    adm_env = str(os.getenv("ADM_USUARIO") or "").strip().lower()
+    return nome in USUARIOS_RESERVADOS or (adm_env != "" and nome == adm_env)
+
+
+# ─── aviso "sua senha foi redefinida pelo administrador" ─────────────────
+# A coluna usuario.senha_redefinida_em (migracoes/002_aviso_senha_redefinida.sql) fica
+# preenchida desde que o administrador redefine a senha até a pessoa criar uma nova.
+# O /me consulta isso a cada carregamento de página, então o resultado fica em cache
+# por alguns segundos. Enquanto o SQL não for rodado, a coluna não existe e tudo
+# responde "sem aviso" (a redefinição continua funcionando).
+def senha_redefinida(uid):
+    chave = f"redef:{uid}"
+    em_cache = cache_get(chave)
+    if em_cache is not None:
+        return em_cache
+    valor = False
+    try:
+        res = supabase.table(tabela_usuarios()).select('senha_redefinida_em').eq('id', uid).limit(1).execute()
+        valor = bool(res.data and res.data[0].get('senha_redefinida_em'))
+    except Exception:
+        valor = False
+    cache_set(chave, valor)
+    return valor
+
+
+def marcar_aviso_senha(uid):
+    """Liga o aviso. Devolve False se a coluna ainda não existe no banco."""
+    try:
+        supabase.table(tabela_usuarios()).update(
+            {"senha_redefinida_em": datetime.now(timezone.utc).isoformat()}
+        ).eq('id', uid).execute()
+    except Exception as erro:
+        print("marcar_aviso_senha: coluna ausente ou erro:", erro, flush=True)
+        invalidar_cache(f"redef:{uid}")
+        return False
+    invalidar_cache(f"redef:{uid}")
+    return True
+
+
+def limpar_aviso_senha(uid):
+    """Desliga o aviso (a pessoa já criou uma senha nova)."""
+    try:
+        supabase.table(tabela_usuarios()).update({"senha_redefinida_em": None}).eq('id', uid).execute()
+    except Exception:
+        pass  # coluna ainda não existe: não há aviso para desligar
+    invalidar_cache(f"redef:{uid}")
