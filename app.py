@@ -1,4 +1,5 @@
 import os
+import re
 from flask import Flask, jsonify
 from flask_cors import CORS
 from flasgger import Swagger
@@ -9,12 +10,17 @@ from routes.auth_routes import auth_bp
 from routes.admin_routes import admin_bp
 from routes.eventos_routes import eventos_bp
 from routes.imagens_routes import imagens_bp
+from routes.perfil_routes import perfil_bp
 
 # Inicializa o Flask
 app = Flask(__name__)
+# Aceita também o site aberto no seu computador em QUALQUER porta (Live Server
+# usa 5500, `http.server` 8000 etc.) — antes só a 5502 passava e as demais
+# eram barradas pelo navegador.
+ORIGENS_LOCAIS = re.compile(r"^http://(localhost|127\.0\.0\.1)(:\d+)?$")
 # max_age: o navegador guarda a resposta do "pré-voo" (OPTIONS) e não repete
 # essa viagem extra a cada login/cadastro/fetch com JSON (~0,3 s cada).
-CORS(app, origins=FRONTEND_ORIGINS, supports_credentials=True, max_age=86400)
+CORS(app, origins=FRONTEND_ORIGINS + [ORIGENS_LOCAIS], supports_credentials=True, max_age=86400)
 
 # Compressão das respostas (JSON de eventos/imagens encolhe ~70%). Opcional:
 # se o pacote ainda não estiver instalado, o servidor sobe normalmente sem ela.
@@ -41,6 +47,7 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(admin_bp)
 app.register_blueprint(eventos_bp)
 app.register_blueprint(imagens_bp)
+app.register_blueprint(perfil_bp)
 
 
 @app.route('/health', methods=['GET', 'HEAD'])
