@@ -329,3 +329,12 @@ def limpar_aviso_senha(uid):
     except Exception:
         pass  # coluna ainda não existe: não há aviso para desligar
     invalidar_cache(f"redef:{uid}")
+
+
+# ─── chave de um evento (usada nos favoritos) ────────────────────────────
+# Nome sem acento, em minúsculas e sem espaços nas pontas: é o que liga o mesmo evento
+# na linha do tempo, na galeria e no banco (que têm ids diferentes).
+def normalizar_chave(texto):
+    import unicodedata
+    texto = unicodedata.normalize('NFD', str(texto or ''))
+    return ''.join(c for c in texto if not unicodedata.combining(c)).lower().strip()

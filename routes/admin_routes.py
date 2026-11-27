@@ -1,10 +1,11 @@
 """Rotas específicas do painel administrativo: estatísticas e listagem de alunos."""
 from functools import wraps
+from collections import Counter
 from datetime import datetime, timezone
 from flask import Blueprint, request, jsonify, session
 from helpers import (
     supabase, dados_eventos, tabela_usuarios, gerar_hash_senha,
-    marcar_aviso_senha, usuario_reservado, invalidar_cache,
+    marcar_aviso_senha, usuario_reservado, invalidar_cache, normalizar_chave, cache_get,
 )
 from auth import gerar_senha_temporaria
 
@@ -189,3 +190,82 @@ def admin_excluir_usuario(uid):
     except Exception as e:
         print("admin_excluir_usuario:", e, flush=True)
         return jsonify({"status": "error", "message": "Não foi possível excluir agora."}), 500
+
+
+# ─── Eventos mais favoritados ────────────────────────────────────────────
+def _todas_as_linhas_de_favoritos():
+    """Lê a tabela inteira de favoritos em páginas (o Supabase devolve no máximo 1000 por vez)."""
+    linhas, pagina, tamanho = [], 0, 1000
+    while pagina < 100:  # trava de segurança: até 100 mil favoritos
+        lote = supabase.table('favoritos').select('usuario_id,evento_chave').range(
+            pagina * tamanho, pagina * tamanho + tamanho - 1).execute().data or []
+        linhas.extend(lote)
+        if len(lote) < tamanho:
+            break
+        pagina += 1
+    return linhas
+
+
+def _eventos_por_chave():
+    """Nome, período e ano de cada evento, indexados pela chave normalizada."""
+    lista = cache_get('eventos')
+    if lista is None:
+        try:
+            lista = supabase.table('evento').select('nome,periodo,ano_inicio,lugar').execute().data or []
+        except Exception:
+            lista = []
+    indice = {}
+    for ev in lista:
+        if ev.get('nome'):
+            indice[normalizar_chave(ev['nome'])] = {
+                "nome": ev.get('nome'), "periodo": ev.get('periodo') or '',
+                "ano": ev.get('ano_inicio') or ev.get('ano') or '', "lugar": ev.get('lugar') or '',
+            }
+    # complementa com o periodos.json (rede de segurança: eventos que ainda não estão no banco)
+    periodos = dados_eventos.get('periodos', []) if isinstance(dados_eventos, dict) else dados_eventos
+    for periodo in periodos:
+        for ev in periodo.get('acontecimentos', []):
+            chave = normalizar_chave(ev.get('nome'))
+            if chave and chave not in indice:
+                indice[chave] = {"nome": ev.get('nome'), "periodo": periodo.get('nome') or '',
+                                 "ano": ev.get('ano') or '', "lugar": ev.get('lugar') or ''}
+    return indice
+
+
+@admin_bp.route('/admin/favoritos', methods=['GET'])
+@requer_sessao_adm
+def admin_favoritos():
+    """Ranking dos eventos mais favoritados. Só devolve CONTAGENS: nunca diz quem favoritou."""
+    limite = min(max(request.args.get('limite', 10, type=int) or 10, 1), 200)
+    try:
+        linhas = _todas_as_linhas_de_favoritos()
+    except Exception as e:
+        texto = str(e)
+        if any(t in texto for t in ('PGRST205', 'schema cache', 'does not exist', 'Could not find the table')):
+            return jsonify({"status": "error", "codigo": "tabela_ausente",
+                            "message": "A tabela de favoritos ainda não foi criada no banco."}), 503
+        print("admin_favoritos:", e, flush=True)
+        return jsonify({"status": "error", "message": "Não foi possível ler os favoritos agora."}), 500
+
+    contagem = Counter(l.get('evento_chave') for l in linhas if l.get('evento_chave'))
+    eventos = _eventos_por_chave()
+    ranking = []
+    for chave, total in contagem.items():
+        ev = eventos.get(chave)
+        ranking.append({
+            "chave": chave,
+            "nome": ev['nome'] if ev else chave,
+            "periodo": ev['periodo'] if ev else '',
+            "ano": ev['ano'] if ev else '',
+            "total": total,
+            "sem_evento": ev is None,  # o evento foi renomeado ou apagado depois de favoritado
+        })
+    ranking.sort(key=lambda r: (-r['total'], r['nome'].lower()))
+
+    return jsonify({
+        "status": "success",
+        "total_favoritos": len(linhas),
+        "usuarios_com_favoritos": len({l.get('usuario_id') for l in linhas}),
+        "eventos_favoritados": len(contagem),
+        "ranking": ranking[:limite],
+    }), 200
