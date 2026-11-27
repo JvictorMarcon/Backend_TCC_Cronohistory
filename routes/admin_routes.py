@@ -7,16 +7,16 @@ from helpers import (
     supabase, dados_eventos, tabela_usuarios, gerar_hash_senha,
     marcar_aviso_senha, usuario_reservado, invalidar_cache, normalizar_chave, cache_get,
 )
-from auth import gerar_senha_temporaria
+from auth import gerar_senha_temporaria, admin_autenticado
 
 admin_bp = Blueprint('admin', __name__)
 
 
-# ─── decorator de proteção admin (checa a sessão, não o JWT) ────────────────
+# ─── decorator de proteção admin (cookie de sessão OU token do administrador) ──
 def requer_sessao_adm(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        if session.get('role') != 'adm':
+        if not admin_autenticado():
             return jsonify({"status": "error", "message": "Acesso restrito ao administrador."}), 403
         return f(*args, **kwargs)
     return decorated

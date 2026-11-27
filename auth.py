@@ -107,3 +107,26 @@ def gerar_senha_temporaria(tamanho=8):
         senha = "".join(secrets.choice(_ALFABETO_SENHA_TEMP) for _ in range(tamanho))
         if any(c.isdigit() for c in senha) and any(c.isalpha() for c in senha):
             return senha
+
+
+# ==========================
+# ADMINISTRADOR AUTENTICADO (sessão OU token)
+# ==========================
+def admin_autenticado():
+    """True se a requisição vem do administrador: cookie de sessão ativo OU cabeçalho
+    `Authorization: Bearer <token>` com um token válido emitido no login do admin.
+
+    O token existe porque muitos navegadores (Safari, Brave, Firefox, modo anônimo) bloqueiam
+    cookies de terceiros: o site fica na Vercel e a API no Render, então o cookie de sessão
+    pode simplesmente não ser enviado. O login do admin guarda o token e o painel o envia.
+    """
+    if session.get('role') == 'adm':
+        return True
+    partes = request.headers.get("Authorization", "").split()
+    if len(partes) != 2 or partes[0] != "Bearer":
+        return False
+    try:
+        dados = jwt.decode(partes[1], current_app.config["SECRET_KEY"], algorithms=["HS256"])
+    except jwt.InvalidTokenError:  # expirado, adulterado ou de outra chave
+        return False
+    return dados.get("perfil") == "adm"
