@@ -269,3 +269,33 @@ def admin_favoritos():
         "eventos_favoritados": len(contagem),
         "ranking": ranking[:limite],
     }), 200
+
+
+@admin_bp.route('/admin/favoritos/usuarios', methods=['GET'])
+@requer_sessao_adm
+def admin_favoritos_usuarios():
+    """Quem favoritou um evento (só o administrador). O ranking continua devolvendo só contagens;
+    os nomes são pedidos evento a evento, quando o admin abre a linha."""
+    chave = normalizar_chave(request.args.get('chave', ''))
+    if not chave:
+        return jsonify({"status": "error", "message": "Informe o evento (parâmetro 'chave')."}), 400
+    try:
+        favs = supabase.table('favoritos').select('usuario_id').eq('evento_chave', chave).execute().data or []
+        ids = sorted({f['usuario_id'] for f in favs if f.get('usuario_id') is not None})
+        pessoas = []
+        if ids:
+            todos = supabase.table(tabela_usuarios()).select('id,user,nome').execute().data or []
+            por_id = {str(u.get('id')): u for u in todos}
+            for uid in ids:
+                u = por_id.get(str(uid))
+                if u:  # usuário já excluído não aparece
+                    pessoas.append({"id": u.get('id'), "user": u.get('user'), "nome": u.get('nome')})
+        pessoas.sort(key=lambda p: normalizar_chave(p.get('nome') or p.get('user')))
+        return jsonify({"status": "success", "chave": chave, "total": len(pessoas), "usuarios": pessoas}), 200
+    except Exception as e:
+        texto = str(e)
+        if any(t in texto for t in ('PGRST205', 'schema cache', 'does not exist', 'Could not find the table')):
+            return jsonify({"status": "error", "codigo": "tabela_ausente",
+                            "message": "A tabela de favoritos ainda não foi criada no banco."}), 503
+        print("admin_favoritos_usuarios:", e, flush=True)
+        return jsonify({"status": "error", "message": "Não foi possível ler os favoritos agora."}), 500
